@@ -1,0 +1,41 @@
+"use client";
+
+//import { Header } from "./(navigation)/Header";
+import Canva from "@/components/ui/canva";
+import { usePathname } from "next/navigation";
+import { Header } from "./(navigation)/Header";
+import { Sidebar } from "./(navigation)/Sidebar";
+//import { AlertProvider } from "@/components/Alert";
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const pathname = usePathname();
+  // Rotas onde o Sidebar e Header NÃO devem aparecer
+  const hiddenRoutes = ["/login", "/register", "/recuperar-senha"];
+  // Verifica se a rota atual inicia com alguma das ocultas
+  const hideNavigation = hiddenRoutes.some((route) =>
+    pathname.startsWith(route)
+  );
+
+  return (
+    <>
+      <Canva />
+      <div className="flex justify-center w-full p-4 relative z-10">
+        {/* Exibir Sidebar e Header apenas se não estiver nas rotas ocultas */}
+        <div className="w-[75%]">
+          {!hideNavigation && <Header />}
+          <div className="flex">
+            {!hideNavigation && <Sidebar />}
+            <div className="">{children}</div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+//<AlertProvider></AlertProvider>
+// {!hideNavigation && <Header />}
