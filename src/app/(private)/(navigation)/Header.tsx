@@ -32,7 +32,7 @@ export function Header() {
               <input
                 type="text"
                 placeholder="Search systems..."
-                className="bg-transparent border-none focus:outline-none text-sm w-40 placeholder:text-slate-500"
+                className="bg-transparent border-none focus:outline-none text-sm w-60 placeholder:text-slate-500"
               />
             </div>
 

@@ -27,9 +27,9 @@ export default function RootLayout({
         {/* Exibir Sidebar e Header apenas se não estiver nas rotas ocultas */}
         <div className="w-[75%]">
           {!hideNavigation && <Header />}
-          <div className="flex">
+          <div className="flex w-full">
             {!hideNavigation && <Sidebar />}
-            <div className="">{children}</div>
+            {children}
           </div>
         </div>
       </div>

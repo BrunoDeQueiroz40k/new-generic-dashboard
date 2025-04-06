@@ -11,9 +11,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Particles from "@/components/ui/particles";
+import { Checkbox } from "@/components/ui/checkbox";
 import AlterraLogo from "@/components/ui/alterra-logo";
 import { Mail, LockKeyhole, UserPlus2, Lock, User } from "lucide-react";
-import { Checkbox } from "@/components/ui/checkbox";
 
 export default function Register() {
   return (
@@ -51,7 +51,7 @@ export default function Register() {
                   </div>
                 </div>
                 <div>
-                  <Label htmlFor="sobremone">Sobremone</Label>
+                  <Label htmlFor="sobremone">Sobrenome</Label>
                   <Input
                     id="sobremone"
                     type="sobremone"

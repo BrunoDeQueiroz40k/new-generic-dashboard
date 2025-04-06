@@ -63,8 +63,8 @@ export function Sidebar() {
 
   return (
     <>
-      <div className="col-span-12 md:col-span-3 lg:col-span-2">
-        <Card className="bg-slate-900/50 border-slate-700/50 backdrop-blur-sm h-full">
+      <div className="col-span-12 md:col-span-3 lg:col-span-2 mr-6">
+        <Card className="bg-slate-900/50 border-slate-700/50 backdrop-blur-sm">
           <CardContent className="py-4 px-2">
             <nav className="space-y-4">
               {menuItems.map((section) => (

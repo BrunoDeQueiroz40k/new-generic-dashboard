@@ -1,7 +1,12 @@
+import { Page } from "@/components/ui/page";
+import { SystemOverview } from "./(informations)/SystemOverview";
+
 export default function Dashboard() {
-   return (
-      <>
-         
-      </>
-   )
+  return (
+    <>
+      <Page>
+        <SystemOverview />
+      </Page>
+    </>
+  );
 }
