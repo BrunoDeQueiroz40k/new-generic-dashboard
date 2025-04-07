@@ -21,7 +21,7 @@ export function Header() {
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center justify-center">
             <Image src={Alterra} alt="Alterra Logo" className="w-10" />
-            <span className="text-2xl font-bold ml-2">
+            <span className="text-2xl font-bold ml-3">
               Alterra <span className="text-[#FF8601]">Corps</span>
             </span>
           </div>

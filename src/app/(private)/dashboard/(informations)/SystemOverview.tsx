@@ -1,5 +1,6 @@
 import { Aperture } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { ResumoDasAPIs } from "./ResumoDasAPIs";
 import { StatusDaConta } from "./(components)/StatusDaConta";
 import { TempoDoSistema } from "./(components)/TempoDoSistema";
 import { ResumoDePagamento } from "./(components)/ResumoDePagamento";
@@ -22,10 +23,13 @@ export function SystemOverview() {
               </Badge>
             </div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="space-y-4">
             <div className="w-full flex gap-6">
               <StatusDaConta />
               <ResumoDePagamento />
+            </div>
+            <div>
+              <ResumoDasAPIs />
             </div>
           </CardContent>
         </Card>
