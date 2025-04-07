@@ -56,7 +56,7 @@ export default function NotFound() {
 
               <div className="w-full max-w-xs p-4 bg-slate-800/50 rounded-lg border border-slate-700/50 font-mono text-xs text-slate-400">
                 <div className="text-red-400">{">"} ERROR_CODE: 0x80070002</div>
-                <div>{">"} LOCATION: /nexus/system/path</div>
+                <div>{">"} LOCATION: /alterra/system/path</div>
                 <div>{">"} STATUS: resource_not_found</div>
                 <div className="mt-2 text-cyan-400">
                   {">"} Initiating recovery protocol...
