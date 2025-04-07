@@ -1,18 +1,20 @@
+import Link from "next/link";
 import Image from "next/image";
-import { Bell, Cog, LogOut, Search, User } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { Bell, Cog, LogOut, Search, User } from "lucide-react";
+
+// Componentes
+import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+
+// Imagem
+import Alterra from "@/../public/imgs/alterra.gif";
 
 const user = [
    { icon: User, label: "Perfil", href: "/dashboard/configuracoes" },
    { icon: Cog, label: "Configurações", href: "/dashboard/configuracoes" },
    { icon: LogOut, label: "Sair", href: "" },
 ]
-
-// Imagem
-import Alterra from "@/../public/imgs/alterra.gif";
-import Link from "next/link";
 
 export function Header() {
   return (

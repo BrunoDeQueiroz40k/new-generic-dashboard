@@ -9,6 +9,8 @@ import {
   ResponsiveContainer,
   Legend,
 } from "recharts";
+
+// Componentes
 import {
    ChartContainer,
    ChartTooltip,

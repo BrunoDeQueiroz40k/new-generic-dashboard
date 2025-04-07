@@ -1,6 +1,8 @@
+import { ShieldCheck } from "lucide-react";
+
+// Componentes
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { BadgeCheck, ChartNoAxesCombined, ShieldCheck } from "lucide-react";
 
 export function StatusDaConta() {
   return (

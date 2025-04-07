@@ -1,4 +1,6 @@
 import Link from "next/link";
+
+// Componentes
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 

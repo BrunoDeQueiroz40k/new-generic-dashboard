@@ -6,14 +6,19 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import Canva from "@/components/ui/canva";
+import { Mail, LockKeyhole, UserPlus2, Lock, User } from "lucide-react";
+
+// Compoentes
+import { Dot } from "@/components/ui/dot";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import Particles from "@/components/ui/particles";
 import { Checkbox } from "@/components/ui/checkbox";
+
+// Component Defaults
+import Canva from "@/components/ui/canva";
+import Particles from "@/components/ui/particles";
 import AlterraLogo from "@/components/ui/alterra-logo";
-import { Mail, LockKeyhole, UserPlus2, Lock, User } from "lucide-react";
 
 export default function Register() {
   return (
@@ -24,7 +29,7 @@ export default function Register() {
         <div className="w-[450px]">
           <AlterraLogo />
           <Card className="bg-slate-900/70 border-slate-700/50 backdrop-blur-md overflow-hidden">
-            <CardHeader className="pb-4">
+            <CardHeader className="pb-4 md:pb-0">
               <div className="flex justify-between items-center">
                 <CardTitle>Criar Conta</CardTitle>
                 <div className="flex items-center space-x-1">
@@ -36,7 +41,7 @@ export default function Register() {
               <CardDescription>Crie sua conta e se junte a nós</CardDescription>
             </CardHeader>
 
-            <CardContent>
+            <CardContent className="md:pt-4 md:pb-4">
               <div className="flex gap-4">
                 <div>
                   <Label htmlFor="nome">Nome</Label>
@@ -46,7 +51,7 @@ export default function Register() {
                       id="nome"
                       type="nome"
                       placeholder="John"
-                      className="pl-10 mt-2 mb-4 bg-slate-800/50 border-slate-700/50 text-slate-200"
+                      className="pl-10 mt-2 md:mt-1 mb-4 bg-slate-800/50 border-slate-700/50 text-slate-200"
                     />
                   </div>
                 </div>
@@ -56,7 +61,7 @@ export default function Register() {
                     id="sobremone"
                     type="sobremone"
                     placeholder="Warhammer"
-                    className="mt-2 mb-4 bg-slate-800/50 border-slate-700/50 text-slate-200"
+                    className="mt-2 md:mt-1 mb-4 bg-slate-800/50 border-slate-700/50 text-slate-200"
                   />
                 </div>
               </div>
@@ -69,7 +74,7 @@ export default function Register() {
                     id="email"
                     type="email"
                     placeholder="johnwarhammer@gmail.com"
-                    className="pl-10 mt-2 mb-4 bg-slate-800/50 border-slate-700/50 text-slate-200"
+                    className="pl-10 mt-2 md:mt-1 mb-4 bg-slate-800/50 border-slate-700/50 text-slate-200"
                   />
                 </div>
               </div>
@@ -81,7 +86,7 @@ export default function Register() {
                     id="password"
                     type="password"
                     placeholder="Digite a sua senha"
-                    className="pl-10 mt-2 mb-4 bg-slate-800/50 border-slate-700/50 text-slate-200"
+                    className="pl-10 mt-2 md:mt-1 mb-4 bg-slate-800/50 border-slate-700/50 text-slate-200"
                   />
                 </div>
               </div>
@@ -93,7 +98,7 @@ export default function Register() {
                     id="confirmPassword"
                     type="confirmPassword"
                     placeholder="Confirme a sua senha"
-                    className="pl-10 mt-2 bg-slate-800/50 border-slate-700/50 text-slate-200"
+                    className="pl-10 mt-2 md:mt-1 bg-slate-800/50 border-slate-700/50 text-slate-200"
                   />
                 </div>
               </div>
@@ -120,7 +125,7 @@ export default function Register() {
                 Cadastrar-se
               </Button>
 
-              <div className="flex flex-col gap-4 text-center pt-6">
+              <div className="flex flex-col gap-4 text-center pt-4">
                 <p>
                   Já possuí tem uma conta?{" "}
                   <Link className="text-alterra hover:underline" href="/login">
@@ -129,6 +134,11 @@ export default function Register() {
                 </p>
               </div>
             </CardContent>
+            <div className="flex gap-1.5 items-center justify-center pb-4">
+              <Dot className="bg-alterra" />
+              <span className="text-xs text-slate-500 font-mono">ALTERRA OS v12.245</span>
+              <Dot className="bg-alterra" />
+            </div>
           </Card>
         </div>
       </div>

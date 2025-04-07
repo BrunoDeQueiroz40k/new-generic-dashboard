@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
+// Componentes
 import { Card, CardContent } from "@/components/ui/card";
 
 export function TempoDoSistema() {

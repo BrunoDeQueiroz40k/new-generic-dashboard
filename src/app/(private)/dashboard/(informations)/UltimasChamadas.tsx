@@ -1,6 +1,8 @@
 import { Timer } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+// Componentes
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const apis = [
    { api: "/api/users/profile", type: "GET", status: "200", time: "2 min atrás", lag: "42ms" },

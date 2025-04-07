@@ -1,19 +1,24 @@
 import {
-   Card,
-   CardContent,
-   CardDescription,
-   CardHeader,
-   CardTitle,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import Canva from "@/components/ui/canva";
+import { Mail, LockKeyhole, LogIn, Github } from "lucide-react";
+
+// Componentes
+import { Dot } from "@/components/ui/dot";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import Particles from "@/components/ui/particles";
 import { Separator } from "@/components/ui/separator";
+
+// Component Defaults
+import Canva from "@/components/ui/canva";
+import Particles from "@/components/ui/particles";
 import AlterraLogo from "@/components/ui/alterra-logo";
-import { Mail, LockKeyhole, LogIn, Github } from "lucide-react";
 
 export default function Login() {
   return (
@@ -24,13 +29,13 @@ export default function Login() {
         <div className="w-[400px]">
           <AlterraLogo />
           <Card className="bg-slate-900/70 border-slate-700/50 backdrop-blur-md overflow-hidden">
-            <CardHeader className="pb-4">
+            <CardHeader className="pb-4 md:pt-4 md:pb-0">
               <div className="flex justify-between items-center">
                 <CardTitle>Fazer Login</CardTitle>
                 <div className="flex items-center space-x-1">
-                  <div className="h-2 w-2 rounded-full bg-gray-700"></div>
-                  <div className="h-2 w-2 rounded-full bg-alterra"></div>
-                  <div className="h-2 w-2 rounded-full bg-white"></div>
+                  <Dot className="w-2 h-2 bg-gray-700" />
+                  <Dot className="w-2 h-2 bg-alterra" />
+                  <Dot className="w-2 h-2 bg-white" />
                 </div>
               </div>
               <CardDescription>
@@ -38,7 +43,7 @@ export default function Login() {
               </CardDescription>
             </CardHeader>
 
-            <CardContent>
+            <CardContent className="pb-4">
               <div>
                 <Label htmlFor="email">Email</Label>
                 <div>
@@ -70,7 +75,7 @@ export default function Login() {
               </Button>
 
               <div className="text-center pt-4">
-               <Link href="" className="text-alterra hover:underline">Esqueceu sua senha?</Link>
+                <Link href="" className="text-alterra hover:underline">Esqueceu sua senha?</Link>
               </div>
 
               <div className="relative flex items-center justify-center py-4">
@@ -121,6 +126,11 @@ export default function Login() {
                     </Link>
                   </p>
                 </div>
+              </div>
+              <div className="flex gap-1.5 items-center justify-center pt-4">
+                <Dot className="bg-alterra" />
+                <span className="text-xs text-slate-500 font-mono">ALTERRA OS v12.245</span>
+                <Dot className="bg-alterra" />
               </div>
             </CardContent>
           </Card>

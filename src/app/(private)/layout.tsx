@@ -1,10 +1,14 @@
 "use client";
 
-//import { Header } from "./(navigation)/Header";
-import Canva from "@/components/ui/canva";
 import { usePathname } from "next/navigation";
+
+// Componentes
 import { Header } from "./(navigation)/Header";
 import { Sidebar } from "./(navigation)/Sidebar";
+
+// Componentes Defaults
+import Canva from "@/components/ui/canva";
+
 //import { AlertProvider } from "@/components/Alert";
 
 export default function RootLayout({
@@ -25,7 +29,7 @@ export default function RootLayout({
       <Canva />
       <div className="flex justify-center w-full p-4 relative z-10">
         {/* Exibir Sidebar e Header apenas se não estiver nas rotas ocultas */}
-        <div className="min-w-[77%]">
+        <div className="min-w-[77%] md:min-w-[93%]">
           {!hideNavigation && <Header />}
           <div className="flex w-full">
             {!hideNavigation && <Sidebar />}

@@ -1,5 +1,7 @@
-import { Resumo } from "./Resumo";
 import { Aperture } from "lucide-react";
+
+// Componentes
+import { Resumo } from "./Resumo";
 import { Badge } from "@/components/ui/badge";
 import { StatusDaConta } from "./(components)/StatusDaConta";
 import { ResumoDePagamento } from "./(components)/ResumoDePagamento";

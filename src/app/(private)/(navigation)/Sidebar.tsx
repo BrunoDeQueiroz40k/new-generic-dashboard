@@ -10,8 +10,10 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Card, CardContent } from "@/components/ui/card";
+
+// Componentes 
 import { Separator } from "@/components/ui/separator";
+import { Card, CardContent } from "@/components/ui/card";
 
 const menuItems = [
   {
@@ -77,11 +79,10 @@ export function Sidebar() {
                       <li key={item.label}>
                         <Link
                           href={item.href}
-                          className={`flex items-center gap-3 text-sm rounded-sm px-7 py-2 transition-colors ${
-                            pathname === item.href
+                          className={`flex items-center gap-3 text-sm rounded-sm px-7 py-2 transition-colors ${pathname === item.href
                               ? "text-alterra"
                               : "text-gray-300 hover:text-alterra hover:bg-slate-800/50"
-                          }`}
+                            }`}
                         >
                           {item.icon && <item.icon className="w-[18px] h-[18px]" />}
                           {item.label}
@@ -92,7 +93,7 @@ export function Sidebar() {
                 </div>
               ))}
             </nav>
-            <div className="flex justify-center"> 
+            <div className="flex justify-center">
               <Separator className="my-4 bg-slate-700/50 w-[90%]" />
             </div>
           </CardContent>

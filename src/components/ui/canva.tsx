@@ -17,7 +17,7 @@ export default function Canva() {
     canvas.height = window.innerHeight;
 
     const particles: Particle[] = [];
-    const particleCount = 100;
+    const particleCount = 200;
 
     class Particle {
       x: number;
@@ -100,7 +100,7 @@ export default function Canva() {
     <>
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-30"
+        className="absolute inset-0 w-full h-screen opacity-30"
       />
     </>
   );

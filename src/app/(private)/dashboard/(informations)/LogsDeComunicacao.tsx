@@ -1,4 +1,7 @@
-import { Button } from "@/components/ui/button";
+import { MessageSquare, Mic } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+
+// Componentes
 import {
   Card,
   CardContent,
@@ -8,8 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Dot } from "@/components/ui/dot";
 import { Input } from "@/components/ui/input";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import { MessageSquare, Mic } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const messages = [
   {

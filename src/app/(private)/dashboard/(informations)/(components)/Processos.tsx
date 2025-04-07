@@ -1,3 +1,4 @@
+// Componentes
 import { Badge } from "@/components/ui/badge";
 
 const processo = [

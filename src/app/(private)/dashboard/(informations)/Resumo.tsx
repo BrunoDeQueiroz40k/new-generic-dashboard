@@ -1,3 +1,4 @@
+// Componentes
 import { Processos } from "./(components)/Processos";
 import { Armazenamento } from "./(components)/Armazenamento";
 import { ResumoDasAPIs } from "./(components)/ResumoDasAPIs";
