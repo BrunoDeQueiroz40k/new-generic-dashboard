@@ -1,8 +1,7 @@
+import { Resumo } from "./Resumo";
 import { Aperture } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { ResumoDasAPIs } from "./ResumoDasAPIs";
 import { StatusDaConta } from "./(components)/StatusDaConta";
-import { TempoDoSistema } from "./(components)/TempoDoSistema";
 import { ResumoDePagamento } from "./(components)/ResumoDePagamento";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -29,11 +28,10 @@ export function SystemOverview() {
               <ResumoDePagamento />
             </div>
             <div>
-              <ResumoDasAPIs />
+              <Resumo />
             </div>
           </CardContent>
         </Card>
-        <TempoDoSistema />
       </div>
     </>
   );

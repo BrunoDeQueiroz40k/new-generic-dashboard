@@ -9,9 +9,16 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-slate-800/50 border-slate-700/50 text-slate-200 hover:bg-slate-700/50",
-        border: "bg-slate-800/50 border-slate-700/50 text-slate-200 hover:bg-slate-700/50 border",
-        alterra: "w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white",
+        default: 
+          "bg-slate-800/50 border-slate-700/50 text-slate-200 hover:bg-slate-700/50",
+        border: 
+          "bg-slate-800/50 border-slate-700/50 text-slate-200 hover:bg-slate-700/50 border",
+        alterra: 
+          "w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white",
+        blue: 
+          "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white",
+        green:
+          "bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white",
       },
       size: {
         default: "h-10 px-4 py-2",

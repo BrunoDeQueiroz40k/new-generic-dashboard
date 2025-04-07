@@ -4,20 +4,24 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2",
   {
     variants: {
       variant: {
+        slate:
+          "text-slate-200/90 bg-slate-500/20 border-slate-600/50 hover:bg-slate-600/30",
         green:
-          "text-green-500 bg-green-600/10 border-green-500 hover:bg-green-600/20",
+          "text-green-500 bg-green-600/20 border-green-500/50 hover:bg-green-600/30",
         orange:
-          "text-orange-500 bg-orange-600/10 border-orange-500 hover:bg-orange-600/20",
+          "text-orange-500 bg-orange-600/20 border-orange-500/50 hover:bg-orange-600/30",
         cyan:
-          "text-cyan-500 bg-cyan-600/10 border-cyan-500 hover:bg-cyan-600/20",
+          "text-cyan-500 bg-cyan-600/20 border-cyan-500/50 hover:bg-cyan-600/30",
+        yellow:
+          "text-yellow-500 bg-yellow-600/20 border-yellow-500/50 hover:bg-yellow-600/30",
       },
     },
     defaultVariants: {
-      variant: "green",
+      variant: "slate",
     },
   }
 );
