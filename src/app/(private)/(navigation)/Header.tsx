@@ -13,7 +13,7 @@ import Alterra from "@/../public/imgs/alterra.gif";
 const user = [
    { icon: User, label: "Perfil", href: "/dashboard/configuracoes" },
    { icon: Cog, label: "Configurações", href: "/dashboard/configuracoes" },
-   { icon: LogOut, label: "Sair", href: "" },
+   { icon: LogOut, label: "Sair", href: "/login" },
 ]
 
 export function Header() {
@@ -59,7 +59,7 @@ export function Header() {
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Portal>
                   <DropdownMenu.Content
-                    className="min-w-[280px] bg-gray-900 text-white rounded-md shadow-md border border-gray-600 py-1"
+                    className="min-w-[280px] bg-gray-900 text-white rounded-md shadow-md border border-gray-600 py-1 z-10"
                     align="end"
                   >
                     <DropdownMenu.Item asChild>

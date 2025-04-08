@@ -29,7 +29,7 @@ export default function Login() {
       <div className="w-full flex items-center justify-center">
         <div className="w-[400px]">
           <AlterraLogo />
-          <Card className="bg-slate-900/70 border-slate-700/50 backdrop-blur-md overflow-hidden">
+          <Card className="">
             <CardHeader className="pb-4 md:pt-4 md:pb-0">
               <div className="flex justify-between items-center">
                 <CardTitle>Fazer Login</CardTitle>

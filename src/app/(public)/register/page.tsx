@@ -29,7 +29,7 @@ export default function Register() {
       <div className="w-full flex items-center justify-center">
         <div className="w-[450px]">
           <AlterraLogo />
-          <Card className="bg-slate-900/70 border-slate-700/50 backdrop-blur-md overflow-hidden pb-4">
+          <Card className="pb-4">
             <CardHeader className="pb-4 md:pb-0">
               <div className="flex justify-between items-center">
                 <CardTitle>Criar Conta</CardTitle>

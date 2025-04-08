@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 // Componentes Defaults
 import Particles from "@/components/ui/particles";
 import AlterraLogo from "@/components/ui/alterra-logo";
+import { Version } from "./version";
 
 export default function NotFound() {
   return (
@@ -27,7 +28,7 @@ export default function NotFound() {
         <AlterraLogo />
 
         {/* Main card */}
-        <Card className="bg-slate-900/70 border-slate-700/50 backdrop-blur-md overflow-hidden">
+        <Card className="pb-4">
           <CardHeader className="pb-4 md:pb-0">
             <div className="flex justify-between items-center">
               <CardTitle className="text-slate-100 text-xl flex items-center">
@@ -42,7 +43,7 @@ export default function NotFound() {
             </div>
           </CardHeader>
 
-          <CardContent>
+          <CardContent className="">
             <div className="flex flex-col items-center justify-center py-6 md:py-0">
               <div className="w-24 h-24 relative mb-6">
                 <div className="absolute inset-0 border-4 border-dashed border-alterra/50 rounded-full animate-spin-slow"></div>
@@ -70,7 +71,7 @@ export default function NotFound() {
             </div>
           </CardContent>
 
-          <CardFooter className="flex justify-center space-x-4 pt-2 md:pt-0">
+          <CardFooter className="flex justify-center space-x-4 pt-2 md:pt-0 pb-1">
             <Button
               variant="border"
               className="border-slate-700 bg-slate-800/50 hover:bg-slate-700/50"
@@ -92,11 +93,7 @@ export default function NotFound() {
               </Link>
             </Button>
           </CardFooter>
-          <div className="flex gap-1.5 items-center justify-center pb-4 pt-2">
-            <Dot className="bg-alterra" />
-            <span className="text-xs text-slate-500 font-mono">ALTERRA OS v12.245</span>
-            <Dot className="bg-alterra" />
-          </div>
+          <Version />
         </Card>
       </div>
     </div>
