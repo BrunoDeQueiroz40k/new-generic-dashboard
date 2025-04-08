@@ -70,9 +70,11 @@ export default function Login() {
                 </div>
               </div>
 
-              <Button variant="alterra" className="w-full mt-2">
-                <LogIn className="mr-2 h-4 w-4" />
-                <Link href="/dashboard">Fazer Login</Link>
+              <Button variant="alterra" className="w-full mt-2 p-0">
+                <Link href="/" className="w-full h-full flex items-center justify-center">
+                  <LogIn className="mr-2 h-4 w-4" />
+                  Fazer Login
+                </Link>
               </Button>
 
               <div className="text-center pt-4">
