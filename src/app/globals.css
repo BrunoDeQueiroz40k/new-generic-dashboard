@@ -8,6 +8,15 @@ body {
   width: 100%;
 }
 
+.scroll-invisible {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.scroll-invisible::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 @theme {
 
   /* CORES */
@@ -33,5 +42,5 @@ body {
     100% {
       transform: rotate(360deg);
     }
-  }	
+  }
 }

@@ -19,6 +19,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Canva from "@/components/ui/canva";
 import Particles from "@/components/ui/particles";
 import AlterraLogo from "@/components/ui/alterra-logo";
+import { Version } from "@/app/version";
 
 export default function Register() {
   return (
@@ -28,7 +29,7 @@ export default function Register() {
       <div className="w-full flex items-center justify-center">
         <div className="w-[450px]">
           <AlterraLogo />
-          <Card className="bg-slate-900/70 border-slate-700/50 backdrop-blur-md overflow-hidden">
+          <Card className="bg-slate-900/70 border-slate-700/50 backdrop-blur-md overflow-hidden pb-4">
             <CardHeader className="pb-4 md:pb-0">
               <div className="flex justify-between items-center">
                 <CardTitle>Criar Conta</CardTitle>
@@ -41,7 +42,7 @@ export default function Register() {
               <CardDescription>Crie sua conta e se junte a nós</CardDescription>
             </CardHeader>
 
-            <CardContent className="md:pt-4 md:pb-4">
+            <CardContent className="md:pt-4 pb-0">
               <div className="flex gap-4">
                 <div>
                   <Label htmlFor="nome">Nome</Label>
@@ -134,11 +135,7 @@ export default function Register() {
                 </p>
               </div>
             </CardContent>
-            <div className="flex gap-1.5 items-center justify-center pb-4">
-              <Dot className="bg-alterra" />
-              <span className="text-xs text-slate-500 font-mono">ALTERRA OS v12.245</span>
-              <Dot className="bg-alterra" />
-            </div>
+            <Version />
           </Card>
         </div>
       </div>

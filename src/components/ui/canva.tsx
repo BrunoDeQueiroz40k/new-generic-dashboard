@@ -100,7 +100,7 @@ export default function Canva() {
     <>
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-screen opacity-30"
+        className="fixed inset-0 w-full h-screen opacity-30"
       />
     </>
   );

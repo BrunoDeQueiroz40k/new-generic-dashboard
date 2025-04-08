@@ -40,7 +40,7 @@ export function TempoDoSistema() {
     <>
       <Card className="h-fit">
         <CardContent className="p-0">
-          <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-6 border-b border-slate-700/50">
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-6 border-b border-slate-700/50 rounded-t-lg">
             <div className="text-center">
               <div className="text-xs text-slate-500 mb-1 font-mono">
                 SYSTEM TIME

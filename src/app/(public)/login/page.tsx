@@ -19,6 +19,7 @@ import { Separator } from "@/components/ui/separator";
 import Canva from "@/components/ui/canva";
 import Particles from "@/components/ui/particles";
 import AlterraLogo from "@/components/ui/alterra-logo";
+import { Version } from "@/app/version";
 
 export default function Login() {
   return (
@@ -127,11 +128,7 @@ export default function Login() {
                   </p>
                 </div>
               </div>
-              <div className="flex gap-1.5 items-center justify-center pt-4">
-                <Dot className="bg-alterra" />
-                <span className="text-xs text-slate-500 font-mono">ALTERRA OS v12.245</span>
-                <Dot className="bg-alterra" />
-              </div>
+              <Version />
             </CardContent>
           </Card>
         </div>

@@ -1,3 +1,5 @@
+import "@/app/globals.css";
+
 import {
   LayoutDashboard,
   Key,
@@ -74,7 +76,7 @@ export function Sidebar() {
   return (
     <>
       <div className="col-span-12 md:col-span-3 lg:col-span-2 mr-6 flex-shrink-0">
-        <Card className="bg-slate-900/50 border-slate-700/50 backdrop-blur-sm sticky top-[25px]">
+        <Card className="bg-slate-900/50 border-slate-700/50 backdrop-blur-sm sticky top-[15px]">
           <CardContent className="py-4 px-2">
             <nav className="space-y-4">
               {menuItems.map((section) => (
@@ -88,8 +90,8 @@ export function Sidebar() {
                         <Link
                           href={item.href}
                           className={`flex items-center gap-3 text-sm rounded-sm px-7 py-2 transition-colors ${pathname === item.href
-                              ? "text-alterra"
-                              : "text-gray-300 hover:text-alterra hover:bg-slate-800/50"
+                            ? "text-alterra bg-slate-800/50"
+                            : "text-gray-300 hover:text-alterra hover:bg-slate-800/50"
                             }`}
                         >
                           {item.icon && <item.icon className="w-[18px] h-[18px]" />}
