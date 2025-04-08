@@ -81,11 +81,12 @@ export default function Login() {
                 <Link href="" className="text-alterra hover:underline">Esqueceu sua senha?</Link>
               </div>
 
-              <div className="relative flex items-center justify-center py-4">
-                <Separator className="absolute w-full bg-slate-700/50" />
-                <span className="relative px-2 bg-slate-900/70 text-sm text-slate-500">
+              <div className="flex items-center justify-center py-4">
+                <Separator className="bg-slate-700/50" />
+                <p className="shrink-0 px-2 text-sm text-slate-500">
                   Ou continue com
-                </span>
+                </p>
+                <Separator className="bg-slate-700/50" />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
