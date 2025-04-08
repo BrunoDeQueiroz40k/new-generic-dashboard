@@ -29,7 +29,7 @@ export default function RootLayout({
       <Canva />
       <div className="flex justify-center w-full p-4 relative z-10">
         {/* Exibir Sidebar e Header apenas se não estiver nas rotas ocultas */}
-        <div className="min-w-[77%] md:min-w-[93%]">
+        <div className="min-w-[93%] md:min-w-[77%]">
           {!hideNavigation && <Header />}
           <div className="flex w-full">
             {!hideNavigation && <Sidebar />}

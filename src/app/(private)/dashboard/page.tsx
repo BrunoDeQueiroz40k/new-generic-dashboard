@@ -3,6 +3,8 @@ import { SystemOverview } from "./(informations)/SystemOverview";
 import { TempoDoSistema } from "./(informations)/(components)/TempoDoSistema";
 import { UltimasChamadas } from "./(informations)/UltimasChamadas";
 import { LogsDeComunicacao } from "./(informations)/LogsDeComunicacao";
+import { ControleDeAmbiente } from "./(informations)/ControleDeAmbiente";
+import { AlertasDoSistema } from "./(informations)/(components)/AlertasDoSistema";
 
 export default function Dashboard() {
   return (
@@ -13,9 +15,11 @@ export default function Dashboard() {
             <SystemOverview />
             <LogsDeComunicacao />
           </div>
-          <div className="space-y-6">
+          <div className="space-y-6 min-w-[250px] max-w-[270px]">
             <TempoDoSistema />
             <UltimasChamadas />
+            <ControleDeAmbiente />
+            <AlertasDoSistema />
           </div>
         </div>
       </Page>

@@ -7,6 +7,7 @@ import {
   BadgeHelp,
   FileText,
   ChartSpline,
+  Settings,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -14,6 +15,7 @@ import { usePathname } from "next/navigation";
 // Componentes 
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
+import { StatusDoSistema } from "./(informations)/StatusDoSistema";
 
 const menuItems = [
   {
@@ -54,9 +56,15 @@ const menuItems = [
       {
         icon: ChartSpline,
         label: "Relatórios",
-        href: "/dashboard//relatorios",
+        href: "/dashboard/relatorios",
       },
     ],
+  },
+  {
+    title: "CONFIGURAÇÕES",
+    items: [
+      { icon: Settings, label: "Configurações", href: "/dashboard/configuracoes" },
+    ]
   },
 ];
 
@@ -96,6 +104,7 @@ export function Sidebar() {
             <div className="flex justify-center">
               <Separator className="my-4 bg-slate-700/50 w-[90%]" />
             </div>
+            <StatusDoSistema />
           </CardContent>
         </Card>
       </div>

@@ -15,7 +15,7 @@ const apis = [
 export function UltimasChamadas() {
    return (
       <>
-         <Card className="w-fit h-fit">
+         <Card className="w-full h-fit">
             <CardHeader className="flex flex-row items-center px-4 py-4 pb-2 gap-2">
                <Timer className="h-5 w-5 m-0 text-cyan-500" />
                <CardTitle className="text-lg">Chamadas APIs</CardTitle>
