@@ -2,6 +2,8 @@ import { Page, PageContent, PageDescription, PageHeader, PageTitle } from "@/com
 import { Key } from "lucide-react";
 import { MinhasAPIs } from "./(informations)/MinhasAPIs";
 import { LogsDeAcesso } from "./(informations)/LogsDeAcesso";
+import { GerarNovaChaveAPI } from "./(informations)/GerarNovaChaveAPI";
+import { GerenciarChavesAPI } from "./(informations)/GerenciarChavesAPI";
 
 export default function GerenciarAPIs() {
    return (
@@ -16,6 +18,10 @@ export default function GerenciarAPIs() {
             </PageHeader>
             <PageContent>
                <MinhasAPIs />
+               <div className="flex gap-4 justify-between">
+                  <GerarNovaChaveAPI />
+                  <GerenciarChavesAPI />
+               </div>
                <LogsDeAcesso />
             </PageContent>
          </Page>

@@ -5,6 +5,7 @@ import {
   CircleX,
   Clock,
   Code2,
+  Codesandbox,
   FileText,
   Info,
   Plus,
@@ -86,6 +87,7 @@ export function MinhasAPIs() {
     <>
       <Card>
         <CardHeader>
+          <Codesandbox className="w-6 h-6 text-slate-400" />
           <CardTitle>Minhas APIs</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
@@ -93,7 +95,7 @@ export function MinhasAPIs() {
             <div className="relative w-full max-w-md">
               <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-500" />
               <Input
-                placeholder="Pesquisar API"
+                placeholder="Pesquisar por APIs"
                 className="pl-10 bg-slate-800/50 border-slate-700 text-slate-200"
               />
             </div>

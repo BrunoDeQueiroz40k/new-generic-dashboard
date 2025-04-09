@@ -13,7 +13,7 @@ export function SystemOverview() {
       <div className="flex gap-4">
         <Card className="flex-1">
           <CardHeader className="flex flex-row items-center justify-between border-b border-slate-700/50">
-            <CardTitle className="flex items-center">
+            <CardTitle className="flex items-center text-2xl">
               <Aperture className="mr-2 h-6 w-6 text-cyan-500" />
               Visão Geral do Sistema
             </CardTitle>
