@@ -16,9 +16,9 @@ export default function GerenciarAPIs() {
                </PageTitle>
                <PageDescription>Gerencia suas APIs, Chaves e controles de acesso</PageDescription>
             </PageHeader>
-            <PageContent>
+            <PageContent className="flex flex-col gap-6">
                <MinhasAPIs />
-               <div className="flex gap-4 justify-between">
+               <div className="flex gap-6 justify-between">
                   <GerarNovaChaveAPI />
                   <GerenciarChavesAPI />
                </div>

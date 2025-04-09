@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <>
       <Canva />
-      <div className="flex justify-center w-full p-4 relative z-10">
+      <div className="flex justify-center w-full p-4 pb-6 pt-2 relative z-10">
         {/* Exibir Sidebar e Header apenas se não estiver nas rotas ocultas */}
         <div className="min-w-[93%] [@media(min-width:1600px)]:min-w-[77%]">
           {!hideNavigation && <Header />}

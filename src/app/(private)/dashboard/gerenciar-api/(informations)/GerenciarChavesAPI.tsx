@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield } from "lucide-react";
 
 export function GerenciarChavesAPI() {
@@ -9,6 +9,9 @@ export function GerenciarChavesAPI() {
                <Shield className="w-6 h-6 text-slate-400" />
                <CardTitle>Gerenciar Chaves</CardTitle>
             </CardHeader>
+            <CardContent>
+               
+            </CardContent>
          </Card>
       </>
    )
