@@ -1,6 +1,7 @@
 import { Page, PageContent, PageDescription, PageHeader, PageTitle } from "@/components/ui/page";
 import { Key } from "lucide-react";
 import { MinhasAPIs } from "./(informations)/MinhasAPIs";
+import { LogsDeAcesso } from "./(informations)/LogsDeAcesso";
 
 export default function GerenciarAPIs() {
    return (
@@ -15,6 +16,7 @@ export default function GerenciarAPIs() {
             </PageHeader>
             <PageContent>
                <MinhasAPIs />
+               <LogsDeAcesso />
             </PageContent>
          </Page>
       </>
