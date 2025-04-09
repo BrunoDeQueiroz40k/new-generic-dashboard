@@ -50,9 +50,3 @@ export function StatusDaConta() {
     </>
   );
 }
-
-/*
-        <div className="absolute bottom-2 right-2 flex items-center">
-          <BadgeCheck className="h-5 w-5 text-green-500" />
-        </div>
-*/
