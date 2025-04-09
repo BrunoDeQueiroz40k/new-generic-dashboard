@@ -1,9 +1,10 @@
+import { FileCode, FileText, Search } from "lucide-react";
+
+// Componentes
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { FileCode, FileText, Plus, Search } from "lucide-react";
 
 const logs = [
    { timestamp: "20-12-2023 14:32", title: "Development Key", ip: "192.168.1.45", endpoint: "api/data/users", method: "GET", status: 200, responseTime: "43ms" },

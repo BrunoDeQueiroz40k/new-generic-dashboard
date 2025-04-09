@@ -1,0 +1,152 @@
+[
+   {
+     "title": "User Authentication API",
+     "status": "ativo",
+     "description": "API usada para autenticação e autorização",
+     "updated": "Updated Jan 15, 2024, 11:30",
+     "version": "v2.3.1",
+     "usage": 73,
+     "icon": "CheckCircle",
+     "endpoint": "/login"
+   },
+   {
+     "title": "Payment Gateway API",
+     "status": "ativo",
+     "description": "API para processamento de pagamentos",
+     "updated": "Updated Dez 10, 2023, 14:20",
+     "version": "v1.8.0",
+     "usage": 45,
+     "icon": "CheckCircle",
+     "endpoint": "/dashboard/faturamento"
+   },
+   {
+     "title": "Data Analytics API",
+     "status": "manutenção",
+     "description": "API para análise de dados e relatórios",
+     "updated": "Updated Fev 5, 2024, 09:15",
+     "version": "v3.0.0",
+     "usage": 15,
+     "icon": "Info",
+     "endpoint": "/dashboard/relatorios"
+   },
+   {
+     "title": "Notification Service API",
+     "status": "error",
+     "description": "API para envio de notificações",
+     "updated": "Updated Jan 20, 2024, 16:45",
+     "version": "v2.5.2",
+     "usage": 97,
+     "icon": "CircleX",
+     "endpoint": "/dashboard/configuracoes"
+   },
+   {
+     "title": "Inventory Management API",
+     "status": "inativo",
+     "description": "API para gerenciamento de inventário",
+     "updated": "Updated Nov 25, 2023, 12:00",
+     "version": "v1.4.3",
+     "usage": 0,
+     "icon": "CircleOff",
+     "endpoint": "/dashboard/gerenciamento-api"
+   },
+   {
+     "title": "Customer Support API",
+     "status": "ativo",
+     "description": "API para suporte ao cliente",
+     "updated": "Updated Jan 10, 2024, 10:00",
+     "version": "v1.2.0",
+     "usage": 50,
+     "icon": "CheckCircle",
+     "endpoint": "/support"
+   },
+   {
+     "title": "Order Tracking API",
+     "status": "ativo",
+     "description": "API para rastreamento de pedidos",
+     "updated": "Updated Dez 20, 2023, 15:30",
+     "version": "v2.0.1",
+     "usage": 60,
+     "icon": "CheckCircle",
+     "endpoint": "/orders/track"
+   },
+   {
+     "title": "Feedback Collection API",
+     "status": "manutenção",
+     "description": "API para coleta de feedbacks",
+     "updated": "Updated Fev 1, 2024, 08:45",
+     "version": "v1.5.0",
+     "usage": 25,
+     "icon": "Info",
+     "endpoint": "/feedback"
+   },
+   {
+     "title": "Shipping Management API",
+     "status": "ativo",
+     "description": "API para gerenciamento de envios",
+     "updated": "Updated Jan 18, 2024, 13:20",
+     "version": "v3.1.0",
+     "usage": 80,
+     "icon": "CheckCircle",
+     "endpoint": "/shipping"
+   },
+   {
+     "title": "User Profile API",
+     "status": "ativo",
+     "description": "API para gerenciamento de perfis de usuário",
+     "updated": "Updated Dez 5, 2023, 11:10",
+     "version": "v2.2.0",
+     "usage": 40,
+     "icon": "CheckCircle",
+     "endpoint": "/profile"
+   },
+   {
+     "title": "Product Catalog API",
+     "status": "ativo",
+     "description": "API para consulta de catálogo de produtos",
+     "updated": "Updated Jan 25, 2024, 17:00",
+     "version": "v1.9.0",
+     "usage": 90,
+     "icon": "CheckCircle",
+     "endpoint": "/products"
+   },
+   {
+     "title": "Billing API",
+     "status": "manutenção",
+     "description": "API para gerenciamento de cobranças",
+     "updated": "Updated Fev 10, 2024, 14:00",
+     "version": "v2.4.0",
+     "usage": 30,
+     "icon": "Info",
+     "endpoint": "/billing"
+   },
+   {
+     "title": "Marketing Campaign API",
+     "status": "ativo",
+     "description": "API para gerenciamento de campanhas de marketing",
+     "updated": "Updated Dez 15, 2023, 09:30",
+     "version": "v1.6.0",
+     "usage": 55,
+     "icon": "CheckCircle",
+     "endpoint": "/marketing"
+   },
+   {
+     "title": "Fraud Detection API",
+     "status": "error",
+     "description": "API para detecção de fraudes",
+     "updated": "Updated Jan 22, 2024, 18:00",
+     "version": "v3.2.1",
+     "usage": 10,
+     "icon": "CircleX",
+     "endpoint": "/fraud"
+   },
+   {
+     "title": "Loyalty Program API",
+     "status": "ativo",
+     "description": "API para gerenciamento de programas de fidelidade",
+     "updated": "Updated Fev 3, 2024, 12:30",
+     "version": "v2.7.0",
+     "usage": 65,
+     "icon": "CheckCircle",
+     "endpoint": "/loyalty"
+   }
+]

@@ -1,6 +1,10 @@
+"use client"
+
 import {
   Activity,
   CheckCircle,
+  ChevronLeft,
+  ChevronRight,
   CircleOff,
   CircleX,
   Clock,
@@ -13,14 +17,9 @@ import {
   Settings,
   X,
 } from "lucide-react";
+import { useState } from "react";
 
 // Componentes
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Dot } from "@/components/ui/dot";
-import { Progress } from "@/components/ui/progress";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -28,61 +27,43 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Dot } from "@/components/ui/dot";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const apis = [
-  {
-    title: "User Authentication API",
-    status: "ativo",
-    description: "API usada para autenticação e autorização",
-    updated: "Updated Jan 15, 2024, 11:30",
-    version: "v2.3.1",
-    usage: 73,
-    icon: CheckCircle,
-    endpoint: "/login",
-  },
-  {
-    title: "Payment Gateway API",
-    status: "ativo",
-    description: "API para processamento de pagamentos",
-    updated: "Updated Dez 10, 2023, 14:20",
-    version: "v1.8.0",
-    usage: 45,
-    icon: CheckCircle,
-    endpoint: "/dashboard/faturamento",
-  },
-  {
-    title: "Data Analytics API",
-    status: "manutenção",
-    description: "API para análise de dados e relatórios",
-    updated: "Updated Fev 5, 2024, 09:15",
-    version: "v3.0.0",
-    usage: 15,
-    icon: Info,
-    endpoint: "/dashboard/relatorios",
-  },
-  {
-    title: "Notification Service API",
-    status: "error",
-    description: "API para envio de notificações",
-    updated: "Updated Jan 20, 2024, 16:45",
-    version: "v2.5.2",
-    usage: 97,
-    icon: CircleX,
-    endpoint: "/dashboard/configuracoes",
-  },
-  {
-    title: "Inventory Management API",
-    status: "inativo",
-    description: "API para gerenciamento de inventário",
-    updated: "Updated Nov 25, 2023, 12:00",
-    version: "v1.4.3",
-    usage: 0,
-    icon: CircleOff,
-    endpoint: "/dashboard/gerenciamento-api",
-  },
-];
+// Componentes Defaults
+import api from "../(informations)/apis.json"
+
+const iconMap = {
+  CheckCircle: CheckCircle,
+  Info: Info,
+  CircleX: CircleX,
+  CircleOff: CircleOff,
+};
+
+const ITEMS_PER_PAGE = 5;
+
+const apis = api.map((api) => ({
+  ...api,
+  icon: iconMap[api.icon as keyof typeof iconMap],
+}));
 
 export function MinhasAPIs() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(apis.length / ITEMS_PER_PAGE);
+
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentApis = apis.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const changePage = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
   return (
     <>
       <Card>
@@ -118,7 +99,7 @@ export function MinhasAPIs() {
               </Button>
             </div>
           </div>
-          {apis.map((item) => (
+          {currentApis.map((item) => (
             <div
               key={item.title}
               className="flex items-center justify-between rounded-lg background px-4 py-2.5 transition"
@@ -126,15 +107,14 @@ export function MinhasAPIs() {
               <div className="flex flex-col gap-1 flex-11/12">
                 <div className="flex items-center gap-2">
                   <item.icon
-                    className={`w-4.5 h-4.5 ${
-                      item.icon === CheckCircle
-                        ? "text-green-500"
-                        : item.icon === Info
+                    className={`w-4.5 h-4.5 ${item.icon === CheckCircle
+                      ? "text-green-500"
+                      : item.icon === Info
                         ? "text-yellow-500"
                         : item.icon === CircleX
-                        ? "text-red-500"
-                        : "text-slate-400"
-                    }`}
+                          ? "text-red-500"
+                          : "text-slate-400"
+                      }`}
                   />
                   <h1 className="font-semibold">{item.title}</h1>
                   <Badge
@@ -142,10 +122,10 @@ export function MinhasAPIs() {
                       item.status === "ativo"
                         ? "green"
                         : item.status === "manutenção"
-                        ? "yellow"
-                        : item.status === "error"
-                        ? "red"
-                        : "slate"
+                          ? "yellow"
+                          : item.status === "error"
+                            ? "red"
+                            : "slate"
                     }
                   >
                     {item.status === "ativo" ? (
@@ -168,7 +148,7 @@ export function MinhasAPIs() {
                   </span>
                   <span className="flex items-center">
                     <Code2 className="w-3 h-3 mr-1" />
-                    Versão:
+                    Versão:{" "}
                     {item.version}
                   </span>
                   <span className="flex items-center">
@@ -182,38 +162,36 @@ export function MinhasAPIs() {
                   <div className="flex gap-18 items-center justify-between">
                     <span className="text-slate-400 text-sm">Usage</span>
                     <span
-                      className={`text-sm ${
-                        item.usage >= 85
-                          ? "text-red-500"
-                          : item.usage >= 65
+                      className={`text-sm ${item.usage >= 85
+                        ? "text-red-500"
+                        : item.usage >= 65
                           ? "text-amber-500"
                           : item.usage >= 36
-                          ? "text-cyan-500"
-                          : item.usage <= 35
-                          ? "text-emerald-500"
-                          : item.usage === 0
-                          ? "text-slate-400"
-                          : ""
-                      }`}
+                            ? "text-cyan-500"
+                            : item.usage <= 35
+                              ? "text-emerald-500"
+                              : item.usage === 0
+                                ? "text-slate-400"
+                                : ""
+                        }`}
                     >
                       {item.usage}%
                     </span>
                   </div>
                   <Progress
                     value={item.usage}
-                    className={`[&>*]:bg-gradient-to-r ${
-                      item.usage >= 85
-                        ? "[&>*]:from-orange-800 [&>*]:to-red-600"
-                        : item.usage >= 65
+                    className={`[&>*]:bg-gradient-to-r ${item.usage >= 85
+                      ? "[&>*]:from-orange-800 [&>*]:to-red-600"
+                      : item.usage >= 65
                         ? "[&>*]:from-amber-500 [&>*]:to-orange-500"
                         : item.usage >= 45
-                        ? "[&>*]:from-cyan-500 [&>*]:to-blue-600"
-                        : item.usage <= 35
-                        ? "[&>*]:from-emerald-500 [&>*]:to-green-600"
-                        : item.usage === 0
-                        ? "text-slate-400"
-                        : ""
-                    }`}
+                          ? "[&>*]:from-cyan-500 [&>*]:to-blue-600"
+                          : item.usage <= 35
+                            ? "[&>*]:from-emerald-500 [&>*]:to-green-600"
+                            : item.usage === 0
+                              ? "text-slate-400"
+                              : ""
+                      }`}
                   >
                     <div
                       className="h-full rounded-full"
@@ -234,6 +212,29 @@ export function MinhasAPIs() {
               </div>
             </div>
           ))}
+
+          {/* Paginação */}
+          <div className="flex justify-center items-center gap-2 mt-4">
+            <Button onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}
+              className="p-2 px-3 rounded bg-slate-700 text-white disabled:opacity-30">
+              <ChevronLeft size={16} />
+            </Button>
+            {Array.from({ length: totalPages }, (_, i) => (
+              <Button key={i} onClick={() => changePage(i + 1)}
+                className={`${currentPage === i + 1
+                  ? "bg-blue-500 hover:bg-blue-600"
+                  : ""
+                  }`}
+              >
+                {i + 1}
+              </Button>
+            ))}
+            <Button onClick={() => changePage(currentPage + 1)} disabled={currentPage === totalPages}
+              className="p-2 px-3 rounded bg-slate-700 text-white disabled:opacity-30">
+              <ChevronRight size={16} />
+            </Button>
+          </div>
+
         </CardContent>
       </Card>
     </>
