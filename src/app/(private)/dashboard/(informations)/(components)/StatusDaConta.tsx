@@ -1,6 +1,7 @@
 import { ShieldCheck } from "lucide-react";
 
 // Componentes
+import { Dot } from "@/components/ui/dot";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
@@ -16,8 +17,8 @@ export function StatusDaConta() {
           <div className="w-full mb-1 flex flex-col gap-2 text-slate-400 text-sm">
             <span className="flex justify-between">
               <p>Status da Conta:</p>
-              <Badge variant="green">
-                <div className="h-1.5 w-1.5 rounded-full bg-green-500 mr-1 animate-pulse"></div>
+              <Badge className="pb-0.5" variant="green">
+                <Dot className="animate-pulse mr-0.5" />
                 Ativo
               </Badge>
             </span>

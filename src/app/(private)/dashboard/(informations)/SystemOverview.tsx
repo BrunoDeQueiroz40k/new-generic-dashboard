@@ -2,6 +2,7 @@ import { Aperture } from "lucide-react";
 
 // Componentes
 import { Resumo } from "./Resumo";
+import { Dot } from "@/components/ui/dot";
 import { Badge } from "@/components/ui/badge";
 import { StatusDaConta } from "./(components)/StatusDaConta";
 import { ResumoDePagamento } from "./(components)/ResumoDePagamento";
@@ -19,7 +20,7 @@ export function SystemOverview() {
             </CardTitle>
             <div>
               <Badge variant="cyan" className="mr-2">
-                <div className="h-1.5 w-1.5 rounded-full bg-cyan-500 mr-1 animate-pulse"></div>
+                <Dot className="bg-cyan-500 animate-pulse mr-0.5" />
                 ATIVO
               </Badge>
             </div>

@@ -9,7 +9,7 @@ const Dot = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "h-1.5 w-1.5 rounded-full bg-green-500",
+      "h-1.5 w-1.5 rounded-full bg-green-500 translate-y-[0.5px]",
       className
     )}
     {...props}

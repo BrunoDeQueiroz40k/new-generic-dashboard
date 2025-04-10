@@ -1,10 +1,13 @@
-import { Copy, Ellipsis, Eye, Shield } from "lucide-react";
+import { Copy, Ellipsis, Eye, Plus, Search, Shield } from "lucide-react";
 
 // Componentes
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GerenciarChavesAPIsInfos } from "./(components)/GerenciarChavesAPIsInfos";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Dot } from "@/components/ui/dot";
 
 const chaves = [
   {
@@ -57,9 +60,56 @@ export function GerenciarNovasChavesAPIs() {
           <Shield className="w-6 h-6 text-slate-400" />
           <CardTitle>Gerenciar Chaves APIs</CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col gap-6">
+        <CardContent>
           <div>
             <GerenciarChavesAPIsInfos />
+          </div>
+          <div className="flex justify-between pt-6 pb-4">
+            <div className="relative w-full max-w-md">
+              <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-500" />
+              <Input
+                placeholder="Pesquisar por APIs"
+                className="pl-10 bg-slate-800/50 border-slate-700 text-slate-200"
+              />
+            </div>
+            <div className="flex">
+              <Select>
+                <SelectTrigger>
+                  <SelectValue placeholder="Filtrar por status" />
+                </SelectTrigger>
+                <SelectContent className="bg-slate-800 border-slate-700 text-slate-200">
+                  <SelectItem value="todos">Todos os Status</SelectItem>
+                  <SelectItem value="produção">
+                    <div className="flex items-center gap-2">
+                      <Dot className="w-2 h-2 bg-green-500" />
+                      <p>Produção</p>
+                    </div>
+                  </SelectItem>
+                  <SelectItem value="teste">
+                    <div className="flex items-center gap-2">
+                      <Dot className="w-2 h-2 bg-yellow-500" />
+                      <p>Teste</p>
+                    </div>
+                  </SelectItem>
+                  <SelectItem value="parceria">
+                    <div className="flex items-center gap-2">
+                      <Dot className="w-2 h-2 bg-purple-500" />
+                      <p>Parceria</p>
+                    </div>
+                  </SelectItem>
+                  <SelectItem value="desenvolvimento">
+                    <div className="flex items-center gap-2">
+                      <Dot className="w-2 h-2 bg-blue-500" />
+                      <p>Desenvolvimento</p>
+                    </div>
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+              <Button variant="blue" className="ml-4">
+                <Plus className="w-4 h-4" />
+                Criar nova API
+              </Button>
+            </div>
           </div>
           <div className="overflow-x-auto bg-slate-800/30 rounded-md border border-slate-700/50 w-full">
             <table className="min-w-full text-sm text-left">
@@ -95,15 +145,14 @@ export function GerenciarNovasChavesAPIs() {
                     </td>
                     <td className="w-[150px]">
                       <Badge
-                        variant={`${
-                          chave.type === "Produção"
-                            ? "green"
-                            : chave.type === "Desenvolvimento"
+                        variant={`${chave.type === "Produção"
+                          ? "green"
+                          : chave.type === "Desenvolvimento"
                             ? "blue"
                             : chave.type === "Teste"
-                            ? "yellow"
-                            : "purple"
-                        }`}
+                              ? "yellow"
+                              : "purple"
+                          }`}
                       >
                         {chave.type}
                       </Badge>
@@ -112,20 +161,19 @@ export function GerenciarNovasChavesAPIs() {
                     <td className="text-slate-400 text-sm">{chave.used}</td>
                     <td>
                       <Badge
-                        variant={`${
-                          chave.status === "Ativo"
-                            ? "green"
-                            : chave.status === "Revogado"
+                        variant={`${chave.status === "Ativo"
+                          ? "green"
+                          : chave.status === "Revogado"
                             ? "red"
                             : "slate"
-                        }`}
+                          }`}
                       >
                         {chave.status}
                       </Badge>
                     </td>
                     <td className="flex gap-1">
                       <button className="flex items-center px-2 py-1 gap-1 cursor-pointer hover:bg-transparent text-slate-400 hover:text-slate-300">
-                        <Eye className="w-3 h-3" />
+                        <Eye className="w-4 h-4" />
                         Detalhes
                       </button>
                       <button className="flex items-center px-2 py-1 gap-1 cursor-pointer hover:bg-transparent text-slate-400 hover:text-slate-300">

@@ -26,7 +26,7 @@ export function UltimasChamadas() {
                   <div key={item.api} className="border-b border-slate-700/50 w-full px-4 pt-2 hover:bg-slate-800/50 transition">
                      <div className="flex items-center justify-between gap-8">
                         <h1 className="text-sm text-cyan-500 font-mono">{item.api}</h1>
-                        <Badge variant={item.status === "200" ? "green" : item.status === "429" ? "yellow" : "slate"}>{item.status}</Badge>
+                        <Badge className="pb-0.5" variant={item.status === "200" ? "green" : item.status === "429" ? "yellow" : "slate"}>{item.status}</Badge>
                      </div>
                      <div className="flex items-center justify-between mt-1 mb-2">
                         <div className="flex gap-1">
