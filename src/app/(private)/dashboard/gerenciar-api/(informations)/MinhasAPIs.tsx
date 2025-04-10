@@ -214,15 +214,15 @@ export function MinhasAPIs() {
           ))}
 
           {/* Paginação */}
-          <div className="flex justify-center items-center gap-2 mt-4">
+          <div className="flex justify-center items-center gap-2 mt-4 font-mono">
             <Button onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}
-              className="p-2 px-3 rounded bg-slate-700 text-white disabled:opacity-30">
+              className="h-7 py-2 px-2 rounded bg-slate-700 text-white disabled:opacity-30 ">
               <ChevronLeft size={16} />
             </Button>
             {Array.from({ length: totalPages }, (_, i) => (
               <Button key={i} onClick={() => changePage(i + 1)}
-                className={`${currentPage === i + 1
-                  ? "bg-blue-500 hover:bg-blue-600"
+                className={`h-7 py-2 px-3 font-mono ${currentPage === i + 1
+                  ? "bg-slate-500/50 hover:bg-slate-500/70"
                   : ""
                   }`}
               >
@@ -230,7 +230,7 @@ export function MinhasAPIs() {
               </Button>
             ))}
             <Button onClick={() => changePage(currentPage + 1)} disabled={currentPage === totalPages}
-              className="p-2 px-3 rounded bg-slate-700 text-white disabled:opacity-30">
+              className="h-7 py-2 px-2 rounded bg-slate-700 text-white disabled:opacity-30">
               <ChevronRight size={16} />
             </Button>
           </div>
