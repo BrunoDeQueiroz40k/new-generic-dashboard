@@ -1,13 +1,15 @@
 import { Copy, Ellipsis, Eye, Plus, Search, Shield } from "lucide-react";
 
 // Componentes
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { GerenciarChavesAPIsInfos } from "./(components)/GerenciarChavesAPIsInfos";
-import { Button } from "@/components/ui/button";
+import { Dot } from "@/components/ui/dot";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "@/components/ui/dialog";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GerenciarChavesAPIsInfos } from "./(components)/GerenciarChavesAPIsInfos";
+import { GerenciarChavesAPIsDialog } from "./(components)/GerenciarChavesAPIsDialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Dot } from "@/components/ui/dot";
 
 const chaves = [
   {
@@ -105,10 +107,17 @@ export function GerenciarNovasChavesAPIs() {
                   </SelectItem>
                 </SelectContent>
               </Select>
-              <Button variant="blue" className="ml-4">
-                <Plus className="w-4 h-4" />
-                Criar nova API
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="blue" className="ml-4">
+                    <Plus className="w-4 h-4" />
+                    Criar nova API
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="">
+                  <GerenciarChavesAPIsDialog />
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
           <div className="overflow-x-auto bg-slate-800/30 rounded-md border border-slate-700/50 w-full">
