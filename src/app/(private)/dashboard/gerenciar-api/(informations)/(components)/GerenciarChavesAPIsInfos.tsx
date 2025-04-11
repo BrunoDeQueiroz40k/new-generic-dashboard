@@ -39,7 +39,7 @@ export function GerenciarChavesAPIsInfos() {
         {info.map((item) => (
           <div
             key={item.title}
-            className={`p-4 background flex-1 relative overflow-hidden ${item.badge === "Ativo"
+            className={`p-4 background transition flex-1 relative overflow-hidden ${item.badge === "Ativo"
               ? "!border-green-500/25"
               : item.badge === "Status"
                 ? "!border-blue-500/25"

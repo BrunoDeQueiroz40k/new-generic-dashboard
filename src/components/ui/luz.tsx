@@ -9,7 +9,7 @@ const Luz = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "absolute -bottom-6 -right-6 h-16 w-16 rounded-full bg-gradient-to-r opacity-20 blur-xl from-green-500 to-emerald-500",
+      "absolute -bottom-6 -right-6 h-22 w-22 rounded-full bg-gradient-to-r opacity-20 blur-xl from-green-500 to-emerald-500 z-[-1]",
       className
     )}
     {...props}

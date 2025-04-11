@@ -108,12 +108,12 @@ export function MinhasAPIs() {
                 <div className="flex items-center gap-2">
                   <item.icon
                     className={`w-4.5 h-4.5 ${item.icon === CheckCircle
-                        ? "text-green-500"
-                        : item.icon === Info
-                          ? "text-yellow-500"
-                          : item.icon === CircleX
-                            ? "text-red-500"
-                            : "text-slate-400"
+                      ? "text-green-500"
+                      : item.icon === Info
+                        ? "text-yellow-500"
+                        : item.icon === CircleX
+                          ? "text-red-500"
+                          : "text-slate-400"
                       }`}
                   />
                   <h1 className="font-semibold">{item.title}</h1>
@@ -162,16 +162,16 @@ export function MinhasAPIs() {
                     <span className="text-slate-400 text-sm">Usage</span>
                     <span
                       className={`text-sm ${item.usage >= 85
-                          ? "text-red-500"
-                          : item.usage >= 65
-                            ? "text-amber-500"
-                            : item.usage >= 36
-                              ? "text-cyan-500"
-                              : item.usage <= 35
-                                ? "text-emerald-500"
-                                : item.usage === 0
-                                  ? "text-slate-400"
-                                  : ""
+                        ? "text-red-500"
+                        : item.usage >= 65
+                          ? "text-amber-500"
+                          : item.usage >= 36
+                            ? "text-cyan-500"
+                            : item.usage <= 35
+                              ? "text-emerald-500"
+                              : item.usage === 0
+                                ? "text-slate-400"
+                                : ""
                         }`}
                     >
                       {item.usage}%
@@ -180,16 +180,16 @@ export function MinhasAPIs() {
                   <Progress
                     value={item.usage}
                     className={`[&>*]:bg-gradient-to-r ${item.usage >= 85
-                        ? "[&>*]:from-orange-800 [&>*]:to-red-600"
-                        : item.usage >= 65
-                          ? "[&>*]:from-amber-500 [&>*]:to-orange-500"
-                          : item.usage >= 45
-                            ? "[&>*]:from-cyan-500 [&>*]:to-blue-600"
-                            : item.usage <= 35
-                              ? "[&>*]:from-emerald-500 [&>*]:to-green-600"
-                              : item.usage === 0
-                                ? "text-slate-400"
-                                : ""
+                      ? "[&>*]:from-orange-800 [&>*]:to-red-600"
+                      : item.usage >= 65
+                        ? "[&>*]:from-amber-500 [&>*]:to-orange-500"
+                        : item.usage >= 45
+                          ? "[&>*]:from-cyan-500 [&>*]:to-blue-600"
+                          : item.usage <= 35
+                            ? "[&>*]:from-emerald-500 [&>*]:to-green-600"
+                            : item.usage === 0
+                              ? "text-slate-400"
+                              : ""
                       }`}
                   >
                     <div
@@ -218,30 +218,18 @@ export function MinhasAPIs() {
               Página {currentPage} de {totalPages}
             </span>
             <div className="flex items-center gap-2">
-              <Button
-                onClick={() => changePage(currentPage - 1)}
-                disabled={currentPage === 1}
-                className="h-7 py-2 px-2 rounded bg-slate-700 text-white disabled:opacity-30 "
-              >
+              <Button onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}
+                className="h-7 py-2 px-2 rounded bg-slate-700 text-white disabled:opacity-30 ">
                 <ChevronLeft size={16} />
               </Button>
               {Array.from({ length: totalPages }, (_, i) => (
-                <Button
-                  key={i}
-                  onClick={() => changePage(i + 1)}
-                  className={`h-7 py-2 px-3 font-mono ${currentPage === i + 1
-                      ? "bg-slate-500/50 hover:bg-slate-500/70"
-                      : ""
-                    }`}
-                >
+                <Button key={i} onClick={() => changePage(i + 1)}
+                  className={`h-7 py-2 px-3 font-mono ${currentPage === i + 1 ? "bg-slate-500/50 hover:bg-slate-500/70" : ""}`}>
                   {i + 1}
                 </Button>
               ))}
-              <Button
-                onClick={() => changePage(currentPage + 1)}
-                disabled={currentPage === totalPages}
-                className="h-7 py-2 px-2 rounded bg-slate-700 text-white disabled:opacity-30"
-              >
+              <Button onClick={() => changePage(currentPage + 1)} disabled={currentPage === totalPages}
+                className="h-7 py-2 px-2 rounded bg-slate-700 text-white disabled:opacity-30">
                 <ChevronRight size={16} />
               </Button>
             </div>
