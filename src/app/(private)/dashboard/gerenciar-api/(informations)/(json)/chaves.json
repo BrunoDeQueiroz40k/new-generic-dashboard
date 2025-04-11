@@ -1,50 +1,176 @@
 [
    {
+      "id": 1,
       "title": "Production Key",
       "key": "alterra_45JKgf345bytGTB",
       "type": "Produção",
       "created": "Set 15, 2023, 07:30",
       "used": "1 ano atrás",
-      "status": "Ativo"
+      "status": "Ativo",
+      "permission": ["Leitura", "Escrita"],
+      "detalhes": {
+         "requests": 1200,
+         "rate": "98%",
+         "response": "200ms"
+      },
+      "usoDiario": {
+         "00:00": 15,
+         "02:00": 20,
+         "04:00": 18,
+         "06:00": 22,
+         "08:00": 25,
+         "10:00": 30,
+         "12:00": 28,
+         "14:00": 35,
+         "16:00": 40,
+         "18:00": 38,
+         "20:00": 42,
+         "22:00": 45
+      }
    },
    {
+      "id": 2,
       "title": "Development Key",
       "key": "alterra_12345abcV54GBFd",
       "type": "Desenvolvimento",
       "created": "Out 10, 2023, 14:20",
       "used": "2 meses atrás",
-      "status": "Revogado"
+      "status": "Revogado",
+      "permission": ["Deletar"],
+      "detalhes": {
+         "requests": 800,
+         "rate": "85%",
+         "response": "300ms"
+      },
+      "usoDiario": {
+         "00:00": 5,
+         "02:00": 8,
+         "04:00": 6,
+         "06:00": 10,
+         "08:00": 12,
+         "10:00": 15,
+         "12:00": 14,
+         "14:00": 18,
+         "16:00": 20,
+         "18:00": 22,
+         "20:00": 25,
+         "22:00": 28
+      }
    },
    {
+      "id": 3,
       "title": "Integração",
       "key": "alterra_67890xyzCGR4R4g",
       "type": "Parceria",
       "created": "Ago 05, 2023, 09:15",
       "used": "3 semanas atrás",
-      "status": "Ativo"
+      "status": "Ativo",
+      "permission": ["Leitura", "Escrita", "Deletar"],
+      "detalhes": {
+         "requests": 1500,
+         "rate": "92%",
+         "response": "250ms"
+      },
+      "usoDiario": {
+         "00:00": 25,
+         "02:00": 30,
+         "04:00": 28,
+         "06:00": 35,
+         "08:00": 40,
+         "10:00": 45,
+         "12:00": 42,
+         "14:00": 50,
+         "16:00": 55,
+         "18:00": 52,
+         "20:00": 60,
+         "22:00": 65
+      }
    },
    {
+      "id": 4,
       "title": "Testing Key",
       "key": "alterra_54321def3gt43gg",
       "type": "Teste",
       "created": "Jul 20, 2023, 11:45",
       "used": "5 dias atrás",
-      "status": "Inativo"
+      "status": "Inativo",
+      "permission": ["Leitura"],
+      "detalhes": {
+         "requests": 400,
+         "rate": "75%",
+         "response": "350ms"
+      },
+      "usoDiario": {
+         "00:00": 2,
+         "02:00": 3,
+         "04:00": 4,
+         "06:00": 5,
+         "08:00": 6,
+         "10:00": 7,
+         "12:00": 8,
+         "14:00": 9,
+         "16:00": 10,
+         "18:00": 11,
+         "20:00": 12,
+         "22:00": 13
+      }
    },
    {
+      "id": 5,
       "title": "Backup Key",
       "key": "alterra_backup_98765uvw",
       "type": "Produção",
       "created": "Jun 01, 2023, 08:00",
       "used": "6 meses atrás",
-      "status": "Ativo"
+      "status": "Ativo",
+      "permission": ["Escrita", "Deletar"],
+      "detalhes": {
+         "requests": 1000,
+         "rate": "95%",
+         "response": "220ms"
+      },
+      "usoDiario": {
+         "00:00": 10,
+         "02:00": 12,
+         "04:00": 15,
+         "06:00": 18,
+         "08:00": 20,
+         "10:00": 25,
+         "12:00": 22,
+         "14:00": 30,
+         "16:00": 35,
+         "18:00": 32,
+         "20:00": 40,
+         "22:00": 45
+      }
    },
    {
+      "id": 6,
       "title": "Analytics Key",
       "key": "alterra_analytics_11223a",
       "type": "Parceiro",
       "created": "Nov 01, 2023, 10:00",
       "used": "1 dia atrás",
-      "status": "Ativo"
+      "status": "Ativo",
+      "permission": ["Leitura", "Escrita"],
+      "detalhes": {
+         "requests": 1800,
+         "rate": "99%",
+         "response": "180ms"
+      },
+      "usoDiario": {
+         "00:00": 50,
+         "02:00": 55,
+         "04:00": 60,
+         "06:00": 65,
+         "08:00": 70,
+         "10:00": 75,
+         "12:00": 80,
+         "14:00": 85,
+         "16:00": 90,
+         "18:00": 95,
+         "20:00": 100,
+         "22:00": 105
+      }
    }
 ]

@@ -19,7 +19,7 @@ const chaves = [
    { id: "partner", title: "Parceiros", value: "parceiros", description: "Para integrações de fora" },
 ]
 
-export function GerenciarChavesAPIsDialog() {
+export function GerenciarChavesAPIsCriarDialog() {
    return (
       <>
          <Card className="max-h-[95vh] overflow-y-auto futuristic-scroll">

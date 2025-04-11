@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Copy, Ellipsis, Eye, LayoutGrid, Menu, Plus, Search, Shield } from "lucide-react";
+import { LayoutGrid, Menu, Plus, Search, Shield } from "lucide-react";
 
 // Componentes
 import {
@@ -17,12 +17,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Dot } from "@/components/ui/dot";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GerenciarChavesAPIsInfos } from "./(components)/GerenciarChavesAPIsInfos";
-import { GerenciarChavesAPIsDialog } from "./(components)/GerenciarChavesAPIsDialog";
+import { GerenciarChavesAPIsCriarDialog } from "./(components)/GerenciarChavesAPIsCriarDialog";
 import { GerenciarChavesAPIsLine } from "./(components)/GerenciarChavesAPIsLine";
 import { GerenciarChavesAPIsGrid } from "./(components)/GerenciarChavesAPIsGrid";
 
@@ -99,7 +98,7 @@ export function GerenciarNovasChavesAPIs() {
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="">
-                  <GerenciarChavesAPIsDialog />
+                  <GerenciarChavesAPIsCriarDialog />
                 </DialogContent>
               </Dialog>
             </div>

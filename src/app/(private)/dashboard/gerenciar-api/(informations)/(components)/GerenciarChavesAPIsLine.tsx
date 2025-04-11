@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge";
 
 // Componentes Default
 import chaves from "../(json)/chaves.json";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { GerenciarChavesAPIsDetalhesDialog } from "./GerenciarChavesAPIsDetalhesDialog";
 
 export function GerenciarChavesAPIsLine() {
    return (
@@ -54,10 +56,17 @@ export function GerenciarChavesAPIsLine() {
                            </Badge>
                         </td>
                         <td className="flex gap-1 translate-y-[3px]">
-                           <button className="flex items-center px-2 py-1 gap-1 cursor-pointer hover:bg-transparent text-slate-400 hover:text-slate-300">
-                              <Eye className="w-4 h-4" />
-                              Detalhes
-                           </button>
+                           <Dialog>
+                              <DialogTrigger asChild>
+                                 <button className="flex items-center px-2 py-1 gap-1 cursor-pointer hover:bg-transparent text-slate-400 hover:text-slate-300">
+                                    <Eye className="w-5 h-5" />
+                                    Detalhes
+                                 </button>
+                              </DialogTrigger>
+                              <DialogContent className="">
+                                 <GerenciarChavesAPIsDetalhesDialog chave={chave} />
+                              </DialogContent>
+                           </Dialog>
                            <button className="flex items-center px-2 py-1 gap-1 cursor-pointer hover:bg-transparent text-slate-400 hover:text-slate-300">
                               <Ellipsis className="w-5 h-5" />
                            </button>
