@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Activity,
@@ -35,7 +35,7 @@ import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 // Componentes Defaults
-import api from "../(informations)/apis.json"
+import api from "../(informations)/(json)/apis.json";
 
 const iconMap = {
   CheckCircle: CheckCircle,
@@ -74,7 +74,7 @@ export function MinhasAPIs() {
         <CardContent className="space-y-3">
           <div className="flex justify-between">
             <div className="relative w-full max-w-md">
-              <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-500" />
+              <Search className="absolute left-3 top-3 h-4 w-4 text-slate-500" />
               <Input
                 placeholder="Pesquisar por APIs"
                 className="pl-10 bg-slate-800/50 border-slate-700 text-slate-200"
@@ -108,12 +108,12 @@ export function MinhasAPIs() {
                 <div className="flex items-center gap-2">
                   <item.icon
                     className={`w-4.5 h-4.5 ${item.icon === CheckCircle
-                      ? "text-green-500"
-                      : item.icon === Info
-                        ? "text-yellow-500"
-                        : item.icon === CircleX
-                          ? "text-red-500"
-                          : "text-slate-400"
+                        ? "text-green-500"
+                        : item.icon === Info
+                          ? "text-yellow-500"
+                          : item.icon === CircleX
+                            ? "text-red-500"
+                            : "text-slate-400"
                       }`}
                   />
                   <h1 className="font-semibold">{item.title}</h1>
@@ -148,8 +148,7 @@ export function MinhasAPIs() {
                   </span>
                   <span className="flex items-center">
                     <Code2 className="w-3 h-3 mr-1" />
-                    Versão:{" "}
-                    {item.version}
+                    Versão: {item.version}
                   </span>
                   <span className="flex items-center">
                     <Clock className="w-3 h-3 mr-1" />
@@ -163,16 +162,16 @@ export function MinhasAPIs() {
                     <span className="text-slate-400 text-sm">Usage</span>
                     <span
                       className={`text-sm ${item.usage >= 85
-                        ? "text-red-500"
-                        : item.usage >= 65
-                          ? "text-amber-500"
-                          : item.usage >= 36
-                            ? "text-cyan-500"
-                            : item.usage <= 35
-                              ? "text-emerald-500"
-                              : item.usage === 0
-                                ? "text-slate-400"
-                                : ""
+                          ? "text-red-500"
+                          : item.usage >= 65
+                            ? "text-amber-500"
+                            : item.usage >= 36
+                              ? "text-cyan-500"
+                              : item.usage <= 35
+                                ? "text-emerald-500"
+                                : item.usage === 0
+                                  ? "text-slate-400"
+                                  : ""
                         }`}
                     >
                       {item.usage}%
@@ -181,16 +180,16 @@ export function MinhasAPIs() {
                   <Progress
                     value={item.usage}
                     className={`[&>*]:bg-gradient-to-r ${item.usage >= 85
-                      ? "[&>*]:from-orange-800 [&>*]:to-red-600"
-                      : item.usage >= 65
-                        ? "[&>*]:from-amber-500 [&>*]:to-orange-500"
-                        : item.usage >= 45
-                          ? "[&>*]:from-cyan-500 [&>*]:to-blue-600"
-                          : item.usage <= 35
-                            ? "[&>*]:from-emerald-500 [&>*]:to-green-600"
-                            : item.usage === 0
-                              ? "text-slate-400"
-                              : ""
+                        ? "[&>*]:from-orange-800 [&>*]:to-red-600"
+                        : item.usage >= 65
+                          ? "[&>*]:from-amber-500 [&>*]:to-orange-500"
+                          : item.usage >= 45
+                            ? "[&>*]:from-cyan-500 [&>*]:to-blue-600"
+                            : item.usage <= 35
+                              ? "[&>*]:from-emerald-500 [&>*]:to-green-600"
+                              : item.usage === 0
+                                ? "text-slate-400"
+                                : ""
                       }`}
                   >
                     <div
@@ -214,27 +213,39 @@ export function MinhasAPIs() {
           ))}
 
           {/* Paginação */}
-          <div className="flex justify-center items-center gap-2 mt-4 font-mono">
-            <Button onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}
-              className="h-7 py-2 px-2 rounded bg-slate-700 text-white disabled:opacity-30 ">
-              <ChevronLeft size={16} />
-            </Button>
-            {Array.from({ length: totalPages }, (_, i) => (
-              <Button key={i} onClick={() => changePage(i + 1)}
-                className={`h-7 py-2 px-3 font-mono ${currentPage === i + 1
-                  ? "bg-slate-500/50 hover:bg-slate-500/70"
-                  : ""
-                  }`}
+          <div className="flex justify-between items-center mt-4 font-mono">
+            <span className="text-slate-500">
+              Página {currentPage} de {totalPages}
+            </span>
+            <div className="flex items-center gap-2">
+              <Button
+                onClick={() => changePage(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="h-7 py-2 px-2 rounded bg-slate-700 text-white disabled:opacity-30 "
               >
-                {i + 1}
+                <ChevronLeft size={16} />
               </Button>
-            ))}
-            <Button onClick={() => changePage(currentPage + 1)} disabled={currentPage === totalPages}
-              className="h-7 py-2 px-2 rounded bg-slate-700 text-white disabled:opacity-30">
-              <ChevronRight size={16} />
-            </Button>
+              {Array.from({ length: totalPages }, (_, i) => (
+                <Button
+                  key={i}
+                  onClick={() => changePage(i + 1)}
+                  className={`h-7 py-2 px-3 font-mono ${currentPage === i + 1
+                      ? "bg-slate-500/50 hover:bg-slate-500/70"
+                      : ""
+                    }`}
+                >
+                  {i + 1}
+                </Button>
+              ))}
+              <Button
+                onClick={() => changePage(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className="h-7 py-2 px-2 rounded bg-slate-700 text-white disabled:opacity-30"
+              >
+                <ChevronRight size={16} />
+              </Button>
+            </div>
           </div>
-
         </CardContent>
       </Card>
     </>

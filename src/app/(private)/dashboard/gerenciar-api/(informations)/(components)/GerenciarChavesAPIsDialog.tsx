@@ -44,13 +44,13 @@ export function GerenciarChavesAPIsDialog() {
                   <RadioGroup defaultValue="desenvolvimento">
                      {
                         chaves.map((key) => (
-                           <div key={key.value} className="flex items-center gap-2 pb-1">
+                           <div key={key.value} className="flex items-center gap-2 px-4 py-1 hover:bg-slate-800/60 rounded-lg transition">
                               <RadioGroupItem value={key.value} id={key.id} />
                               <Label htmlFor={key.id} id={key.id} className="flex items-center gap-2 cursor-pointer text-slate-200">
                                  <Dot className={`w-2 h-2 ${key.value === "desenvolvimento" ? "bg-blue-500" : key.value === "teste" ? "bg-yellow-500" : key.value === "produção" ? "bg-green-500" : "bg-purple-500"}`} />
                                  {key.title}
+                                 <span className="text-sm font-normal text-slate-400">- {key.description}</span>
                               </Label>
-                              <span className="text-sm text-slate-400">- {key.description}</span>
                            </div>
                         ))
                      }
