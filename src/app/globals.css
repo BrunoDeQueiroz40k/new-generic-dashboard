@@ -42,7 +42,7 @@ body {
 }
 
 .background {
-  @apply rounded-lg border bg-slate-900/50 border-slate-700/50 backdrop-blur-[3px] shadow-sm hover:bg-slate-800/40;
+  @apply rounded-lg border bg-slate-900/50 border-slate-700/50 backdrop-blur-[3px] shadow-sm transition hover:bg-slate-800/40;
 }
 
 .background2 {

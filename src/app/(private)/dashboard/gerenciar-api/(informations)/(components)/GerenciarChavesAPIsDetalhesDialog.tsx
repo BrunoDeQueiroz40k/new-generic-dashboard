@@ -1,10 +1,10 @@
-import { Copy, Eye, Key } from "lucide-react";
+import { ArrowDownRight, ArrowRight, Copy, Eye, Key } from "lucide-react";
 
 // Componentes
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Title } from "@/components/ui/title";
 import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface DetalhesProps {
    chave: {
@@ -26,7 +26,7 @@ interface DetalhesProps {
 export function GerenciarChavesAPIsDetalhesDialog({ chave }: DetalhesProps) {
    return (
       <>
-         <Card className="max-h-[95vh] overflow-y-auto futuristic-scroll pt-6">
+         <Card className="futuristic-scroll pt-6">
             <CardHeader className="flex-col items-start gap-2 pb-0">
                <CardTitle className="w-full text-slate-200">
                   <div className="flex-1 flex items-center justify-between">
@@ -74,6 +74,59 @@ export function GerenciarChavesAPIsDetalhesDialog({ chave }: DetalhesProps) {
                            {chave.type}
                         </Badge>
                      </div>
+                  </div>
+                  <div className="font-mono flex gap-8 pt-4">
+                     <div className="flex flex-col">
+                        <span className="text-slate-300 pb-2">Criado em</span>
+                        <span className="text-sm text-slate-400">{chave.created}</span>
+                     </div>
+                     <div className="flex flex-col">
+                        <span className="text-slate-300 pb-2">Ultimo uso</span>
+                        <span className="text-sm text-slate-400">{chave.used}</span>
+                     </div>
+                     <div className="flex flex-col">
+                        <span className="text-slate-300 pb-2">Permissões</span>
+                        <span className="flex gap-3">
+                           {chave.permission.map((perm, index) => (
+                              <Badge variant={`${perm === "Leitura" ? "cyan" : perm === "Escrita" ? "green" : "yellow"}`} key={index}>{perm}</Badge>
+                           ))}
+                        </span>
+                     </div>
+                  </div>
+               </div>
+               <div className="flex gap-4">
+                  <div className="flex flex-col items-center background p-4 px-6 gap-1">
+                     <span className="text-3xl text-cyan-500 font-bold">{chave.detalhes.requests.toLocaleString("pt-BR")}</span>
+                     <span className="text-slate-400 text-sm">Total Requests</span>
+                     <span className="flex items-center gap-1 text-xs text-slate-500 pt-3 font-semibold">
+                        <ArrowDownRight className="w-4 h-4 text-green-500" />
+                        <span className="text-green-500">
+                           +12.5%
+                        </span>
+                        da ultima semana
+                     </span>
+                  </div>
+                  <div className="flex flex-col items-center background p-4 px-6 gap-1">
+                     <span className="text-3xl text-green-500 font-bold">{chave.detalhes.rate}</span>
+                     <span className="text-slate-400 text-sm">Taxa de Sucesso</span>
+                     <span className="flex items-center gap-1 text-xs text-slate-500 pt-3 font-semibold">
+                        <ArrowDownRight className="w-4 h-4 text-green-500" />
+                        <span className="text-green-500">
+                           +8.5%
+                        </span>
+                        da ultima semana
+                     </span>
+                  </div>
+                  <div className="flex flex-col items-center background p-4 px-6 gap-1">
+                     <span className="text-3xl text-purple-400 font-bold">{chave.detalhes.response}</span>
+                     <span className="text-slate-400 text-sm">Tempo de Resposta média</span>
+                     <span className="flex items-center gap-1 text-xs text-slate-500 pt-3 font-semibold">
+                        <ArrowRight className="w-4 h-4 text-green-500" />
+                        <span className="text-green-500">
+                           +8.5%
+                        </span>
+                        da ultima semana
+                     </span>
                   </div>
                </div>
             </CardContent>

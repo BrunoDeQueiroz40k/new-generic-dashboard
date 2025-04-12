@@ -97,7 +97,7 @@ export function GerenciarNovasChavesAPIs() {
                     Criar nova API
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="">
+                <DialogContent>
                   <GerenciarChavesAPIsCriarDialog />
                 </DialogContent>
               </Dialog>
