@@ -38,7 +38,7 @@
       "status": "Revogado",
       "permission": ["Deletar"],
       "detalhes": {
-         "requests": 800,
+         "requests": 856433,
          "rate": "85%",
          "response": "300ms"
       },
@@ -67,7 +67,7 @@
       "status": "Ativo",
       "permission": ["Leitura", "Escrita", "Deletar"],
       "detalhes": {
-         "requests": 1500,
+         "requests": 15007,
          "rate": "92%",
          "response": "250ms"
       },
@@ -96,7 +96,7 @@
       "status": "Inativo",
       "permission": ["Leitura"],
       "detalhes": {
-         "requests": 400,
+         "requests": 400678,
          "rate": "75%",
          "response": "350ms"
       },
@@ -125,7 +125,7 @@
       "status": "Ativo",
       "permission": ["Escrita", "Deletar"],
       "detalhes": {
-         "requests": 1000,
+         "requests": 123455,
          "rate": "95%",
          "response": "220ms"
       },
@@ -154,7 +154,7 @@
       "status": "Ativo",
       "permission": ["Leitura", "Escrita"],
       "detalhes": {
-         "requests": 1800,
+         "requests": 184567,
          "rate": "99%",
          "response": "180ms"
       },
