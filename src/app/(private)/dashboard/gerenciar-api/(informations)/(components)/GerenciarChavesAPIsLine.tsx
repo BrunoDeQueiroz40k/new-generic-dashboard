@@ -27,8 +27,8 @@ export function GerenciarChavesAPIsLine() {
                </thead>
                <tbody className="divide-y divide-slate-700/30">
                   {chaves.map((chave) => (
-                     <tr key={chave.key} className="hover:bg-slate-800/50">
-                        <td className="px-4 py-4 text-slate-200 w-[150px]">
+                     <tr key={chave.key} className="hover:bg-slate-800/50 transition hover:text-cyan-500">
+                        <td className="px-4 py-4 w-[150px] font-bold">
                            {chave.title}
                         </td>
                         <td className="flex items-center justify-between h-full w-[300px] px-4 py-4 text-slate-300 font-semibold font-mono">

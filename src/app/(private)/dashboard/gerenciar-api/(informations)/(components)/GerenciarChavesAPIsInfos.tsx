@@ -91,7 +91,7 @@ export function GerenciarChavesAPIsInfos() {
             </div>
             <div className="flex justify-between items-center pt-2">
               <p className="text-sm text-slate-400">{item.message}</p>
-              <span className="font-semibold text-slate-300">{item.info}</span>
+              <span className="font-semibold text-slate-300 bg-slate-700/50 px-2 rounded-lg">{item.info}</span>
             </div>
             <Luz
               className={`-bottom-10 -right-12 h-32 w-52 opacity-10 ${item.badge === "Ativo"
