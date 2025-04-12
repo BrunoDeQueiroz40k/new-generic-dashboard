@@ -7,9 +7,9 @@ import { Label } from "@/components/ui/label";
 import { Title } from "@/components/ui/title";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { DialogClose } from "@radix-ui/react-dialog";
+import { DialogTitle, DialogClose } from "@/components/ui/dialog";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const chaves = [
@@ -24,10 +24,10 @@ export function GerenciarChavesAPIsCriarDialog() {
       <>
          <Card className="max-h-[95vh] overflow-y-auto futuristic-scroll">
             <CardHeader className="flex-col items-start gap-1 pb-0">
-               <CardTitle className="flex items-center gap-2 text-slate-200">
+               <DialogTitle className="flex items-center gap-2 text-slate-200">
                   <KeyRound className="w-5 h-5 text-cyan-500" />
                   Criar uma nova chave API
-               </CardTitle>
+               </DialogTitle>
                <CardDescription>Gere uma nova chave API para acessar suas APIs</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-4 overflow-x-visible">
@@ -102,13 +102,13 @@ export function GerenciarChavesAPIsCriarDialog() {
                </div>
                <div className="flex gap-2 justify-end">
                   <DialogClose asChild>
+                     <Button>Cancelar</Button>
+                  </DialogClose>
+                  <DialogClose asChild>
                      <Button variant="blue">
                         <Plus className="w-4 h-4" />
                         Criar Chave
                      </Button>
-                  </DialogClose>
-                  <DialogClose asChild>
-                     <Button>Cancelar</Button>
                   </DialogClose>
                </div>
             </CardContent>

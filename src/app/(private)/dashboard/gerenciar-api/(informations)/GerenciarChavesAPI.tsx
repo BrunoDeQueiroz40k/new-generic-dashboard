@@ -7,6 +7,7 @@ import { LayoutGrid, Menu, Plus, Search, Shield } from "lucide-react";
 import {
   Dialog,
   DialogContent,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import {
@@ -98,7 +99,9 @@ export function GerenciarNovasChavesAPIs() {
                   </Button>
                 </DialogTrigger>
                 <DialogContent>
-                  <GerenciarChavesAPIsCriarDialog />
+                  <DialogTitle>
+                    <GerenciarChavesAPIsCriarDialog />
+                  </DialogTitle>
                 </DialogContent>
               </Dialog>
             </div>

@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 
 // Componentes Default
 import chaves from "../(json)/chaves.json";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { GerenciarChavesAPIsDetalhesDialog } from "./GerenciarChavesAPIsDetalhesDialog";
 
 const ITEMS_PER_PAGE = 3;
 
@@ -73,10 +75,17 @@ export function GerenciarChavesAPIsGrid() {
                         </div>
                      </div>
                      <div className="flex justify-between gap-2 border-t border-slate-700/50 mt-4 pt-4">
-                        <button className="flex items-center px-2 py-1 gap-1 cursor-pointer hover:bg-transparent text-slate-400 hover:text-slate-300">
-                           <Eye className="w-4 h-4" />
-                           Detalhes
-                        </button>
+                        <Dialog>
+                           <DialogTrigger asChild>
+                              <button className="flex items-center px-2 py-1 gap-1 cursor-pointer hover:bg-transparent text-slate-400 hover:text-slate-300">
+                                 <Eye className="w-5 h-5" />
+                                 Detalhes
+                              </button>
+                           </DialogTrigger>
+                           <DialogContent className="">
+                              <GerenciarChavesAPIsDetalhesDialog chave={chave} />
+                           </DialogContent>
+                        </Dialog>
                         <div className="flex gap-2">
                            <Button className="hover:text-cyan-500">
                               <RefreshCcw className="w-4 h-4" />
@@ -87,7 +96,7 @@ export function GerenciarChavesAPIsGrid() {
                            </Button>
                         </div>
                      </div>
-                     <Luz className={`${chave.type === "Produção" ? "from-green-500 to-emerald-500" : chave.type === "Desenvolvimento" ? "from-blue-500 to-cyan-500" : chave.type === "Teste" ? "from-yellow-500 to-amber-500" : "from-purple-500 to-fuchsia-500-500" }`} />
+                     <Luz className={`${chave.type === "Produção" ? "from-green-500 to-emerald-500" : chave.type === "Desenvolvimento" ? "from-blue-500 to-cyan-500" : chave.type === "Teste" ? "from-yellow-500 to-amber-500" : "from-purple-500 to-fuchsia-500-500"}`} />
                   </div>
                ))
             }

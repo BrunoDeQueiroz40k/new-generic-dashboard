@@ -49,6 +49,10 @@ body {
   @apply rounded-lg border bg-slate-900/50 border-slate-700/50 backdrop-blur-[3px] shadow-sm;
 }
 
+.rgbText {
+  @apply text-transparent bg-clip-text bg-[linear-gradient(90deg,_#06b6d4,_#3b82f6)] bg-[length:200%_200%];
+}
+
 @theme {
   
   /* CORES */

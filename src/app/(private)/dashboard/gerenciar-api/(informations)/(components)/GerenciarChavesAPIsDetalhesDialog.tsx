@@ -4,7 +4,10 @@ import { ArrowDownRight, ArrowRight, Copy, Eye, Key } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Title } from "@/components/ui/title";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { DialogTitle } from "@/components/ui/dialog";
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
 interface DetalhesProps {
    chave: {
@@ -20,29 +23,35 @@ interface DetalhesProps {
          rate: string;
          response: string;
       };
+      usoDiario: Record<string, number>;
    };
 }
 
 export function GerenciarChavesAPIsDetalhesDialog({ chave }: DetalhesProps) {
+   const dadosGrafico = Object.entries(chave.usoDiario).map(([hora, valor]) => ({
+      hora,
+      diario: valor,
+   }));
+
    return (
       <>
          <Card className="futuristic-scroll pt-6">
             <CardHeader className="flex-col items-start gap-2 pb-0">
-               <CardTitle className="w-full text-slate-200">
+               <CardHeader className="w-full text-slate-200 p-0">
                   <div className="flex-1 flex items-center justify-between">
                      <div className="flex items-center gap-2 w-full">
                         <span className="p-2 bg-cyan-500/20 border border-cyan-500/50 rounded-xl">
                            <Key className="w-5 h-5 text-cyan-500" />
                         </span>
-                        <span className="text-transparent bg-clip-text bg-[linear-gradient(90deg,_#06b6d4,_#3b82f6)] bg-[length:200%_200%]">
+                        <DialogTitle className="rgbText text-xl font-bold">
                            {chave.title}
-                        </span>
+                        </DialogTitle>
                      </div>
                      <Badge variant={`${chave.status === "Ativo" ? "green" : chave.status === "Revogado" ? "red" : "slate"}`}>
                         {chave.status}
                      </Badge>
                   </div>
-               </CardTitle>
+               </CardHeader>
                <CardDescription>Detelhes e estatísticas de uso da Chave API</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-4 overflow-x-visible">
@@ -77,15 +86,15 @@ export function GerenciarChavesAPIsDetalhesDialog({ chave }: DetalhesProps) {
                   </div>
                   <div className="font-mono flex gap-8 pt-4">
                      <div className="flex flex-col">
-                        <span className="text-slate-300 pb-2">Criado em</span>
+                        <span className="text-slate-300 pb-2 font-semibold">Criado em</span>
                         <span className="text-sm text-slate-400">{chave.created}</span>
                      </div>
                      <div className="flex flex-col">
-                        <span className="text-slate-300 pb-2">Ultimo uso</span>
+                        <span className="text-slate-300 pb-2 font-semibold">Ultimo uso</span>
                         <span className="text-sm text-slate-400">{chave.used}</span>
                      </div>
                      <div className="flex flex-col">
-                        <span className="text-slate-300 pb-2">Permissões</span>
+                        <span className="text-slate-300 pb-2 font-semibold">Permissões</span>
                         <span className="flex gap-3">
                            {chave.permission.map((perm, index) => (
                               <Badge variant={`${perm === "Leitura" ? "cyan" : perm === "Escrita" ? "green" : "yellow"}`} key={index}>{perm}</Badge>
@@ -128,6 +137,54 @@ export function GerenciarChavesAPIsDetalhesDialog({ chave }: DetalhesProps) {
                         da ultima semana
                      </span>
                   </div>
+               </div>
+               <div className="background2 p-4">
+                  <ChartContainer
+                     config={{
+                        diario: {
+                           label: "Diário:",
+                        },
+                        semanal: {
+                           label: "Semanal:",
+                        },
+                        mensal: {
+                           label: "Mensal:",
+                        },
+                     }}
+                     className="h-[300px]"
+                  >
+                     <ResponsiveContainer
+                        width="90%"
+                        height="100%"
+                        className="bg-slate-800/50 border border-slate-700/50 rounded-lg"
+                     >
+                        <LineChart
+                           data={dadosGrafico}
+                           margin={{ top: 25, right: 25, bottom: 10, left: 5 }}
+                        >
+                           <CartesianGrid
+                              vertical={false}
+                              horizontal={true}
+                              stroke="#334155"
+                           />
+                           <CartesianGrid strokeDasharray="1 4" />
+                           <XAxis dataKey="hora" tick={{ fontSize: 12, fill: "#94a3b8" }} />
+                           <Legend />
+                           <YAxis
+                              yAxisId="left"
+                              tick={{ fontSize: 12, fill: "#94a3b8" }}
+                              width={45}
+                           />
+                           <ChartTooltip content={<ChartTooltipContent />} />
+                           <Line
+                              yAxisId="left"
+                              type="monotone"
+                              dataKey="diario"
+                              stroke="cyan"
+                           />
+                        </LineChart>
+                     </ResponsiveContainer>
+                  </ChartContainer>
                </div>
             </CardContent>
          </Card>
