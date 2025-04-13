@@ -8,6 +8,7 @@ import { GerenciarChavesAPIsDetalhesDialog } from "./GerenciarChavesAPIsDetalhes
 
 // Componentes Default
 import chaves from "../(json)/chaves.json";
+import { GerenciarChavesAPIsRegenerateDialog } from "./GerenciarChavesAPIsRegenerateDialog";
 
 export function GerenciarChavesAPIsLine() {
    return (
@@ -64,33 +65,26 @@ export function GerenciarChavesAPIsLine() {
                                     Detalhes
                                  </button>
                               </DialogTrigger>
-                              <DialogContent className="">
+                              <DialogContent>
                                  <GerenciarChavesAPIsDetalhesDialog chave={chave} />
                               </DialogContent>
                            </Dialog>
                            <DropdownMenu.Root>
-                              <DropdownMenu.Trigger asChild>
-                                 <button className="flex items-center px-2 translate-y-[2px] gap-1 cursor-pointer hover:bg-slate-700/60 rounded-lg transition text-slate-400 hover:text-slate-300">
-                                    <Ellipsis className="w-6 h-6" />
-                                 </button>
+                              <DropdownMenu.Trigger className="flex items-center px-2 translate-y-[2px] gap-1 cursor-pointer hover:bg-slate-700/60 rounded-lg transition text-slate-400 hover:text-slate-300">
+                                 <Ellipsis className="w-6 h-6" />
                               </DropdownMenu.Trigger>
                               <DropdownMenu.Portal>
                                  <DropdownMenu.Content className="min-w-[150px] background2 !backdrop-blur-[7px] text-white py-1 z-10">
                                     <DropdownMenu.Item asChild>
                                        <div className="px-1 outline-none">
-                                          <button className="w-full flex items-center gap-4 px-2 py-2 rounded-sm hover:bg-gray-700 transition outline-none text-sm">
-                                             <RefreshCcw className="w-4 h-4 text-cyan-500" />
-                                             Regenerar
-                                          </button>
+                                          <GerenciarChavesAPIsRegenerateDialog />
                                        </div>
                                     </DropdownMenu.Item>
-                                    <DropdownMenu.Item asChild>
-                                       <div className="px-1 outline-none">
-                                          <button className="w-full flex items-center gap-4 px-2 py-2 rounded-sm hover:bg-gray-700 transition outline-none text-sm">
-                                             <Trash2 className="w-4 h-4 text-red-400" />
-                                             Revogar
-                                          </button>
-                                       </div>
+                                    <DropdownMenu.Item className="px-1 outline-none">
+                                       <button className="w-full flex items-center gap-4 px-2 py-2 rounded-sm hover:bg-gray-700 transition outline-none text-sm">
+                                          <Trash2 className="w-4 h-4 text-red-400" />
+                                          Revogar
+                                       </button>
                                     </DropdownMenu.Item>
                                  </DropdownMenu.Content>
                               </DropdownMenu.Portal>

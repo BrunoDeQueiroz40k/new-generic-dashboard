@@ -36,8 +36,8 @@ export function GerenciarChavesAPIsDetalhesDialog({ chave }: DetalhesProps) {
    return (
       <>
          <Card className="futuristic-scroll pt-6">
-            <CardHeader className="flex-col items-start gap-2 pb-0">
-               <CardHeader className="w-full text-slate-200 p-0">
+            <CardHeader className="flex-col items-start gap-2 pb-0 text-slate-200">
+               <div className="w-full">
                   <div className="flex-1 flex items-center justify-between">
                      <div className="flex items-center gap-2 w-full">
                         <span className="p-2 bg-cyan-500/20 border border-cyan-500/50 rounded-xl">
@@ -51,7 +51,7 @@ export function GerenciarChavesAPIsDetalhesDialog({ chave }: DetalhesProps) {
                         {chave.status}
                      </Badge>
                   </div>
-               </CardHeader>
+               </div>
                <CardDescription>Detelhes e estatísticas de uso da Chave API</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-4 overflow-x-visible">
@@ -160,7 +160,7 @@ export function GerenciarChavesAPIsDetalhesDialog({ chave }: DetalhesProps) {
                      >
                         <LineChart
                            data={dadosGrafico}
-                           margin={{ top: 25, right: 25, bottom: 10, left: 5 }}
+                           margin={{ top: 25, right: 25, bottom: 10, left: -10 }}
                         >
                            <CartesianGrid
                               vertical={false}

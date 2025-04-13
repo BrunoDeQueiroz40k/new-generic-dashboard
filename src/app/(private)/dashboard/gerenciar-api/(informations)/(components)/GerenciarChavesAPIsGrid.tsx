@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Copy, Ellipsis, Eye, RefreshCcw, Trash, Trash2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Copy, Eye, RefreshCcw, Trash2 } from "lucide-react";
 
 // Componentes
 import { Luz } from "@/components/ui/luz";

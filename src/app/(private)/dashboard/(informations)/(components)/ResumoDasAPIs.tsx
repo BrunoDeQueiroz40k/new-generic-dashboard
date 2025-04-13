@@ -67,7 +67,7 @@ export function ResumoDasAPIs() {
         >
           <LineChart
             data={efficiencyDataCorrigido}
-            margin={{ top: 25, right: 25, bottom: 10, left: 5 }}
+            margin={{ top: 25, right: 25, bottom: 10, left: 10 }}
           >
             <CartesianGrid
               vertical={false}
