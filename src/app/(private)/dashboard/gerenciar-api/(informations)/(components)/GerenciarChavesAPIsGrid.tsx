@@ -6,11 +6,13 @@ import { Luz } from "@/components/ui/luz";
 import { Badge } from "@/components/ui/badge";
 import { Title } from "@/components/ui/title";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { GerenciarChavesAPIsRevokeDialog } from "./GerenciarChavesAPIsRevokeDialog";
+import { GerenciarChavesAPIsDetalhesDialog } from "./GerenciarChavesAPIsDetalhesDialog";
+import { GerenciarChavesAPIsRegenerateDialog } from "./GerenciarChavesAPIsRegenerateDialog";
 
 // Componentes Default
 import chaves from "../(json)/chaves.json";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { GerenciarChavesAPIsDetalhesDialog } from "./GerenciarChavesAPIsDetalhesDialog";
 
 const ITEMS_PER_PAGE = 3;
 
@@ -82,18 +84,28 @@ export function GerenciarChavesAPIsGrid() {
                                  Detalhes
                               </button>
                            </DialogTrigger>
-                           <DialogContent className="">
+                           <DialogContent>
                               <GerenciarChavesAPIsDetalhesDialog chave={chave} />
                            </DialogContent>
                         </Dialog>
                         <div className="flex gap-2">
-                           <Button className="hover:text-cyan-500">
-                              <RefreshCcw className="w-4 h-4" />
-                              Regenerar
-                           </Button>
-                           <Button className="text-red-400">
-                              <Trash2 className="w-4 h-4" />
-                           </Button>
+                           <Dialog>
+                              <DialogTrigger className="flex items-center gap-4 px-3 py-2 rounded-lg transition outline-none text-sm bg-slate-700/50 hover:bg-slate-600/50 cursor-pointer">
+                                 <RefreshCcw className="w-4 h-4 text-cyan-500" />
+                                 Regenerar
+                              </DialogTrigger>
+                              <DialogContent>
+                                 <GerenciarChavesAPIsRegenerateDialog />
+                              </DialogContent>
+                           </Dialog>
+                           <Dialog>
+                              <DialogTrigger className="px-3 py-2 rounded-lg transition outline-none bg-slate-700/50 hover:bg-slate-600/50 cursor-pointer">
+                                 <Trash2 className="w-4 h-4 text-red-400" />
+                              </DialogTrigger>
+                              <DialogContent>
+                                 <GerenciarChavesAPIsRevokeDialog />
+                              </DialogContent>
+                           </Dialog>
                         </div>
                      </div>
                      <Luz className={`${chave.type === "Produção" ? "from-green-500 to-emerald-500" : chave.type === "Desenvolvimento" ? "from-blue-500 to-cyan-500" : chave.type === "Teste" ? "from-yellow-500 to-amber-500" : "from-purple-500 to-fuchsia-500-500"}`} />

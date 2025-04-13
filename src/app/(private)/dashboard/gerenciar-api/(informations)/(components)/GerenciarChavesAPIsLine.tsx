@@ -4,11 +4,12 @@ import { Copy, Ellipsis, Eye, RefreshCcw, Trash2 } from "lucide-react";
 // Componentes
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { GerenciarChavesAPIsRevokeDialog } from "./GerenciarChavesAPIsRevokeDialog";
 import { GerenciarChavesAPIsDetalhesDialog } from "./GerenciarChavesAPIsDetalhesDialog";
+import { GerenciarChavesAPIsRegenerateDialog } from "./GerenciarChavesAPIsRegenerateDialog";
 
 // Componentes Default
 import chaves from "../(json)/chaves.json";
-import { GerenciarChavesAPIsRegenerateDialog } from "./GerenciarChavesAPIsRegenerateDialog";
 
 export function GerenciarChavesAPIsLine() {
    return (
@@ -74,18 +75,32 @@ export function GerenciarChavesAPIsLine() {
                                  <Ellipsis className="w-6 h-6" />
                               </DropdownMenu.Trigger>
                               <DropdownMenu.Portal>
-                                 <DropdownMenu.Content className="min-w-[150px] background2 !backdrop-blur-[7px] text-white py-1 z-10">
-                                    <DropdownMenu.Item asChild>
-                                       <div className="px-1 outline-none">
-                                          <GerenciarChavesAPIsRegenerateDialog />
-                                       </div>
-                                    </DropdownMenu.Item>
+                                 <DropdownMenu.Content aria-modal={false} className="min-w-[150px] background2 !backdrop-blur-[7px] text-white py-1 z-10">
+
                                     <DropdownMenu.Item className="px-1 outline-none">
-                                       <button className="w-full flex items-center gap-4 px-2 py-2 rounded-sm hover:bg-gray-700 transition outline-none text-sm">
-                                          <Trash2 className="w-4 h-4 text-red-400" />
-                                          Revogar
-                                       </button>
+                                       <Dialog>
+                                          <DialogTrigger className="w-full flex items-center gap-4 px-2 py-2 rounded-lg transition outline-none text-sm border-slate-700/50 text-slate-200 hover:bg-slate-700/50 cursor-pointer">
+                                             <RefreshCcw className="w-4 h-4 text-cyan-500" />
+                                             Regenerar
+                                          </DialogTrigger>
+                                          <DialogContent className="z-10">
+                                             <GerenciarChavesAPIsRegenerateDialog />
+                                          </DialogContent>
+                                       </Dialog>
                                     </DropdownMenu.Item>
+
+                                    <DropdownMenu.Item className="px-1 outline-none">
+                                       <Dialog>
+                                          <DialogTrigger className="w-full flex items-center gap-4 px-3 py-2 rounded-lg transition outline-none text-sm border-slate-700/50 text-slate-200 hover:bg-slate-700/50 cursor-pointer mt-1">
+                                             <Trash2 className="w-4 h-4 text-red-400" />
+                                             Revogar
+                                          </DialogTrigger>
+                                          <DialogContent className="z-10">
+                                             <GerenciarChavesAPIsRevokeDialog />
+                                          </DialogContent>
+                                       </Dialog>
+                                    </DropdownMenu.Item>
+
                                  </DropdownMenu.Content>
                               </DropdownMenu.Portal>
                            </DropdownMenu.Root>
