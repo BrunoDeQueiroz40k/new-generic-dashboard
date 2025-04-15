@@ -30,7 +30,7 @@ export default function Register() {
         <div className="w-[450px]">
           <AlterraLogo />
           <Card className="pb-4">
-            <CardHeader className="pb-4 md:pb-0">
+            <CardHeader className="flex-col gap-1 pb-4 md:pt-4 md:pb-0">
               <div className="flex justify-between items-center">
                 <CardTitle>Criar Conta</CardTitle>
                 <div className="flex items-center space-x-1">

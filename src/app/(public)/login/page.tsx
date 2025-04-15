@@ -30,7 +30,7 @@ export default function Login() {
         <div className="w-[400px]">
           <AlterraLogo />
           <Card className="">
-            <CardHeader className="pb-4 md:pt-4 md:pb-0">
+            <CardHeader className="flex-col gap-1 pb-4 md:pt-4 md:pb-0">
               <div className="flex justify-between items-center">
                 <CardTitle>Fazer Login</CardTitle>
                 <div className="flex items-center space-x-1">

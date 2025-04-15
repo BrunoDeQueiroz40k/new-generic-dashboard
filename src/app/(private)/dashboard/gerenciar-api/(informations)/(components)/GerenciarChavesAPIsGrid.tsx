@@ -108,7 +108,7 @@ export function GerenciarChavesAPIsGrid() {
                            </Dialog>
                         </div>
                      </div>
-                     <Luz className={`${chave.type === "Produção" ? "from-green-500 to-emerald-500" : chave.type === "Desenvolvimento" ? "from-blue-500 to-cyan-500" : chave.type === "Teste" ? "from-yellow-500 to-amber-500" : "from-purple-500 to-fuchsia-500-500"}`} />
+                     <Luz className={`${chave.type === "Produção" ? "from-green-500 to-emerald-500" : chave.type === "Desenvolvimento" ? "from-blue-500 to-cyan-500" : chave.type === "Teste" ? "from-yellow-500 to-amber-500" : "from-purple-500 to-fuchsia-500"}`} />
                   </div>
                ))
             }
