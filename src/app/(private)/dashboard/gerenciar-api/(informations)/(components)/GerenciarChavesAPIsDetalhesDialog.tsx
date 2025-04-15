@@ -35,7 +35,7 @@ export function GerenciarChavesAPIsDetalhesDialog({ chave }: DetalhesProps) {
 
    return (
       <>
-         <Card className="futuristic-scroll pt-6">
+         <Card className="max-h-[95vh] overflow-y-auto futuristic-scroll pt-6">
             <CardHeader className="flex-col items-start gap-2 pb-0 text-slate-200">
                <div className="w-full">
                   <div className="flex-1 flex items-center justify-between">

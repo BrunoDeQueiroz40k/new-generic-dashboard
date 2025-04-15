@@ -36,15 +36,15 @@ export function GerenciarChavesAPIsCriarDialog() {
                   <Input type="text" placeholder="e.q.exemplo" className="mt-2 mb-2" />
                   <p className="text-slate-500 text-xs">Escolha um nome descritivo para as suas chaves</p>
                </div>
-               <div>
-                  <Title>
+               <div className="py-4 px-2 border bg-slate-700/30 border-slate-700 rounded-lg">
+                  <Title className="px-4">
                      <KeySquare className="w-4 h-4 text-slate-400" />
                      Tipo da Chave
                   </Title>
                   <RadioGroup defaultValue="desenvolvimento">
                      {
                         chaves.map((key) => (
-                           <div key={key.value} className="flex items-center gap-2 px-4 py-1 hover:bg-slate-800/60 rounded-lg transition">
+                           <div key={key.value} className="flex items-center gap-2 px-2 py-1 hover:bg-slate-800/60 rounded-lg transition">
                               <RadioGroupItem value={key.value} id={key.id} />
                               <Label htmlFor={key.id} id={key.id} className="flex items-center gap-2 cursor-pointer text-slate-200">
                                  <Dot className={`w-2 h-2 ${key.value === "desenvolvimento" ? "bg-blue-500" : key.value === "teste" ? "bg-yellow-500" : key.value === "produção" ? "bg-green-500" : "bg-purple-500"}`} />
@@ -64,21 +64,21 @@ export function GerenciarChavesAPIsCriarDialog() {
                   <div className="flex flex-col gap-3">
                      <div className="flex items-center justify-between">
                         <div>
-                           <span>Acesso de Leitura</span>
+                           <span className="text-base">Acesso de Leitura</span>
                            <p className="text-sm text-slate-400">Permite somente a leitura das APIs</p>
                         </div>
                         <Switch defaultChecked />
                      </div>
                      <div className="flex items-center justify-between">
                         <div>
-                           <span>Acesso de Escrita</span>
+                           <span className="text-base">Acesso de Escrita</span>
                            <p className="text-sm text-slate-400">Permite a criação e atualização de dados</p>
                         </div>
                         <Switch defaultChecked />
                      </div>
                      <div className="flex items-center justify-between">
                         <div>
-                           <span>Acesso de Deletar</span>
+                           <span className="text-base">Acesso de Deletar</span>
                            <p className="text-sm text-slate-400">Permite deletar dados</p>
                         </div>
                         <Switch defaultChecked />
