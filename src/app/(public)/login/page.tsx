@@ -6,9 +6,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import { Mail, LockKeyhole, LogIn, Github } from "lucide-react";
+import { LockKeyhole, LogIn, Github, AtSign } from "lucide-react";
 
 // Componentes
+import { Version } from "@/app/version";
 import { Dot } from "@/components/ui/dot";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -19,7 +20,6 @@ import { Separator } from "@/components/ui/separator";
 import Canva from "@/components/ui/canva";
 import Particles from "@/components/ui/particles";
 import AlterraLogo from "@/components/ui/alterra-logo";
-import { Version } from "@/app/version";
 
 export default function Login() {
   return (
@@ -48,7 +48,7 @@ export default function Login() {
               <div>
                 <Label htmlFor="email">Email</Label>
                 <div>
-                  <Mail className="absolute text-slate-400 mt-2.5 ml-2.5 w-5 h-5" />
+                  <AtSign className="absolute text-slate-400 mt-2.5 ml-2.5 w-5 h-5" />
                   <Input
                     id="email"
                     type="email"
@@ -78,7 +78,7 @@ export default function Login() {
               </Button>
 
               <div className="text-center pt-4">
-                <Link href="" className="text-alterra hover:underline">Esqueceu sua senha?</Link>
+                <Link href="/login/forgot-password" className="text-alterra hover:underline">Esqueceu sua senha?</Link>
               </div>
 
               <div className="flex items-center justify-center py-4">
@@ -122,14 +122,12 @@ export default function Login() {
                 <Link href="/" className="text-alterra hover:underline">
                   Configurar autenticação de 2 fatores
                 </Link>
-                <div>
-                  <p>
-                    Não tem uma conta?{" "}
-                    <Link className="text-alterra hover:underline" href="/register">
-                      Registrar-se
-                    </Link>
-                  </p>
-                </div>
+                <p>
+                  Não tem uma conta?{" "}
+                  <Link className="text-alterra hover:underline" href="/register">
+                    Registrar-se
+                  </Link>
+                </p>
               </div>
               <Version />
             </CardContent>

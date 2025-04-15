@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Mail, LockKeyhole, UserPlus2, Lock, User } from "lucide-react";
 
 // Compoentes
-import { Dot } from "@/components/ui/dot";
+import { Version } from "@/app/version";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Canva from "@/components/ui/canva";
 import Particles from "@/components/ui/particles";
 import AlterraLogo from "@/components/ui/alterra-logo";
-import { Version } from "@/app/version";
 
 export default function Register() {
   return (
