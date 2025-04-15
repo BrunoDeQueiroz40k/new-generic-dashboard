@@ -2,8 +2,10 @@ import { DialogTitle } from "@/components/ui/dialog";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dot } from "@/components/ui/dot";
-import { CircleOff, Settings, X } from "lucide-react";
-import { Tabs } from "@/components/ui/tabs";
+import { ChartNoAxesCombined, CircleOff, Copy, Info, Settings, X } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Title } from "@/components/ui/title";
+import { Progress } from "@/components/ui/progress";
 
 interface DetalhesProps {
    api: {
@@ -14,9 +16,10 @@ interface DetalhesProps {
       version: string;
       usage: number;
       endpoint: string;
+      baseEndpoint: string;
       requests: number;
-      rate: string;
-      response: string;
+      rate: number;
+      response: number;
       subEndpoints: {
          path: string;
          method: string;
@@ -25,6 +28,8 @@ interface DetalhesProps {
 }
 
 export function MinhasAPIsDetalhesDialog({ api }: DetalhesProps) {
+   const mediaResponse = 300;
+
    return (
       <Card className="max-h-[95vh] overflow-y-auto futuristic-scroll pt-6">
          <CardHeader className="flex-col gap-1">
@@ -47,7 +52,87 @@ export function MinhasAPIsDetalhesDialog({ api }: DetalhesProps) {
          </CardHeader>
          <CardContent>
             <Tabs>
-               
+               <TabsList className="bg-slate-800/50 p-1">
+                  <TabsTrigger value="all">Visão Geral</TabsTrigger>
+                  <TabsTrigger value="endpoints">Endpoints</TabsTrigger>
+                  <TabsTrigger value="documentation">Documentação</TabsTrigger>
+                  <TabsTrigger value="settings">Configurações</TabsTrigger>
+               </TabsList>
+               <TabsContent value="all">
+                  <div className="flex gap-4">
+                     <div className="background2 p-4 flex flex-col gap-3">
+                        <Title className="pb-2">
+                           <Info className="w-4 h-4 text-slate-400" />
+                           Detalhes da API
+                        </Title>
+                        <div className="flex justify-between">
+                           <p className="text-slate-400">Versão:</p>
+                           <span className="font-mono">{api.version}</span>
+                        </div>
+                        <div className="flex justify-between">
+                           <p className="text-slate-400">Endpoints:</p>
+                           <span className="font-mono">3</span>
+                        </div>
+                        <div className="flex justify-between">
+                           <p className="text-slate-400">Ultima Atualização: </p>
+                           <span>{api.updated}</span>
+                        </div>
+                        <div className="flex justify-between">
+                           <p className="text-slate-400">URL Base:</p>
+                           <div className="flex gap-1 items-center">
+                              <span className="flex-1 border border-slate-700/80 p-0.5 px-2 rounded-md">{api.baseEndpoint}</span>
+                              <button className="p-1.5 px-2 rounded-lg hover:bg-slate-700/70 cursor-pointer">
+                                 <Copy className="w-4 h-4" />
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                     <div>
+                        <div className="background2 p-4">
+                           <Title className="pb-2">
+                              <ChartNoAxesCombined className="w-4 h-4 text-slate-400" />
+                              Estatiscias de uso
+                           </Title>
+                           <div>
+                              <div className="flex justify-between text-slate-400 pb-1 pt-3 gap-14">
+                                 <span>Requests (30 dias)</span>
+                                 <span className="font-mono">{api.requests.toLocaleString("pt-BR")}</span>
+                              </div>
+                              <Progress value={api.usage}>
+                                 <div
+                                    className="h-full rounded-full"
+                                    style={{ width: `${api.usage}` }}
+                                 />
+                              </Progress>
+                           </div>
+                           <div>
+                              <div className="flex justify-between text-slate-400 pb-1 pt-3 gap-14">
+                                 <span>Taxa de sucesso</span>
+                                 <span className="font-mono">{api.rate}%</span>
+                              </div>
+                              <Progress value={api.rate}>
+                                 <div
+                                    className="h-full rounded-full"
+                                    style={{ width: `${api.rate}` }}
+                                 />
+                              </Progress>
+                           </div>
+                           <div>
+                              <div className="flex justify-between text-slate-400 pb-1 pt-3 gap-14">
+                                 <span>Tempo de resposta média</span>
+                                 <span className="font-mono">{api.response}ms</span>
+                              </div>
+                              <Progress value={api.response}>
+                                 <div
+                                    className="h-full rounded-full"
+                                    style={{ width: `${mediaResponse}` }}
+                                 />
+                              </Progress>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </TabsContent>
             </Tabs>
          </CardContent>
       </Card>

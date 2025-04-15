@@ -71,7 +71,7 @@ export function GerenciarChavesAPIsDetalhesDialog({ chave }: DetalhesProps) {
                               <button className="p-1.5 px-2.5 rounded-lg hover:bg-slate-700/70">
                                  <Eye className="w-4 h-4" />
                               </button>
-                              <button className="p-1.5 px-2.5  rounded-lg hover:bg-slate-700/70">
+                              <button className="p-1.5 px-2.5 rounded-lg hover:bg-slate-700/70">
                                  <Copy className="w-4 h-4" />
                               </button>
                            </div>

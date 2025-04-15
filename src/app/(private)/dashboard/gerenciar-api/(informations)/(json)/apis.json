@@ -8,9 +8,10 @@
     "usage": 73,
     "icon": "CheckCircle",
     "endpoint": "/login",
+    "baseEndpoint": "https://api.example.com/login",
     "requests": 45000,
-    "rate": "98.5%",
-    "response": "120ms",
+    "rate": 98.5,
+    "response": 120,
     "subEndpoints": [
       {
         "path": "/login/validate",
@@ -31,9 +32,10 @@
     "usage": 45,
     "icon": "CheckCircle",
     "endpoint": "/dashboard/faturamento",
+    "baseEndpoint": "https://api.example.com/dashboard/faturamento",
     "requests": 32000,
-    "rate": "97.8%",
-    "response": "150ms",
+    "rate": 97.8,
+    "response": 150,
     "subEndpoints": [
       {
         "path": "/dashboard/faturamento/create",
@@ -54,9 +56,10 @@
     "usage": 15,
     "icon": "Info",
     "endpoint": "/dashboard/relatorios",
+    "baseEndpoint": "https://api.example.com/dashboard/relatorios",
     "requests": 12000,
-    "rate": "92.3%",
-    "response": "200ms",
+    "rate": 92.3,
+    "response": 200,
     "subEndpoints": [
       {
         "path": "/dashboard/relatorios/generate",
@@ -77,9 +80,10 @@
     "usage": 97,
     "icon": "CircleX",
     "endpoint": "/dashboard/configuracoes",
+    "baseEndpoint": "https://api.example.com/dashboard/configuracoes",
     "requests": 50000,
-    "rate": "85.0%",
-    "response": "250ms",
+    "rate": 85.0,
+    "response": 250,
     "subEndpoints": [
       {
         "path": "/dashboard/configuracoes/email",
@@ -100,9 +104,10 @@
     "usage": 60,
     "icon": "CheckCircle",
     "endpoint": "/inventory",
+    "baseEndpoint": "https://api.example.com/inventory",
     "requests": 25000,
-    "rate": "96.0%",
-    "response": "180ms",
+    "rate": 96.0,
+    "response": 180,
     "subEndpoints": [
       {
         "path": "/inventory/add",
@@ -123,9 +128,10 @@
     "usage": 80,
     "icon": "CheckCircle",
     "endpoint": "/support",
+    "baseEndpoint": "https://api.example.com/support",
     "requests": 40000,
-    "rate": "97.5%",
-    "response": "140ms",
+    "rate": 97.5,
+    "response": 140,
     "subEndpoints": [
       {
         "path": "/support/ticket",
@@ -146,9 +152,10 @@
     "usage": 25,
     "icon": "Info",
     "endpoint": "/storage",
+    "baseEndpoint": "https://api.example.com/storage",
     "requests": 15000,
-    "rate": "90.0%",
-    "response": "220ms",
+    "rate": 90.0,
+    "response": 220,
     "subEndpoints": [
       {
         "path": "/storage/upload",
