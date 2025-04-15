@@ -36,6 +36,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 // Componentes Defaults
 import api from "../(informations)/(json)/apis.json";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { MinhasAPIsDetalhesDialog } from "./(components)/MinhasAPIsDetalhesDialog";
 
 const iconMap = {
   CheckCircle: CheckCircle,
@@ -119,25 +121,25 @@ export function MinhasAPIs() {
                   <h1 className="font-semibold">{item.title}</h1>
                   <Badge
                     variant={
-                      item.status === "ativo"
+                      item.status === "Ativo"
                         ? "green"
-                        : item.status === "manutenção"
+                        : item.status === "Manutenção"
                           ? "yellow"
-                          : item.status === "error"
+                          : item.status === "Error"
                             ? "red"
                             : "slate"
                     }
                   >
-                    {item.status === "ativo" ? (
+                    {item.status === "Ativo" ? (
                       <Dot />
-                    ) : item.status === "manutenção" ? (
+                    ) : item.status === "Manutenção" ? (
                       <Settings className="w-3 h-3" />
-                    ) : item.status === "error" ? (
+                    ) : item.status === "Error" ? (
                       <X className="w-3 h-3" />
                     ) : (
                       <CircleOff className="w-3 h-3" />
                     )}
-                    <span className="translate-y-[-1px]">{item.status}</span>
+                    <span>{item.status}</span>
                   </Badge>
                 </div>
                 <p className="text-sm text-slate-400">{item.description}</p>
@@ -203,10 +205,17 @@ export function MinhasAPIs() {
                     <Activity className="w-4 h-4" />
                     Status
                   </Button>
-                  <Button variant="border" className="p-2 py-0">
-                    <FileText className="w-4 h-4" />
-                    Detalhes
-                  </Button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="border" className="p-2 py-0">
+                        <FileText className="w-4 h-4" />
+                        Detalhes
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent>
+                      <MinhasAPIsDetalhesDialog api={item} />
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </div>
             </div>

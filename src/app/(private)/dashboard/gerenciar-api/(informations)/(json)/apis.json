@@ -1,152 +1,163 @@
 [
-   {
-     "title": "User Authentication API",
-     "status": "ativo",
-     "description": "API usada para autenticação e autorização",
-     "updated": "Updated Jan 15, 2024, 11:30",
-     "version": "v2.3.1",
-     "usage": 73,
-     "icon": "CheckCircle",
-     "endpoint": "/login"
-   },
-   {
-     "title": "Payment Gateway API",
-     "status": "ativo",
-     "description": "API para processamento de pagamentos",
-     "updated": "Updated Dez 10, 2023, 14:20",
-     "version": "v1.8.0",
-     "usage": 45,
-     "icon": "CheckCircle",
-     "endpoint": "/dashboard/faturamento"
-   },
-   {
-     "title": "Data Analytics API",
-     "status": "manutenção",
-     "description": "API para análise de dados e relatórios",
-     "updated": "Updated Fev 5, 2024, 09:15",
-     "version": "v3.0.0",
-     "usage": 15,
-     "icon": "Info",
-     "endpoint": "/dashboard/relatorios"
-   },
-   {
-     "title": "Notification Service API",
-     "status": "error",
-     "description": "API para envio de notificações",
-     "updated": "Updated Jan 20, 2024, 16:45",
-     "version": "v2.5.2",
-     "usage": 97,
-     "icon": "CircleX",
-     "endpoint": "/dashboard/configuracoes"
-   },
-   {
-     "title": "Inventory Management API",
-     "status": "inativo",
-     "description": "API para gerenciamento de inventário",
-     "updated": "Updated Nov 25, 2023, 12:00",
-     "version": "v1.4.3",
-     "usage": 0,
-     "icon": "CircleOff",
-     "endpoint": "/dashboard/gerenciamento-api"
-   },
-   {
-     "title": "Customer Support API",
-     "status": "ativo",
-     "description": "API para suporte ao cliente",
-     "updated": "Updated Jan 10, 2024, 10:00",
-     "version": "v1.2.0",
-     "usage": 50,
-     "icon": "CheckCircle",
-     "endpoint": "/support"
-   },
-   {
-     "title": "Order Tracking API",
-     "status": "ativo",
-     "description": "API para rastreamento de pedidos",
-     "updated": "Updated Dez 20, 2023, 15:30",
-     "version": "v2.0.1",
-     "usage": 60,
-     "icon": "CheckCircle",
-     "endpoint": "/orders/track"
-   },
-   {
-     "title": "Feedback Collection API",
-     "status": "manutenção",
-     "description": "API para coleta de feedbacks",
-     "updated": "Updated Fev 1, 2024, 08:45",
-     "version": "v1.5.0",
-     "usage": 25,
-     "icon": "Info",
-     "endpoint": "/feedback"
-   },
-   {
-     "title": "Shipping Management API",
-     "status": "ativo",
-     "description": "API para gerenciamento de envios",
-     "updated": "Updated Jan 18, 2024, 13:20",
-     "version": "v3.1.0",
-     "usage": 80,
-     "icon": "CheckCircle",
-     "endpoint": "/shipping"
-   },
-   {
-     "title": "User Profile API",
-     "status": "ativo",
-     "description": "API para gerenciamento de perfis de usuário",
-     "updated": "Updated Dez 5, 2023, 11:10",
-     "version": "v2.2.0",
-     "usage": 40,
-     "icon": "CheckCircle",
-     "endpoint": "/profile"
-   },
-   {
-     "title": "Product Catalog API",
-     "status": "ativo",
-     "description": "API para consulta de catálogo de produtos",
-     "updated": "Updated Jan 25, 2024, 17:00",
-     "version": "v1.9.0",
-     "usage": 90,
-     "icon": "CheckCircle",
-     "endpoint": "/products"
-   },
-   {
-     "title": "Billing API",
-     "status": "manutenção",
-     "description": "API para gerenciamento de cobranças",
-     "updated": "Updated Fev 10, 2024, 14:00",
-     "version": "v2.4.0",
-     "usage": 30,
-     "icon": "Info",
-     "endpoint": "/billing"
-   },
-   {
-     "title": "Marketing Campaign API",
-     "status": "ativo",
-     "description": "API para gerenciamento de campanhas de marketing",
-     "updated": "Updated Dez 15, 2023, 09:30",
-     "version": "v1.6.0",
-     "usage": 55,
-     "icon": "CheckCircle",
-     "endpoint": "/marketing"
-   },
-   {
-     "title": "Fraud Detection API",
-     "status": "error",
-     "description": "API para detecção de fraudes",
-     "updated": "Updated Jan 22, 2024, 18:00",
-     "version": "v3.2.1",
-     "usage": 10,
-     "icon": "CircleX",
-     "endpoint": "/fraud"
-   },
-   {
-     "title": "Loyalty Program API",
-     "status": "ativo",
-     "description": "API para gerenciamento de programas de fidelidade",
-     "updated": "Updated Fev 3, 2024, 12:30",
-     "version": "v2.7.0",
-     "usage": 65,
-     "icon": "CheckCircle",
-     "endpoint": "/loyalty"
-   }
+  {
+    "title": "User Authentication API",
+    "status": "Ativo",
+    "description": "API usada para autenticação e autorização",
+    "updated": "Updated Jan 15, 2024, 11:30",
+    "version": "v2.3.1",
+    "usage": 73,
+    "icon": "CheckCircle",
+    "endpoint": "/login",
+    "requests": 45000,
+    "rate": "98.5%",
+    "response": "120ms",
+    "subEndpoints": [
+      {
+        "path": "/login/validate",
+        "method": "POST"
+      },
+      {
+        "path": "/login/refresh",
+        "method": "POST"
+      }
+    ]
+  },
+  {
+    "title": "Payment Gateway API",
+    "status": "Ativo",
+    "description": "API para processamento de pagamentos",
+    "updated": "Updated Dez 10, 2023, 14:20",
+    "version": "v1.8.0",
+    "usage": 45,
+    "icon": "CheckCircle",
+    "endpoint": "/dashboard/faturamento",
+    "requests": 32000,
+    "rate": "97.8%",
+    "response": "150ms",
+    "subEndpoints": [
+      {
+        "path": "/dashboard/faturamento/create",
+        "method": "POST"
+      },
+      {
+        "path": "/dashboard/faturamento/status",
+        "method": "GET"
+      }
+    ]
+  },
+  {
+    "title": "Data Analytics API",
+    "status": "Manutenção",
+    "description": "API para análise de dados e relatórios",
+    "updated": "Updated Fev 5, 2024, 09:15",
+    "version": "v3.0.0",
+    "usage": 15,
+    "icon": "Info",
+    "endpoint": "/dashboard/relatorios",
+    "requests": 12000,
+    "rate": "92.3%",
+    "response": "200ms",
+    "subEndpoints": [
+      {
+        "path": "/dashboard/relatorios/generate",
+        "method": "POST"
+      },
+      {
+        "path": "/dashboard/relatorios/download",
+        "method": "GET"
+      }
+    ]
+  },
+  {
+    "title": "Notification Service API",
+    "status": "Error",
+    "description": "API para envio de notificações",
+    "updated": "Updated Jan 20, 2024, 16:45",
+    "version": "v2.5.2",
+    "usage": 97,
+    "icon": "CircleX",
+    "endpoint": "/dashboard/configuracoes",
+    "requests": 50000,
+    "rate": "85.0%",
+    "response": "250ms",
+    "subEndpoints": [
+      {
+        "path": "/dashboard/configuracoes/email",
+        "method": "POST"
+      },
+      {
+        "path": "/dashboard/configuracoes/sms",
+        "method": "POST"
+      }
+    ]
+  },
+  {
+    "title": "Inventory Management API",
+    "status": "Ativo",
+    "description": "API para gerenciamento de inventário",
+    "updated": "Updated Jan 25, 2024, 10:00",
+    "version": "v1.0.0",
+    "usage": 60,
+    "icon": "CheckCircle",
+    "endpoint": "/inventory",
+    "requests": 25000,
+    "rate": "96.0%",
+    "response": "180ms",
+    "subEndpoints": [
+      {
+        "path": "/inventory/add",
+        "method": "POST"
+      },
+      {
+        "path": "/inventory/list",
+        "method": "GET"
+      }
+    ]
+  },
+  {
+    "title": "Customer Support API",
+    "status": "Ativo",
+    "description": "API para suporte ao cliente",
+    "updated": "Updated Jan 28, 2024, 12:00",
+    "version": "v2.1.0",
+    "usage": 80,
+    "icon": "CheckCircle",
+    "endpoint": "/support",
+    "requests": 40000,
+    "rate": "97.5%",
+    "response": "140ms",
+    "subEndpoints": [
+      {
+        "path": "/support/ticket",
+        "method": "POST"
+      },
+      {
+        "path": "/support/status",
+        "method": "GET"
+      }
+    ]
+  },
+  {
+    "title": "File Storage API",
+    "status": "Manutenção",
+    "description": "API para armazenamento de arquivos",
+    "updated": "Updated Fev 1, 2024, 08:30",
+    "version": "v1.5.3",
+    "usage": 25,
+    "icon": "Info",
+    "endpoint": "/storage",
+    "requests": 15000,
+    "rate": "90.0%",
+    "response": "220ms",
+    "subEndpoints": [
+      {
+        "path": "/storage/upload",
+        "method": "POST"
+      },
+      {
+        "path": "/storage/download",
+        "method": "GET"
+      }
+    ]
+  }
 ]
