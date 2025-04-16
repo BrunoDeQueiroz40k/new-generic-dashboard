@@ -29,7 +29,7 @@ export function GerenciarChavesAPIsLine() {
                </thead>
                <tbody className="divide-y divide-slate-700/30">
                   {chaves.map((chave) => (
-                     <tr key={chave.key} className="hover:bg-slate-800/50 transition hover:text-cyan-500">
+                     <tr key={chave.key} className="hover:bg-slate-800/50 hover:text-cyan-500">
                         <td className="px-4 py-4 w-[150px] font-bold">
                            {chave.title}
                         </td>

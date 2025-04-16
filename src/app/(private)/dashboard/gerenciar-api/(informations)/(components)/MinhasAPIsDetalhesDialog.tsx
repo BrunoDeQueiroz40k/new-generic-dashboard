@@ -2,7 +2,7 @@ import { DialogTitle } from "@/components/ui/dialog";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dot } from "@/components/ui/dot";
-import { ChartNoAxesCombined, Check, CircleOff, Copy, History, Info, Settings, X } from "lucide-react";
+import { ChartNoAxesCombined, Check, CircleOff, Copy, GitPullRequest, History, Info, Settings, Terminal, X } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Title } from "@/components/ui/title";
 import { Progress } from "@/components/ui/progress";
@@ -77,7 +77,7 @@ export function MinhasAPIsDetalhesDialog({ api }: DetalhesProps) {
                            <p className="text-slate-400">Ultima Atualização: </p>
                            <span>{api.updated}</span>
                         </div>
-                        <div className="flex justify-between">
+                        <div className="flex justify-between gap-4">
                            <p className="text-slate-400">URL Base:</p>
                            <div className="flex gap-1 items-center">
                               <span className="flex-1 border border-slate-700/80 p-0.5 px-2 rounded-md">{api.baseEndpoint}</span>
@@ -88,7 +88,7 @@ export function MinhasAPIsDetalhesDialog({ api }: DetalhesProps) {
                         </div>
                      </div>
                      <div>
-                        <div className="background2 p-4">
+                        <div className="background2 p-4 pb-6 flex-1">
                            <Title className="pb-2">
                               <ChartNoAxesCombined className="w-4 h-4 text-slate-400" />
                               Estatiscias de uso
@@ -138,18 +138,53 @@ export function MinhasAPIsDetalhesDialog({ api }: DetalhesProps) {
                         Histórico de versão
                      </Title>
                      <div className="flex">
-                        <div className="flex flex-col items-center gap-2">
+                        <div className="flex flex-col items-center">
                            <Badge variant="blue">
-                              <Check className="w-3 h-3" />
+                              <Check className="w-3 h-3 translate-y-[1px]" />
                            </Badge>
-                           <div className="w-px h-20 bg-slate-300"></div>
+                           <div className="w-px h-full bg-slate-600"></div>
                         </div>
-                        <div>
+                        <div className="pl-3 pt-3">
                            <div>
-                              <span>{api.version}</span>
+                              <span className="pr-2">{api.version}</span>
                               <Badge>Atual</Badge>
                            </div>
+                           <p className="text-sm text-slate-400">Lançada a 2 dias atrás</p>
+                           <span className="text-sm">● Conserto de bugs e melhoras na performance</span>
                         </div>
+                     </div>
+                     <div className="flex">
+                        <div className="flex flex-col items-center">
+                           <Badge>
+                              <Check className="w-3 h-3 translate-y-[1px]" />
+                           </Badge>
+                           <div className="w-px h-full bg-slate-600"></div>
+                        </div>
+                        <div className="pl-3 pt-3">
+                           <span className="pr-2">1.2.2</span>
+                           <p className="text-sm text-slate-400">Lançada a 3 meses</p>
+                           <span className="text-sm">● Melhorias na performance</span>
+                        </div>
+                     </div>
+                  </div>
+               </TabsContent>
+               <TabsContent value="endpoints">
+                  <div>
+                     <div className="bg-slate-700/40 rounded-lg border border-slate-600">
+                        <Title className="pb-0">
+                           <GitPullRequest className="w-5 h-5 text-slate-400" />
+                           Endpoints Dispovíneis
+                        </Title>
+                        {
+                           api.subEndpoints.map((endpoint) => (
+                              <div key={endpoint.path} className="bg-slate-700/40 border-t border-slate-600 p-4 flex gap-2 items-center">
+                                 <Badge variant={endpoint.path === "GET" ? "green" : endpoint.method === "POST" ? "blue" : endpoint.method === "PUT" ? "yellow" : "red"}>
+                                    {endpoint.method}
+                                 </Badge>
+                                 <span>{endpoint.path}</span>
+                              </div>
+                           ))
+                        }
                      </div>
                   </div>
                </TabsContent>
