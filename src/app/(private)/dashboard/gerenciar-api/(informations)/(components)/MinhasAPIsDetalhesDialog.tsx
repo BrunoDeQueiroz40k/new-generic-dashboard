@@ -2,7 +2,7 @@ import { DialogTitle } from "@/components/ui/dialog";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dot } from "@/components/ui/dot";
-import { ChartNoAxesCombined, CircleOff, Copy, Info, Settings, X } from "lucide-react";
+import { ChartNoAxesCombined, Check, CircleOff, Copy, History, Info, Settings, X } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Title } from "@/components/ui/title";
 import { Progress } from "@/components/ui/progress";
@@ -128,6 +128,26 @@ export function MinhasAPIsDetalhesDialog({ api }: DetalhesProps) {
                                     style={{ width: `${mediaResponse}` }}
                                  />
                               </Progress>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div className="background2 mt-4 p-4">
+                     <Title>
+                        <History className="w-4 h-4 text-slate-400" />
+                        Histórico de versão
+                     </Title>
+                     <div className="flex">
+                        <div className="flex flex-col items-center gap-2">
+                           <Badge variant="blue">
+                              <Check className="w-3 h-3" />
+                           </Badge>
+                           <div className="w-px h-20 bg-slate-300"></div>
+                        </div>
+                        <div>
+                           <div>
+                              <span>{api.version}</span>
+                              <Badge>Atual</Badge>
                            </div>
                         </div>
                      </div>
