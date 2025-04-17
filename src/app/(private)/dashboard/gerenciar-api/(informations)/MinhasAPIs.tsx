@@ -181,7 +181,7 @@ export function MinhasAPIs() {
                   </div>
                   <Progress
                     value={item.usage}
-                    className={`[&>*]:bg-gradient-to-r ${item.usage >= 85
+                    className={`${item.usage >= 85
                       ? "[&>*]:from-orange-800 [&>*]:to-red-600"
                       : item.usage >= 65
                         ? "[&>*]:from-amber-500 [&>*]:to-orange-500"
