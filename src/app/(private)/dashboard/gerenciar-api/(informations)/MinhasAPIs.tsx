@@ -1,22 +1,6 @@
 "use client";
 
-import {
-  Activity,
-  CheckCircle,
-  ChevronLeft,
-  ChevronRight,
-  CircleOff,
-  CircleX,
-  Clock,
-  Code2,
-  Codesandbox,
-  FileText,
-  Info,
-  Plus,
-  Search,
-  Settings,
-  X,
-} from "lucide-react";
+import { Activity, CheckCircle, ChevronLeft, ChevronRight, CircleOff, CircleX, Clock, Code2, Codesandbox, FileText, Info, Plus, Search, Settings, X } from "lucide-react";
 import { useState } from "react";
 
 // Componentes
@@ -108,28 +92,9 @@ export function MinhasAPIs() {
             >
               <div className="flex flex-col gap-1 flex-11/12">
                 <div className="flex items-center gap-2">
-                  <item.icon
-                    className={`w-4.5 h-4.5 ${item.icon === CheckCircle
-                      ? "text-green-500"
-                      : item.icon === Info
-                        ? "text-yellow-500"
-                        : item.icon === CircleX
-                          ? "text-red-500"
-                          : "text-slate-400"
-                      }`}
-                  />
+                  <item.icon className={`w-4.5 h-4.5 ${item.icon === CheckCircle ? "text-green-500" : item.icon === Info ? "text-yellow-500" : item.icon === CircleX ? "text-red-500" : "text-slate-400"}`} />
                   <h1 className="font-semibold">{item.title}</h1>
-                  <Badge
-                    variant={
-                      item.status === "Ativo"
-                        ? "green"
-                        : item.status === "Manutenção"
-                          ? "yellow"
-                          : item.status === "Error"
-                            ? "red"
-                            : "slate"
-                    }
-                  >
+                  <Badge variant={item.status === "Ativo" ? "green" : item.status === "Manutenção" ? "yellow" : item.status === "Error" ? "red" : "slate"}>
                     {item.status === "Ativo" ? (
                       <Dot />
                     ) : item.status === "Manutenção" ? (
@@ -163,37 +128,13 @@ export function MinhasAPIs() {
                   <div className="flex gap-18 items-center justify-between">
                     <span className="text-slate-400 text-sm">Usage</span>
                     <span
-                      className={`text-sm ${item.usage >= 85
-                        ? "text-red-500"
-                        : item.usage >= 65
-                          ? "text-amber-500"
-                          : item.usage >= 36
-                            ? "text-cyan-500"
-                            : item.usage <= 35
-                              ? "text-emerald-500"
-                              : item.usage === 0
-                                ? "text-slate-400"
-                                : ""
-                        }`}
-                    >
+                      className={`text-sm ${item.usage >= 85 ? "text-red-500" : item.usage >= 65 ? "text-amber-500" : item.usage >= 36 ? "text-cyan-500" : item.usage <= 35 ? "text-emerald-500" : item.usage === 0 ? "text-slate-400" : ""}`}>
                       {item.usage}%
                     </span>
                   </div>
                   <Progress
                     value={item.usage}
-                    className={`${item.usage >= 85
-                      ? "[&>*]:from-orange-800 [&>*]:to-red-600"
-                      : item.usage >= 65
-                        ? "[&>*]:from-amber-500 [&>*]:to-orange-500"
-                        : item.usage >= 45
-                          ? "[&>*]:from-cyan-500 [&>*]:to-blue-600"
-                          : item.usage <= 35
-                            ? "[&>*]:from-emerald-500 [&>*]:to-green-600"
-                            : item.usage === 0
-                              ? "text-slate-400"
-                              : ""
-                      }`}
-                  >
+                    className={`${item.usage >= 85 ? "[&>*]:from-orange-800 [&>*]:to-red-600" : item.usage >= 65 ? "[&>*]:from-amber-500 [&>*]:to-orange-500" : item.usage >= 45 ? "[&>*]:from-cyan-500 [&>*]:to-blue-600" : item.usage <= 35 ? "[&>*]:from-emerald-500 [&>*]:to-green-600" : item.usage === 0 ? "text-slate-400" : ""}`}>
                     <div
                       className="h-full rounded-full"
                       style={{ width: `${item.usage}` }}
