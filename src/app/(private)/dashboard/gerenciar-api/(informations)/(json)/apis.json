@@ -21,7 +21,10 @@
         "path": "/login/refresh",
         "method": "POST"
       }
-    ]
+    ],
+    "dailyUsage": [1200, 1300, 1100, 1250, 1400, 1350, 1280],
+    "weeklyUsage": [8880, 9100, 9200, 9300],
+    "monthlyUsage": [38057, 40000, 39000, 87645, 45765, 65726, 12535, 36653, 22342, 45453, 25212, 76543]
   },
   {
     "title": "Payment Gateway API",
@@ -45,7 +48,10 @@
         "path": "/dashboard/faturamento/status",
         "method": "GET"
       }
-    ]
+    ],
+    "dailyUsage": [800, 850, 780, 900, 870, 890, 860],
+    "weeklyUsage": [5950, 6100, 6200, 6300],
+    "monthlyUsage": [25414, 26000, 25500, 27000, 28000, 29000, 30000, 31000, 32000, 33000, 34000, 35000]
   },
   {
     "title": "Data Analytics API",
@@ -69,7 +75,10 @@
         "path": "/dashboard/relatorios/download",
         "method": "GET"
       }
-    ]
+    ],
+    "dailyUsage": [300, 320, 310, 290, 280, 305, 315],
+    "weeklyUsage": [2120, 2200, 2150, 2250],
+    "monthlyUsage": [9057, 9200, 9100, 9300, 9400, 9500, 9600, 9700, 9800, 9900, 10000, 10100]
   },
   {
     "title": "Notification Service API",
@@ -93,7 +102,10 @@
         "path": "/dashboard/configuracoes/sms",
         "method": "POST"
       }
-    ]
+    ],
+    "dailyUsage": [1500, 1450, 1600, 1550, 1480, 1520, 1490],
+    "weeklyUsage": [10590, 10800, 10750, 10900],
+    "monthlyUsage": [45257, 46000, 45500, 47000, 48000, 49000, 50000, 51000, 52000, 53000, 54000, 55000]
   },
   {
     "title": "Inventory Management API",
@@ -117,7 +129,10 @@
         "path": "/inventory/list",
         "method": "GET"
       }
-    ]
+    ],
+    "dailyUsage": [700, 720, 680, 710, 730, 690, 705],
+    "weeklyUsage": [4935, 5000, 4950, 5050],
+    "monthlyUsage": [21064, 21500, 21200, 22000, 23000, 24000, 25000, 26000, 27000, 28000, 29000, 30000]
   },
   {
     "title": "Customer Support API",
@@ -141,7 +156,10 @@
         "path": "/support/status",
         "method": "GET"
       }
-    ]
+    ],
+    "dailyUsage": [1000, 1020, 980, 1010, 1030, 990, 1005],
+    "weeklyUsage": [7035, 7100, 7050, 7150],
+    "monthlyUsage": [30021, 30500, 30200, 31000, 32000, 33000, 34000, 35000, 36000, 37000, 38000, 39000]
   },
   {
     "title": "File Storage API",
@@ -165,6 +183,9 @@
         "path": "/storage/download",
         "method": "GET"
       }
-    ]
+    ],
+    "dailyUsage": [400, 420, 390, 410, 430, 405, 415],
+    "weeklyUsage": [2870, 2900, 2880, 2950],
+    "monthlyUsage": [12285, 12500, 12300, 32000, 33000, 34000, 35000, 36000, 37000, 38000, 39000, 25453]
   }
 ]

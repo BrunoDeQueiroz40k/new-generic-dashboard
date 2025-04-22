@@ -9,7 +9,7 @@ export function Resumo() {
     <>
       <Tabs defaultValue="api">
         <div className="flex justify-between items-center">
-          <TabsList className="bg-slate-800/50 p-1">
+          <TabsList>
             <TabsTrigger value="api">APIs</TabsTrigger>
             <TabsTrigger value="processos">Processos</TabsTrigger>
             <TabsTrigger value="armazenamento">Armazenamento</TabsTrigger>

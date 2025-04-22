@@ -22,6 +22,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import api from "../(informations)/(json)/apis.json";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { MinhasAPIsDetalhesDialog } from "./(components)/MinhasAPIsDetalhesDialog";
+import { MinhasAPIsStatusDialog } from "./(components)/MinhasAPIsStatusDialog";
 
 const iconMap = {
   CheckCircle: CheckCircle,
@@ -142,10 +143,17 @@ export function MinhasAPIs() {
                   </Progress>
                 </div>
                 <div className="flex gap-4">
-                  <Button variant="border" className="p-2 py-0">
-                    <Activity className="w-4 h-4" />
-                    Status
-                  </Button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="border" className="p-2 py-0">
+                        <Activity className="w-4 h-4" />
+                        Status
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="min-w-[56%]">
+                      <MinhasAPIsStatusDialog api={item} />
+                    </DialogContent>
+                  </Dialog>
                   <Dialog>
                     <DialogTrigger asChild>
                       <Button variant="border" className="p-2 py-0">

@@ -1,7 +1,8 @@
-import { ChartNoAxesCombined, Check, CircleOff, Code2, Copy, FileText, History, Info, Settings, Settings2, X } from "lucide-react";
+import { ChartNoAxesCombined, Check, CircleOff, Code2, Copy, FileText, History, Info, Settings, X } from "lucide-react";
 
 // Componentes
 import { Dot } from "@/components/ui/dot";
+import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Title } from "@/components/ui/title";
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,6 @@ import { Progress } from "@/components/ui/progress";
 import { DialogTitle } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 
 interface DetalhesProps {
    api: {
@@ -199,7 +199,7 @@ export function MinhasAPIsDetalhesDialog({ api }: DetalhesProps) {
                               {api.subEndpoints.map((endpoint) => (
                                  <tr key={endpoint.path} className="hover:bg-slate-800/50 text-slate-400 font-mono">
                                     <td className="px-4 py-2.5 text-sm font-mono text-slate-300">{endpoint.path}</td>
-                                    <td className="px-4 py-2.5 text-slate-300 font-semibold">
+                                    <td className="px-4 py-2.5 text-slate-300 font-semibold font-sans">
                                        <Badge variant={endpoint.path === "DELETE" ? "red" : endpoint.method === "POST" ? "blue" : endpoint.method === "PUT" ? "yellow" : "green"}>
                                           {endpoint.method}
                                        </Badge>
