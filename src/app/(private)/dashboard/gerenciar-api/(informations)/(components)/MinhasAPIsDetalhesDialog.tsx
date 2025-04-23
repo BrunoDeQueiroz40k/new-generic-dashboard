@@ -37,7 +37,7 @@ export function MinhasAPIsDetalhesDialog({ api }: DetalhesProps) {
 
    return (
       <Card className="overflow-y-auto futuristic-scroll pt-6">
-         <CardHeader className="flex-col gap-1 pb-0">
+         <CardHeader className="flex-col items-stretch gap-1 pb-0">
             <div className="flex justify-between items-center">
                <DialogTitle>{api.title}</DialogTitle>
                <Badge variant={`${api.status === "Ativo" ? "green" : api.status === "Manutenção" ? "yellow" : api.status === "Error" ? "red" : "slate"}`}>

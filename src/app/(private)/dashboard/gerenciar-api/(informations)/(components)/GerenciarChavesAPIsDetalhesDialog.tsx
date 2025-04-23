@@ -8,6 +8,7 @@ import { DialogTitle } from "@/components/ui/dialog";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import { Luz } from "@/components/ui/luz";
 
 interface DetalhesProps {
    chave: {
@@ -104,19 +105,20 @@ export function GerenciarChavesAPIsDetalhesDialog({ chave }: DetalhesProps) {
                   </div>
                </div>
                <div className="flex gap-4">
-                  <div className="flex flex-col items-center background p-4 px-6 gap-1">
-                     <span className="text-3xl text-cyan-500 font-bold">{chave.detalhes.requests.toLocaleString("pt-BR")}</span>
+                  <div className="relative overflow-hidden flex flex-col items-center background !border-cyan-500/35 p-4 px-6 gap-1">
+                     <span className="text-3xl text-cyan-500 font-bold font-mono">{chave.detalhes.requests.toLocaleString("pt-BR")}</span>
                      <span className="text-slate-400 text-sm">Total Requests</span>
                      <span className="flex items-center gap-1 text-xs text-slate-500 pt-3 font-semibold">
-                        <ArrowDownRight className="w-4 h-4 text-green-500" />
-                        <span className="text-green-500">
+                        <ArrowDownRight className="w-4 h-4 text-cyan-500" />
+                        <span className="text-cyan-500">
                            +12.5%
                         </span>
                         da ultima semana
                      </span>
+                     <Luz className="bg-cyan-500" />
                   </div>
-                  <div className="flex flex-col items-center background p-4 px-6 gap-1">
-                     <span className="text-3xl text-green-500 font-bold">{chave.detalhes.rate}</span>
+                  <div className="relative overflow-hidden flex flex-col items-center background !border-green-500/35 p-4 px-6 gap-1">
+                     <span className="text-3xl text-green-500 font-bold font-mono">{chave.detalhes.rate}</span>
                      <span className="text-slate-400 text-sm">Taxa de Sucesso</span>
                      <span className="flex items-center gap-1 text-xs text-slate-500 pt-3 font-semibold">
                         <ArrowDownRight className="w-4 h-4 text-green-500" />
@@ -125,17 +127,19 @@ export function GerenciarChavesAPIsDetalhesDialog({ chave }: DetalhesProps) {
                         </span>
                         da ultima semana
                      </span>
+                     <Luz />
                   </div>
-                  <div className="flex flex-col items-center background p-4 px-6 gap-1">
-                     <span className="text-3xl text-purple-400 font-bold">{chave.detalhes.response}</span>
+                  <div className="relative overflow-hidden flex flex-col items-center background !border-purple-500/35 p-4 px-6 gap-1">
+                     <span className="text-3xl text-purple-400 font-bold font-mono">{chave.detalhes.response}</span>
                      <span className="text-slate-400 text-sm">Tempo de Resposta média</span>
                      <span className="flex items-center gap-1 text-xs text-slate-500 pt-3 font-semibold">
-                        <ArrowRight className="w-4 h-4 text-green-500" />
-                        <span className="text-green-500">
+                        <ArrowRight className="w-4 h-4 text-purple-500" />
+                        <span className="text-purple-500">
                            +8.5%
                         </span>
                         da ultima semana
                      </span>
+                     <Luz className="bg-purple-500" />
                   </div>
                </div>
                <div className="background2 p-4">
