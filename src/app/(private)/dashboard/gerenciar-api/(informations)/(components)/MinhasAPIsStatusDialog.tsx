@@ -1,12 +1,14 @@
-import { Activity, ArrowDownRight, ChartLine, Clock } from "lucide-react";
+import { Activity, ArrowDownRight, Ban, ChartLine, CircleX, Clock, Eye, Info, } from "lucide-react";
+import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
 // Componentes
 import { Luz } from "@/components/ui/luz";
+import { Title } from "@/components/ui/title";
+import { Badge } from "@/components/ui/badge";
 import { DialogTitle } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
 interface StatusProps {
    api: {
@@ -30,6 +32,12 @@ interface StatusProps {
       monthlyUsage: number[];
    }
 }
+
+const errors = [
+   { title: "429", description: "Too Many Requests", porcentage: "45%", icon: Info, erro: "Limite de requests excedida", auth: "/users/123 ● 2 minutos atrás" },
+   { title: "401", description: "Unauthorized", porcentage: "31%", icon: CircleX, erro: "Chave API inválida", auth: "/auth/login ● 48 minutos atrás" },
+   { title: "404", description: "Not Found", porcentage: "25%", icon: Info, erro: "Nenhum recurso encontrado", auth: "/users/999 ● 1 hora atrás" },
+]
 
 export function MinhasAPIsStatusDialog({ api }: StatusProps) {
    return (
@@ -85,7 +93,7 @@ export function MinhasAPIsStatusDialog({ api }: StatusProps) {
                   <TabsList className="my-4 mb-2">
                      <TabsTrigger value="uso">Uso</TabsTrigger>
                      <TabsTrigger value="performance">Performance</TabsTrigger>
-                     <TabsTrigger value="erros">Erros</TabsTrigger>
+                     <TabsTrigger value="error">Erros</TabsTrigger>
                      <TabsTrigger value="topUsers">Top usuários</TabsTrigger>
                   </TabsList>
 
@@ -93,10 +101,10 @@ export function MinhasAPIsStatusDialog({ api }: StatusProps) {
                      <div className="background2 p-4">
                         <Tabs defaultValue="dia">
                            <TabsList className="flex justify-between bg-transparent">
-                              <div className="flex items-center gap-2">
+                              <Title className="text-lg font-semibold pb-0">
                                  <ChartLine className="w-5 h-5 text-slate-400" />
-                                 <h1 className="text-lg font-semibold">Uso da API</h1>
-                              </div>
+                                 Uso da API
+                              </Title>
                               <div className="bg-slate-800/50 p-1 rounded-md">
                                  <TabsTrigger value="dia">Dia</TabsTrigger>
                                  <TabsTrigger value="semana">Semana</TabsTrigger>
@@ -172,10 +180,10 @@ export function MinhasAPIsStatusDialog({ api }: StatusProps) {
 
                   <TabsContent value="performance">
                      <div className="background2 p-4">
-                        <div className="flex items-center gap-2 pb-4">
+                        <Title className="text-lg font-semibold">
                            <Clock className="w-5 h-5 text-slate-400" />
-                           <h1 className="text-lg font-semibold">Tempo de resposta</h1>
-                        </div>
+                           Tempo de resposta
+                        </Title>
                         <ChartContainer config={{ diario: { label: "Diário:" } }} className="h-[300px]">
                            <ResponsiveContainer width="90%" height="100%" className="bg-slate-800/50 border border-slate-700/50 rounded-lg">
                               <LineChart
@@ -194,6 +202,57 @@ export function MinhasAPIsStatusDialog({ api }: StatusProps) {
                               </LineChart>
                            </ResponsiveContainer>
                         </ChartContainer>
+                     </div>
+                  </TabsContent>
+
+                  <TabsContent value="error">
+                     <div className="background2 p-4">
+                        <Title className="text-lg font-semibold">
+                           <Ban className="w-5 h-5 text-slate-400" />
+                           Erros
+                        </Title>
+                        <div>
+                           <div className="flex justify-between gap-4">
+                              {
+                                 errors.map((error) => (
+                                    <div key={error.title} className={`relative overflow-hidden flex items-center justify-around flex-1 py-3 rounded-lg border bg-slate-800/35 backdrop-blur-[3px] shadow-sm transition hover:bg-slate-700/30 ${error.title === "429" ? "border-orange-500/25" : error.title === "401" ? "border-red-500/25" : "border-blue-500/25"}`}>
+                                       <span className={`p-1.5 rounded-full ${error.title === "429" ? "bg-orange-500/20" : error.title === "401" ? "bg-red-500/20" : "bg-blue-500/20"}`}>
+                                          <error.icon className={`w-5 h-5 ${error.title === "429" ? "text-orange-500" : error.title === "401" ? "text-red-500" : "text-blue-500"}`} />
+                                       </span>
+                                       <div className="flex flex-col">
+                                          <span className="text-lg font-bold">{error.title}</span>
+                                          <span className="text-sm text-slate-400">{error.description}</span>
+                                       </div>
+                                       <span className={`${error.title === "429" ? "text-orange-500" : error.title === "401" ? "text-red-500" : "text-blue-500"}`}>{error.porcentage}</span>
+                                       <Luz className={`${error.title === "429" ? "bg-orange-500/70" : error.title === "401" ? "bg-red-500/70" : "bg-blue-500/70"}`} />
+                                    </div>
+                                 ))
+                              }
+                           </div>
+                           <div className="mt-4 pt-4 rounded-lg border border-slate-700/50 bg-slate-800/35 backdrop-blur-[3px]">
+                              <div className="px-4">
+                                 <Title>Erros recentes</Title>
+                              </div>
+                              {
+                                 errors.map((error) => (
+                                    <div key={error.title} className="flex justify-between p-4 border-t border-slate-700/50 hover:bg-slate-700/30 transition">
+                                       <div className="flex flex-col gap-2">
+                                          <div className="flex gap-2">
+                                             <Badge variant={`${error.title === "429" ? "orange" : error.title === "401" ? "red" : "blue"}`} className={`${error.title === "429" ? "text-orange-500" : error.title === "401" ? "text-red-500" : "text-blue-500"}`}>{error.title}</Badge>
+                                             <span>{error.description}</span>
+                                          </div>
+                                          <span className="text-sm text-slate-400">{error.erro}</span>
+                                          <span className="text-xs text-slate-500 font-mono">{error.auth}</span>
+                                       </div>
+                                       <button className="flex items-center px-2 py-1 translate-y-[2px] gap-1 cursor-pointer hover:bg-transparent text-slate-400 hover:text-slate-300">
+                                          <Eye className="w-5 h-5" />
+                                          Detalhes
+                                       </button>
+                                    </div>
+                                 ))
+                              }
+                           </div>
+                        </div>
                      </div>
                   </TabsContent>
                </Tabs>
