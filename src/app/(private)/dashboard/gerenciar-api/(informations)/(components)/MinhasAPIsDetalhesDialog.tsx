@@ -8,7 +8,7 @@ import { Title } from "@/components/ui/title";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Progress } from "@/components/ui/progress";
-import { DialogTitle } from "@/components/ui/dialog";
+import { DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 
@@ -299,6 +299,11 @@ export function MinhasAPIsDetalhesDialog({ api }: DetalhesProps) {
                   </div>
                </TabsContent>
             </Tabs>
+            <div className="pt-4 flex gap-3 justify-end">
+               <DialogClose asChild>
+                  <Button variant="border">Fechar</Button>
+               </DialogClose>
+            </div>
          </CardContent>
       </Card>
    );

@@ -1,14 +1,15 @@
-import { Activity, ArrowDownRight, Ban, ChartLine, CircleX, Clock, Eye, Info, } from "lucide-react";
+import { Activity, ArrowDownRight, Ban, ChartLine, CircleX, Clock, Eye, Info, RotateCcw, } from "lucide-react";
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
 // Componentes
 import { Luz } from "@/components/ui/luz";
 import { Title } from "@/components/ui/title";
 import { Badge } from "@/components/ui/badge";
-import { DialogTitle } from "@/components/ui/dialog";
+import { DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { Button } from "@/components/ui/button";
 
 interface StatusProps {
    api: {
@@ -42,7 +43,7 @@ const errors = [
 export function MinhasAPIsStatusDialog({ api }: StatusProps) {
    return (
       <>
-         <Card className="overflow-y-auto futuristic-scroll pt-6 text-white ">
+         <Card className="max-h-[95vh] overflow-y-auto futuristic-scroll pt-6">
             <CardHeader className="flex-col items-start gap-1">
                <div className="flex items-center gap-2">
                   <Activity className="w-6 h-6 text-cyan-500" />
@@ -256,6 +257,15 @@ export function MinhasAPIsStatusDialog({ api }: StatusProps) {
                      </div>
                   </TabsContent>
                </Tabs>
+               <div className="pt-4 flex gap-3 justify-end">
+                  <DialogClose asChild>
+                     <Button variant="border">Fechar</Button>
+                  </DialogClose>
+                  <Button variant="blue">
+                     <RotateCcw className="w-4 h-4" />
+                     Atualizar data
+                  </Button>
+               </div>
             </CardContent>
          </Card>
       </>
