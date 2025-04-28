@@ -88,7 +88,7 @@ export function MinhasAPIs() {
                     Criar nova API
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="min-w-[56%]">
+                <DialogContent>
                   <MinhasAPIsCriarDialog />
                 </DialogContent>
               </Dialog>

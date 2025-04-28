@@ -200,7 +200,7 @@ export function MinhasAPIsDetalhesDialog({ api }: DetalhesProps) {
                                  <tr key={endpoint.path} className="hover:bg-slate-800/50 text-slate-400 font-mono">
                                     <td className="px-4 py-2.5 text-sm font-mono text-slate-300">{endpoint.path}</td>
                                     <td className="px-4 py-2.5 text-slate-300 font-semibold font-sans">
-                                       <Badge variant={endpoint.path === "DELETE" ? "red" : endpoint.method === "POST" ? "blue" : endpoint.method === "PUT" ? "yellow" : "green"}>
+                                       <Badge variant={endpoint.path === "DELETE" ? "red" : endpoint.method === "POST" ? "green" : endpoint.method === "PUT" ? "yellow" : "blue"}>
                                           {endpoint.method}
                                        </Badge>
                                     </td>
