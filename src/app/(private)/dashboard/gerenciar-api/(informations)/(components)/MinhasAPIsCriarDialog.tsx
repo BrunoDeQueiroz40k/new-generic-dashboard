@@ -4,19 +4,28 @@ import { Plus, PlusCircle, X } from "lucide-react";
 import { Dot } from "@/components/ui/dot";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
 import { Title } from "@/components/ui/title";
+import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const status = [
    { id: "dev", title: "Desenvolvimento", value: "desenvolvimento", description: "Para testar e desenvolver ambientes" },
    { id: "teste", title: "Teste", value: "teste", description: "Para testes automáticos e CI/CD e integração" },
    { id: "production", title: "Produção", value: "produção", description: "Para livre proução de ambientes" },
+]
+
+const auth = [
+   { id: "1", title: "Chave API" },
+   { id: "2", title: "OAuth 2.0" },
+   { id: "3", title: "JWT" },
+   { id: "4", title: "Sem autenticação" },
 ]
 
 export function MinhasAPIsCriarDialog() {
@@ -96,21 +105,95 @@ export function MinhasAPIsCriarDialog() {
                               Adicionar novo Endpoint
                            </Button>
                         </div>
-                        <div>
-                           <div className="bg-slate-900/10 border border-slate-600 p-3 rounded-md">
-                              <div className="flex justify-between items-center">
-                                 <div className="flex gap-2 items-center">
-                                    <Badge variant="blue">GET</Badge>
-                                    <span className="font-mono text-slate-300">/users</span>
-                                 </div>
-                                 <button className="hover:bg-slate-800 rounded-md transition p-1.5"><X className="w-4 h-4" /> </button>
-                              </div>
-                              <div className="pt-3">
-                                 <Label className="text-slate-300 font-normal">Descrição</Label>
-                                 <Input defaultValue="Pega uma lista de todos os usuários" placeholder="Coloque uma descrição para o endpoint" className="my-1" />
-                              </div>
-                              <div>
 
+                        <div className="flex flex-col gap-4">
+                           <div>
+                              <div className="bg-slate-900/10 border border-slate-600 p-3 rounded-md">
+                                 <div className="flex justify-between items-center">
+                                    <div className="flex gap-2 items-center">
+                                       <Badge variant="blue">GET</Badge>
+                                       <span className="font-mono text-slate-300">/users</span>
+                                    </div>
+                                    <button className="hover:bg-slate-800 rounded-md transition p-1.5"><X className="w-4 h-4" /> </button>
+                                 </div>
+                                 <div className="pt-3">
+                                    <Label className="font-normal">Descrição</Label>
+                                    <Input defaultValue="Pega uma lista de todos os usuários" placeholder="Coloque uma descrição para o endpoint" className="my-1" />
+                                 </div>
+                                 <div className="flex gap-4 pt-4">
+                                    <div>
+                                       <Label className="font-normal">Tipo da Resposta</Label>
+                                       <Select>
+                                          <SelectTrigger className="mt-1">
+                                             <SelectValue placeholder="JSON" />
+                                          </SelectTrigger>
+                                          <SelectContent className="bg-slate-800 border-slate-700 text-slate-200">
+                                             <SelectItem value="Nenhum">Nenhum</SelectItem>
+                                             <SelectItem value="json">JSON</SelectItem>
+                                             <SelectItem value="formData">Form Data</SelectItem>
+                                             <SelectItem value="raw">Raw</SelectItem>
+                                             <SelectItem value="binary">Binary</SelectItem>
+                                          </SelectContent>
+                                       </Select>
+                                    </div>
+                                    <div>
+                                       <Label className="font-normal">Duração do Cache</Label>
+                                       <div className="flex items-center">
+                                          <Input type="number" defaultValue="60" placeholder="Ex: 100" className="my-1 rounded-r-none" />
+                                          <div className="bg-slate-600 py-2 px-3 rounded-r-md">
+                                             <span className="text-slate-400">Segundos</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div>
+                              <div className="bg-slate-900/10 border border-slate-600 p-3 rounded-md">
+                                 <div className="flex justify-between items-center">
+                                    <div className="flex gap-2 items-center">
+                                       <Badge variant="green">POST</Badge>
+                                       <span className="font-mono text-slate-300">/users</span>
+                                    </div>
+                                    <button className="hover:bg-slate-800 rounded-md transition p-1.5"><X className="w-4 h-4" /> </button>
+                                 </div>
+                                 <div className="pt-3">
+                                    <Label className="font-normal">Descrição</Label>
+                                    <Input defaultValue="Pega uma lista de todos os usuários" placeholder="Coloque uma descrição para o endpoint" className="my-1" />
+                                 </div>
+                                 <div className="flex gap-4 pt-4">
+                                    <div>
+                                       <Label className="font-normal">Tipo da Resposta</Label>
+                                       <Select>
+                                          <SelectTrigger className="mt-1">
+                                             <SelectValue placeholder="JSON" />
+                                          </SelectTrigger>
+                                          <SelectContent className="bg-slate-800 border-slate-700 text-slate-200">
+                                             <SelectItem value="Nenhum">Nenhum</SelectItem>
+                                             <SelectItem value="json">JSON</SelectItem>
+                                             <SelectItem value="formData">Form Data</SelectItem>
+                                             <SelectItem value="raw">Raw</SelectItem>
+                                             <SelectItem value="binary">Binary</SelectItem>
+                                          </SelectContent>
+                                       </Select>
+                                    </div>
+                                    <div className="w-full">
+                                       <Label className="font-normal">Request Body</Label>
+                                       <Select>
+                                          <SelectTrigger className="mt-1 w-full">
+                                             <SelectValue placeholder="JSON" />
+                                          </SelectTrigger>
+                                          <SelectContent className="bg-slate-800 border-slate-700 text-slate-200">
+                                             <SelectItem value="Nenhum">Nenhum</SelectItem>
+                                             <SelectItem value="json">JSON</SelectItem>
+                                             <SelectItem value="formData">Form Data</SelectItem>
+                                             <SelectItem value="raw">Raw</SelectItem>
+                                             <SelectItem value="binary">Binary</SelectItem>
+                                          </SelectContent>
+                                       </Select>
+                                    </div>
+                                 </div>
                               </div>
                            </div>
                         </div>
@@ -119,7 +202,49 @@ export function MinhasAPIsCriarDialog() {
 
                   <TabsContent value="autenticacao">
                      <div className="background2 p-4">
-
+                        <Title className="pb-0">Configurações de Autenticação</Title>
+                        <p className="text-sm text-slate-500 pb-4">Configure o como os cliente irão se authenticar com a sua API</p>
+                        <Label className="text-sm">Tipo da autenticação</Label>
+                        <RadioGroup defaultValue="desenvolvimento" className="my-1 mt-2 gap-0.5">
+                           {
+                              auth.map((key) => (
+                                 <div key={key.id} className="flex items-center gap-2 px-2 py-1 hover:bg-slate-800/60 rounded-lg transition">
+                                    <RadioGroupItem value={key.title} id={key.id} />
+                                    <Label htmlFor={key.id} title={key.title} className="flex items-center gap-2 cursor-pointer text-slate-200">
+                                       {key.title}
+                                    </Label>
+                                 </div>
+                              ))
+                           }
+                        </RadioGroup>
+                        <div className="pt-2">
+                           <Label>Localização da Chave API</Label>
+                           <Select>
+                              <SelectTrigger className="mt-1 w-full">
+                                 <SelectValue placeholder="Header (X-API-Key)" />
+                              </SelectTrigger>
+                              <SelectContent className="bg-slate-800 border-slate-700 text-slate-200">
+                                 <SelectItem value="Nenhum">Nenhum</SelectItem>
+                                 <SelectItem value="header">Header (X-API-Key)</SelectItem>
+                              </SelectContent>
+                           </Select>
+                        </div>
+                        <div className="pt-4 space-y-3">
+                           <div className="flex items-center justify-between">
+                              <div className="flex flex-col">
+                                 <span className="text-slate-300">Auto-gerar Chaves API</span>
+                                 <span className="text-xs text-slate-400">Gere automaticamente chaves APIs para novos clientes</span>
+                              </div>
+                              <Switch id="auto-gerar" defaultChecked />
+                           </div>
+                           <div className="flex items-center justify-between pb-2">
+                              <div className="flex flex-col">
+                                 <span className="text-slate-300">Expiração de chave</span>
+                                 <span className="text-xs text-slate-400">habilite para expirar a chave API automaticamente</span>
+                              </div>
+                              <Switch id="auto-gerar" defaultChecked />
+                           </div>
+                        </div>
                      </div>
                   </TabsContent>
 
