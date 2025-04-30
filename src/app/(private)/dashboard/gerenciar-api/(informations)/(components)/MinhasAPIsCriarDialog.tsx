@@ -9,11 +9,12 @@ import { Title } from "@/components/ui/title";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { DialogClose, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogClose, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { MinhasAPIsCriarDialogAdicionarNovoEndpoint } from "./MinhasAPIsCriarDialogAdicionarNovoEndpoint";
 
 const status = [
    { id: "dev", title: "Desenvolvimento", value: "desenvolvimento", description: "Para testar e desenvolver ambientes" },
@@ -100,10 +101,17 @@ export function MinhasAPIsCriarDialog() {
                            <Title className="pb-0">
                               Endpoints da API
                            </Title>
-                           <Button variant="border" className="border-dashed border-slate-500 h-8 text-xs px-3 hover:text-cyan-400 gap-1">
-                              <Plus className="w-3 h-3" />
-                              Adicionar novo Endpoint
-                           </Button>
+                           <Dialog>
+                              <DialogTrigger asChild>
+                                 <Button variant="border" className="border-dashed border-slate-500 h-8 text-xs px-3 hover:text-cyan-400 gap-1">
+                                    <Plus className="w-3 h-3" />
+                                    Adicionar novo Endpoint
+                                 </Button>
+                              </DialogTrigger>
+                              <DialogContent>
+                                 <MinhasAPIsCriarDialogAdicionarNovoEndpoint />
+                              </DialogContent>
+                           </Dialog>
                         </div>
 
                         <div className="flex flex-col gap-4">
@@ -114,7 +122,7 @@ export function MinhasAPIsCriarDialog() {
                                        <Badge variant="blue">GET</Badge>
                                        <span className="font-mono text-slate-300">/users</span>
                                     </div>
-                                    <button className="hover:bg-slate-800 rounded-md transition p-1.5"><X className="w-4 h-4" /> </button>
+                                    <button className="hover:bg-slate-800 rounded-md transition p-1.5"><X className="w-4 h-4" /></button>
                                  </div>
                                  <div className="pt-3">
                                     <Label className="font-normal">Descrição</Label>
@@ -249,8 +257,16 @@ export function MinhasAPIsCriarDialog() {
                   </TabsContent>
 
                   <TabsContent value="avancado">
-                     <div className="background2 p-4">
+                     <div>
+                        <div className="background2 p-4">
 
+                        </div>
+                        <div className="background2 p-4">
+
+                        </div>
+                     </div>
+                     <div>
+                        
                      </div>
                   </TabsContent>
                </Tabs>

@@ -1,7 +1,7 @@
 "use client";
 
-import { Activity, CheckCircle, ChevronLeft, ChevronRight, CircleOff, CircleX, Clock, Code2, Codesandbox, FileText, Info, Plus, Search, Settings, X } from "lucide-react";
 import { useState } from "react";
+import { Activity, CheckCircle, ChevronLeft, ChevronRight, CircleOff, CircleX, Clock, Code2, Codesandbox, FileText, Info, Plus, Search, Settings, X } from "lucide-react";
 
 // Componentes
 import {
@@ -16,14 +16,14 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { MinhasAPIsCriarDialog } from "./(components)/MinhasAPIsCriarDialog";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { MinhasAPIsStatusDialog } from "./(components)/MinhasAPIsStatusDialog";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MinhasAPIsDetalhesDialog } from "./(components)/MinhasAPIsDetalhesDialog";
 
 // Componentes Defaults
 import api from "../(informations)/(json)/apis.json";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { MinhasAPIsDetalhesDialog } from "./(components)/MinhasAPIsDetalhesDialog";
-import { MinhasAPIsStatusDialog } from "./(components)/MinhasAPIsStatusDialog";
-import { MinhasAPIsCriarDialog } from "./(components)/MinhasAPIsCriarDialog";
 
 const iconMap = {
   CheckCircle: CheckCircle,
