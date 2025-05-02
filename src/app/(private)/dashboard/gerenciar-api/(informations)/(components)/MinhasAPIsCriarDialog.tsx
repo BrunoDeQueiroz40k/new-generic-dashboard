@@ -256,17 +256,55 @@ export function MinhasAPIsCriarDialog() {
                      </div>
                   </TabsContent>
 
-                  <TabsContent value="avancado">
-                     <div>
-                        <div className="background2 p-4">
-
+                  <TabsContent value="avancado" className="min-w-[900px]">
+                     <div className="space-y-4">
+                        <div className="flex gap-4">
+                           <div className="background2 p-4 flex-1">
+                              <Title className="pb-0">Limite de taxa</Title>
+                              <p className="text-xs text-slate-500 pb-4">Configure os limite de requisições da API</p>
+                              <div className="flex items-center justify-between pb-2">
+                                 <div className="flex flex-col">
+                                    <span className="text-slate-300">Habilitar limite de taxa</span>
+                                    <span className="text-xs text-slate-400">Limite o número de requisições que um cliente pode fazer</span>
+                                 </div>
+                                 <Switch id="auto-gerar" defaultChecked />
+                              </div>
+                              <div className="pt-3">
+                                 <Label className="font-normal text-slate-400">Requisições por minuto</Label>
+                                 <Input defaultValue="60" placeholder="Coloque uma quantidade de requisições" className="my-1" />
+                              </div>
+                              <div className="pt-3">
+                                 <Label className="font-normal text-slate-400">Bust limit</Label>
+                                 <Input defaultValue="10" placeholder="Coloque umaa quantidade de bust" className="mt-1" />
+                                 <span className="text-xs text-slate-500">Máximo de requisições permitida por um bust</span>
+                              </div>
+                           </div>
+                           <div className="background2 p-4 flex-1">
+                              <div className="background2 p-4 flex-1">
+                                 <Title className="pb-0">Configurações CORS</Title>
+                                 <p className="text-xs text-slate-500 pb-4">Configure recuros de compartilhamento Cross-Origin</p>
+                                 <div className="flex items-center justify-between pb-2">
+                                    <div className="flex flex-col">
+                                       <span className="text-slate-300">Habilitar CORS</span>
+                                       <span className="text-xs text-slate-400">Permitir requisições cross-origin para a sua API</span>
+                                    </div>
+                                    <Switch id="auto-gerar" defaultChecked />
+                                 </div>
+                                 <div className="pt-3">
+                                    <Label className="font-normal text-slate-400">Requisições por minuto</Label>
+                                    <Input defaultValue="60" placeholder="Coloque uma quantidade de requisições" className="my-1" />
+                                 </div>
+                                 <div className="pt-3">
+                                    <Label className="font-normal text-slate-400">Bust limit</Label>
+                                    <Input defaultValue="10" placeholder="Coloque umaa quantidade de bust" className="mt-1" />
+                                    <span className="text-xs text-slate-500">Máximo de requisições permitida por um bust</span>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
                         <div className="background2 p-4">
 
                         </div>
-                     </div>
-                     <div>
-                        
                      </div>
                   </TabsContent>
                </Tabs>
