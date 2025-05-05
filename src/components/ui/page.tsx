@@ -63,7 +63,7 @@ const PageContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("flex flex-col gap-4", className)} {...props} />
+  <div ref={ref} className={cn("flex flex-col gap-6", className)} {...props} />
 ))
 PageContent.displayName = "PageContent"
 
