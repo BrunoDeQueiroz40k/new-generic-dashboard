@@ -1,9 +1,9 @@
 import { Page } from "@/components/ui/page";
 import { SystemOverview } from "./(informations)/SystemOverview";
-import { TempoDoSistema } from "./(informations)/(components)/TempoDoSistema";
 import { UltimasChamadas } from "./(informations)/UltimasChamadas";
 import { LogsDeComunicacao } from "./(informations)/LogsDeComunicacao";
 import { ControleDeAmbiente } from "./(informations)/ControleDeAmbiente";
+import { TempoDoSistema } from "./(informations)/(components)/TempoDoSistema";
 import { AlertasDoSistema } from "./(informations)/(components)/AlertasDoSistema";
 
 export default function Dashboard() {

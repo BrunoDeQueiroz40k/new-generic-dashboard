@@ -88,7 +88,7 @@ export function MinhasAPIs() {
                     Criar nova API
                   </Button>
                 </DialogTrigger>
-                <DialogContent>
+                <DialogContent className="overflow-x-auto max-w-3xl w-full">
                   <MinhasAPIsCriarDialog />
                 </DialogContent>
               </Dialog>
