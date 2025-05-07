@@ -1,7 +1,9 @@
-import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Clock3, Wallet } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+// Componentes
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const faturas = [
    { title: "Fatura-2025-0012", date: "1 de Abril, 2025", amout: 1249, status: "Pago" },

@@ -21,10 +21,10 @@ import { Dot } from "@/components/ui/dot";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { GerenciarChavesAPIsInfos } from "./(components)/GerenciarChavesAPIsInfos";
-import { GerenciarChavesAPIsCriarDialog } from "./(components)/GerenciarChavesAPIsCriarDialog";
 import { GerenciarChavesAPIsLine } from "./(components)/GerenciarChavesAPIsLine";
 import { GerenciarChavesAPIsGrid } from "./(components)/GerenciarChavesAPIsGrid";
+import { GerenciarChavesAPIsInfos } from "./(components)/GerenciarChavesAPIsInfos";
+import { GerenciarChavesAPIsCriarDialog } from "./(components)/GerenciarChavesAPIsCriarDialog";
 
 export function GerenciarNovasChavesAPIs() {
   const [viewType, setViewType] = useState<"list" | "grid">("list");

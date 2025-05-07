@@ -1,6 +1,9 @@
-import { Faturas } from "./Faturas";
+import { Faturas } from "./(informations)/Faturas";
 import { CreditCard } from "lucide-react";
 import { Page, PageContent, PageDescription, PageHeader, PageTitle } from "@/components/ui/page";
+import { FaturamentoInfo } from "./(informations)/FaturamentoInfo";
+import { DespesasMensais } from "./(informations)/DespesasMensais";
+import { CirculoDeCusto } from "./(informations)/CirculoDeCusto";
 
 export default function Faturamento() {
    return (
@@ -15,6 +18,11 @@ export default function Faturamento() {
             </PageHeader>
             <PageContent>
                <Faturas />
+               <FaturamentoInfo />
+               <div className="flex gap-6">
+                  <DespesasMensais />
+                  <CirculoDeCusto />
+               </div>
             </PageContent>
          </Page>
       </>
