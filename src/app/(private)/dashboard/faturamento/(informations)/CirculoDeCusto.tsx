@@ -1,8 +1,8 @@
 "use client";
 
-import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dot } from "@/components/ui/dot";
+import { Cell, Pie, PieChart } from "recharts";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const data = [
    { title: "Chamadas API", value: 1080.00, usage: 81.8 },

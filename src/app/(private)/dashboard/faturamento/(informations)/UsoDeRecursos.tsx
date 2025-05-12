@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const data = [
    { title: "Chamadas APIs (Tier Premium)", used: "1.35M / 3M", usage: 45, description: "Reseta em 11 dias" },
