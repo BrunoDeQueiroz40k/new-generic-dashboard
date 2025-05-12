@@ -4,6 +4,7 @@ import { Page, PageContent, PageDescription, PageHeader, PageTitle } from "@/com
 import { FaturamentoInfo } from "./(informations)/FaturamentoInfo";
 import { DespesasMensais } from "./(informations)/DespesasMensais";
 import { CirculoDeCusto } from "./(informations)/CirculoDeCusto";
+import { UsoDeRecursos } from "./(informations)/UsoDeRecursos";
 
 export default function Faturamento() {
    return (
@@ -22,6 +23,9 @@ export default function Faturamento() {
                <div className="flex gap-6">
                   <DespesasMensais />
                   <CirculoDeCusto />
+               </div>
+               <div>
+                  <UsoDeRecursos />
                </div>
             </PageContent>
          </Page>
