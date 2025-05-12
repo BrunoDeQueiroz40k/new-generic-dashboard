@@ -5,6 +5,7 @@ import { FaturamentoInfo } from "./(informations)/FaturamentoInfo";
 import { DespesasMensais } from "./(informations)/DespesasMensais";
 import { CirculoDeCusto } from "./(informations)/CirculoDeCusto";
 import { UsoDeRecursos } from "./(informations)/UsoDeRecursos";
+import { AlertaDeUso } from "./(informations)/AlertasDeUso";
 
 export default function Faturamento() {
    return (
@@ -24,8 +25,9 @@ export default function Faturamento() {
                   <DespesasMensais />
                   <CirculoDeCusto />
                </div>
-               <div>
+               <div className="flex gap-6">
                   <UsoDeRecursos />
+                  <AlertaDeUso />
                </div>
             </PageContent>
          </Page>

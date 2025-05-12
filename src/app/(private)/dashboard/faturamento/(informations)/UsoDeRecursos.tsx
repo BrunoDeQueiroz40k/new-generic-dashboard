@@ -11,7 +11,7 @@ const data = [
 export function UsoDeRecursos() {
    return (
       <>
-         <Card>
+         <Card className="flex-1">
             <CardHeader>
                <CardTitle>Uso dos Recursos</CardTitle>
             </CardHeader>
