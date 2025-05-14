@@ -1,8 +1,12 @@
-import { Bitcoin, CheckCircle2, CreditCard, Pencil, Plus, Trash } from "lucide-react";
+import { Bitcoin, CheckCircle2, CreditCard, Pencil, Plus, Trash, Wallet } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { TabsContent } from "@radix-ui/react-tabs";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 const metodo = [
    { icon: CreditCard, title: "Visa termina com 4242", expires: "Expira em 09/29", default: true },
@@ -23,11 +27,63 @@ export function MetodoDePagamento() {
                         Adicionar novo método
                      </Button>
                   </DialogTrigger>
-                  <DialogContent className="background2 p-6">
+                  <DialogContent className="background2 p-6 text-slate-200">
                      <DialogHeader>
                         <DialogTitle className="text-slate-200">Adicionar novo método de pagamento</DialogTitle>
                         <DialogDescription className="text-slate-400 text-sm font-normal">Adicione um novo método para a sua conta</DialogDescription>
                      </DialogHeader>
+                     <Tabs defaultValue="creditCard" className="pt-4">
+                        <TabsList className="mb-4">
+                           <TabsTrigger value="creditCard" className="gap-2">
+                              <CreditCard className="w-4 h-4" />
+                              Cartão de crédito
+                           </TabsTrigger>
+                           <TabsTrigger value="crypto" className="gap-2">
+                              <Bitcoin className="w-4 h-4" />
+                              Crypto
+                           </TabsTrigger>
+                           <TabsTrigger value="pix" className="gap-2">
+                              <Wallet className="w-4 h-4" />
+                              Pix
+                           </TabsTrigger>
+                        </TabsList>
+
+                        <TabsContent value="creditCard">
+                           <div>
+                              {/* Cartão */}
+                              <div className="space-y-4">
+                                 <div className="relative">
+                                    <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl blur opacity-20"></div>
+                                    <div className="relative w-full bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-xl border border-slate-700 overflow-hidden">
+                                       <div className="px-4 py-3 flex justify-between items-start">
+                                          <div className="w-12 h-8 bg-gradient-to-r from-slate-600 to-slate-700 rounded opacity-80"></div>
+                                          <div className="text-xs text-slate-400">Novo cartão</div>
+                                       </div>
+                                       <div className="px-4 py-3 text-lg tracking-widest text-slate-300 font-mono">•••• •••• •••• ••••</div>
+
+                                       <div className="px-4 mt-3 flex items-center justify-between h-16 bg-gradient-to-r from-cyan-500/10 to-purple-500/10">
+                                          <div className="text-xs text-slate-400">
+                                             <div>Titular do cartão</div>
+                                             <div className="text-slate-300 mt-1">SEU NOME</div>
+                                          </div>
+                                          <div className="text-xs text-slate-400">
+                                             <div>Expira em</div>
+                                             <div className="text-slate-300 mt-1">MM/YY</div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div className="pt-4">
+                                 <Label className="text-slate-400">Número do cartão</Label>
+                                 <Input placeholder="0000 0000 0000 0000" />
+                                 <div>
+                                    
+                                 </div>
+                              </div>
+                           </div>
+                        </TabsContent>
+                     </Tabs>
                   </DialogContent>
                </Dialog>
             </CardHeader>
