@@ -66,7 +66,7 @@ export function CirculoDeCusto() {
                <div className="pt-4">
                   {
                      data.map((index) => (
-                        <div className="flex justify-between pt-2">
+                        <div key={index.title} className="flex justify-between pt-2">
                            <div className="flex items-center gap-3">
                               <Dot className={`w-2.5 h-2.5 ${index.title === "Chamadas API" ? "bg-blue-500" : index.title === "Suporte do Plano" ? "bg-yellow-400" : ""}`} />
                               <div className="flex flex-col">

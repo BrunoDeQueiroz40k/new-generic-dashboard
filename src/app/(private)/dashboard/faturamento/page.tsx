@@ -6,6 +6,7 @@ import { DespesasMensais } from "./(informations)/DespesasMensais";
 import { CirculoDeCusto } from "./(informations)/CirculoDeCusto";
 import { UsoDeRecursos } from "./(informations)/UsoDeRecursos";
 import { AlertaDeUso } from "./(informations)/AlertasDeUso";
+import { MetodoDePagamento } from "./(informations)/MetodoDePagamento";
 
 export default function Faturamento() {
    return (
@@ -29,6 +30,7 @@ export default function Faturamento() {
                   <UsoDeRecursos />
                   <AlertaDeUso />
                </div>
+               <MetodoDePagamento />
             </PageContent>
          </Page>
       </>
