@@ -7,6 +7,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TabsContent } from "@radix-ui/react-tabs";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const metodo = [
    { icon: CreditCard, title: "Visa termina com 4242", expires: "Expira em 09/29", default: true },
@@ -49,9 +50,9 @@ export function MetodoDePagamento() {
                         </TabsList>
 
                         <TabsContent value="creditCard">
-                           <div>
+                           <div className="flex flex-col items-center">
                               {/* Cartão */}
-                              <div className="space-y-4">
+                              <div className="space-y-4 w-[70%]">
                                  <div className="relative">
                                     <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl blur opacity-20"></div>
                                     <div className="relative w-full bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-xl border border-slate-700 overflow-hidden">
@@ -77,8 +78,25 @@ export function MetodoDePagamento() {
                               <div className="pt-4">
                                  <Label className="text-slate-400">Número do cartão</Label>
                                  <Input placeholder="0000 0000 0000 0000" />
-                                 <div>
-                                    
+                                 <div className="flex gap-4 pt-4">
+                                    <div className="w-full">
+                                       <Label className="text-slate-400">Titular do cartão</Label>
+                                       <Input placeholder="John Doe" />
+                                    </div>
+                                    <div className="flex gap-2">
+                                       <div>
+                                          <Label className="text-slate-400">Expira em</Label>
+                                          <Input placeholder="MM/YY" />
+                                       </div>
+                                       <div>
+                                          <Label className="text-slate-400">CCV</Label>
+                                          <Input placeholder="000" />
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div className="flex items-center gap-1.5 pt-4">
+                                    <Checkbox id="default" />
+                                    <Label htmlFor="default" className="text-slate-400 font-normal">Marcar como método de pagamento padrão</Label>
                                  </div>
                               </div>
                            </div>
