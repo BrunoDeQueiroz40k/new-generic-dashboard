@@ -3,21 +3,9 @@ import { Progress } from "@/components/ui/progress";
 
 const status = [
   { title: "Sistema", value: 75, color: "" },
-  {
-    title: "Banco de Dados",
-    value: 63,
-    color: "[&>*]:bg-gradient-to-r [&>*]:from-red-500 [&>*]:to-orange-500",
-  },
-  {
-    title: "Armazenamento",
-    value: 60,
-    color: "[&>*]:bg-gradient-to-r [&>*]:from-green-500 [&>*]:to-yellow-500",
-  },
-  {
-    title: "Rede",
-    value: 40,
-    color: "[&>*]:bg-gradient-to-r [&>*]:from-purple-500 [&>*]:to-pink-500",
-  },
+  { title: "Banco de Dados", value: 63, color: "[&>*]:bg-gradient-to-r [&>*]:from-red-500 [&>*]:to-orange-500", },
+  { title: "Armazenamento", value: 60, color: "[&>*]:bg-gradient-to-r [&>*]:from-green-500 [&>*]:to-yellow-500", },
+  { title: "Rede", value: 40, color: "[&>*]:bg-gradient-to-r [&>*]:from-purple-500 [&>*]:to-pink-500", },
 ];
 
 export function StatusDoSistema() {

@@ -1,8 +1,8 @@
 import { Bell, CircleOff, Cog, Shield, Zap } from "lucide-react";
 
 // Componentes
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const controle = [
   { title: "Controle de Energia", icon: Zap, status: false },

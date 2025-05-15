@@ -9,38 +9,10 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const alert = [
-  {
-    title: "Scaneamento completo",
-    description: "Nenhuma ameaça encontrada",
-    time: "14:32",
-    color: "text-blue-500",
-    colorBg: "bg-blue-500/30",
-    icon: CircleAlert,
-  },
-  {
-    title: "Lentidão Detectada",
-    description: "Lentidão incomum em atividade",
-    time: "16:32",
-    color: "text-yellow-500",
-    colorBg: "bg-yellow-500/30",
-    icon: CircleAlert,
-  },
-  {
-    title: "Update disponivel",
-    description: "Versão 12.250 pronta para instalação",
-    time: "17:32",
-    color: "text-cyan-500",
-    colorBg: "bg-cyan-500/30",
-    icon: Download,
-  },
-  {
-    title: "Backup completo",
-    description: "Backup do disco E: foi um sucesso",
-    time: "14:32",
-    color: "text-green-500",
-    colorBg: "bg-green-500/30",
-    icon: CheckCircle2,
-  },
+  { title: "Scaneamento completo", description: "Nenhuma ameaça encontrada", time: "14:32", color: "text-blue-500", colorBg: "bg-blue-500/30", icon: CircleAlert, },
+  { title: "Lentidão Detectada", description: "Lentidão incomum em atividade", time: "16:32", color: "text-yellow-500", colorBg: "bg-yellow-500/30", icon: CircleAlert, },
+  { title: "Update disponivel", description: "Versão 12.250 pronta para instalação", time: "17:32", color: "text-cyan-500", colorBg: "bg-cyan-500/30", icon: Download, },
+  { title: "Backup completo", description: "Backup do disco E: foi um sucesso", time: "14:32", color: "text-green-500", colorBg: "bg-green-500/30", icon: CheckCircle2, },
 ];
 
 export function AlertasDoSistema() {

@@ -2,8 +2,8 @@ import { RefreshCcw } from "lucide-react";
 
 // Componentes
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { DialogClose, DialogTitle } from "@/components/ui/dialog";
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 
 export function GerenciarChavesAPIsRegenerateDialog() {
    return (

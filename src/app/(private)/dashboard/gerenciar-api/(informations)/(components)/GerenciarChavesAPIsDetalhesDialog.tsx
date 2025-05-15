@@ -1,6 +1,7 @@
 import { ArrowDownRight, ArrowRight, Copy, Eye, Key } from "lucide-react";
 
 // Componentes
+import { Luz } from "@/components/ui/luz";
 import { Badge } from "@/components/ui/badge";
 import { Title } from "@/components/ui/title";
 import { Label } from "@/components/ui/label";
@@ -8,7 +9,6 @@ import { DialogTitle } from "@/components/ui/dialog";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
-import { Luz } from "@/components/ui/luz";
 
 interface DetalhesProps {
    chave: {

@@ -2,8 +2,8 @@ import { Activity, Key, Shield } from "lucide-react";
 
 // Componentes
 import { Luz } from "@/components/ui/luz";
-import { Badge } from "@/components/ui/badge";
 import { Dot } from "@/components/ui/dot";
+import { Badge } from "@/components/ui/badge";
 
 const info = [
   {

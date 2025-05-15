@@ -1,5 +1,6 @@
 import { Bitcoin, CheckCircle2, CreditCard, Pencil, Plus, Trash, Wallet } from "lucide-react";
 
+// Componentes
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";

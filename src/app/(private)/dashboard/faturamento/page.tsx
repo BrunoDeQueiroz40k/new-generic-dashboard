@@ -1,12 +1,12 @@
-import { Faturas } from "./(informations)/Faturas";
 import { CreditCard } from "lucide-react";
-import { Page, PageContent, PageDescription, PageHeader, PageTitle } from "@/components/ui/page";
-import { FaturamentoInfo } from "./(informations)/FaturamentoInfo";
-import { DespesasMensais } from "./(informations)/DespesasMensais";
-import { CirculoDeCusto } from "./(informations)/CirculoDeCusto";
-import { UsoDeRecursos } from "./(informations)/UsoDeRecursos";
+import { Faturas } from "./(informations)/Faturas";
 import { AlertaDeUso } from "./(informations)/AlertasDeUso";
+import { UsoDeRecursos } from "./(informations)/UsoDeRecursos";
+import { CirculoDeCusto } from "./(informations)/CirculoDeCusto";
+import { DespesasMensais } from "./(informations)/DespesasMensais";
+import { FaturamentoInfo } from "./(informations)/FaturamentoInfo";
 import { MetodoDePagamento } from "./(informations)/MetodoDePagamento";
+import { Page, PageContent, PageDescription, PageHeader, PageTitle } from "@/components/ui/page";
 
 export default function Faturamento() {
    return (

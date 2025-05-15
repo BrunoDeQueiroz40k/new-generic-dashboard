@@ -1,12 +1,14 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
-import { DialogClose, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Plus, X } from "lucide-react";
+
+// Componentes
+import { Title } from "@/components/ui/title";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
-import { Title } from "@/components/ui/title";
-import { Plus, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { DialogClose, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export function MinhasAPIsCriarDialogAdicionarNovoEndpoint() {
    return (

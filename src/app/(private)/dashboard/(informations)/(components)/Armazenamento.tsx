@@ -5,38 +5,10 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
 const armazenamento = [
-  {
-    title: "System Drive (C:)",
-    used: "325 GB",
-    free: "325",
-    total: "512 GB",
-    porcentage: "63%",
-    type: "SSD",
-  },
-  {
-    title: "Data Drive (D:)",
-    used: "1285 GB",
-    free: "1285",
-    total: "2048 GB",
-    porcentage: "63%",
-    type: "HDD",
-  },
-  {
-    title: "Backup Drive (E:)",
-    used: "1865 GB",
-    free: "1865",
-    total: "4096 GB",
-    porcentage: "46%",
-    type: "HDD",
-  },
-  {
-    title: "External Drive (F:)",
-    used: "210 GB",
-    free: "210",
-    total: "1024 GB",
-    porcentage: "21%",
-    type: "SSD",
-  },
+  { title: "System Drive:)", used: "325 GB", free: "325", total: "512 GB", porcentage: "63%", type: "SSD", },
+  { title: "Data Drive (D:)", used: "1285 GB", free: "1285", total: "2048 GB", porcentage: "63%", type: "HDD", },
+  { title: "Backup Drive (E:)", used: "1865 GB", free: "1865", total: "4096 GB", porcentage: "46%", type: "HDD", },
+  { title: "External Drive (F:)", used: "210 GB", free: "210", total: "1024 GB", porcentage: "21%", type: "SSD", },
 ];
 
 const calculatePercentage = (used: string, total: string): number => {
