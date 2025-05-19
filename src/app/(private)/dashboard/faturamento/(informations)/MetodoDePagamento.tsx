@@ -1,4 +1,7 @@
-import { Bitcoin, CheckCircle2, CreditCard, Pencil, Plus, Trash, Wallet } from "lucide-react";
+"use client"
+
+import { useState } from "react";
+import { Bitcoin, CheckCircle2, CreditCard, Menu, Pencil, Plus, Trash, Wallet } from "lucide-react";
 
 // Componentes
 import { Label } from "@/components/ui/label";
@@ -16,10 +19,12 @@ const metodo = [
 ]
 
 export function MetodoDePagamento() {
+   const [selectedCrypto, setSelectedCrypto] = useState<"btc" | "eth" | null>(null);
+
    return (
       <>
          <Card>
-            <CardHeader className="">
+            <CardHeader>
                <CardTitle>Método de pagamento</CardTitle>
                <Dialog>
                   <DialogTrigger asChild>
@@ -28,7 +33,7 @@ export function MetodoDePagamento() {
                         Adicionar novo método
                      </Button>
                   </DialogTrigger>
-                  <DialogContent className="background2 p-6 text-slate-200">
+                  <DialogContent className="background2 p-6 text-slate-200 w-[30%]">
                      <DialogHeader>
                         <DialogTitle className="text-slate-200">Adicionar novo método de pagamento</DialogTitle>
                         <DialogDescription className="text-slate-400 text-sm font-normal">Adicione um novo método para a sua conta</DialogDescription>
@@ -50,54 +55,90 @@ export function MetodoDePagamento() {
                         </TabsList>
 
                         <TabsContent value="creditCard">
-                           <div className="flex flex-col items-center">
-                              {/* Cartão */}
-                              <div className="space-y-4 w-[70%]">
-                                 <div className="relative">
-                                    <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl blur opacity-20"></div>
-                                    <div className="relative w-full bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-xl border border-slate-700 overflow-hidden">
-                                       <div className="px-4 py-3 flex justify-between items-start">
-                                          <div className="w-12 h-8 bg-gradient-to-r from-slate-600 to-slate-700 rounded opacity-80"></div>
-                                          <div className="text-xs text-slate-400">Novo cartão</div>
-                                       </div>
-                                       <div className="px-4 py-3 text-lg tracking-widest text-slate-300 font-mono">•••• •••• •••• ••••</div>
+                           {/* Cartão */}
+                           <div className="space-y-4">
+                              <div className="relative">
+                                 <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl blur opacity-20"></div>
+                                 <div className="relative w-full bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-xl border border-slate-700 overflow-hidden">
+                                    <div className="px-4 py-3 flex justify-between items-start">
+                                       <div className="w-12 h-8 bg-gradient-to-r from-slate-600 to-slate-700 rounded opacity-80"></div>
+                                       <div className="text-xs text-slate-400">Novo cartão</div>
+                                    </div>
+                                    <div className="px-4 py-3 text-lg tracking-widest text-slate-300 font-mono">•••• •••• •••• ••••</div>
 
-                                       <div className="px-4 mt-3 flex items-center justify-between h-16 bg-gradient-to-r from-cyan-500/10 to-purple-500/10">
-                                          <div className="text-xs text-slate-400">
-                                             <div>Titular do cartão</div>
-                                             <div className="text-slate-300 mt-1">SEU NOME</div>
-                                          </div>
-                                          <div className="text-xs text-slate-400">
-                                             <div>Expira em</div>
-                                             <div className="text-slate-300 mt-1">MM/YY</div>
-                                          </div>
+                                    <div className="px-4 mt-3 flex items-center justify-between h-16 bg-gradient-to-r from-cyan-500/10 to-purple-500/10">
+                                       <div className="text-xs text-slate-400">
+                                          <div>Titular do cartão</div>
+                                          <div className="text-slate-300 mt-1">SEU NOME</div>
+                                       </div>
+                                       <div className="text-xs text-slate-400">
+                                          <div>Expira em</div>
+                                          <div className="text-slate-300 mt-1">MM/YY</div>
                                        </div>
                                     </div>
                                  </div>
                               </div>
-                              <div className="pt-4">
+                           </div>
+
+                           <div className="pt-4">
+                              <div>
                                  <Label className="text-slate-400">Número do cartão</Label>
                                  <Input placeholder="0000 0000 0000 0000" />
-                                 <div className="flex gap-4 pt-4">
-                                    <div className="w-full">
-                                       <Label className="text-slate-400">Titular do cartão</Label>
-                                       <Input placeholder="John Doe" />
+                              </div>
+                              <div className="flex gap-4 pt-4">
+                                 <div className="w-1/2">
+                                    <Label className="text-slate-400">Titular do cartão</Label>
+                                    <Input placeholder="John Doe" />
+                                 </div>
+                                 <div className="flex gap-2 w-1/2">
+                                    <div className="w-1/2">
+                                       <Label className="text-slate-400">Expira em</Label>
+                                       <Input placeholder="MM/YY" />
                                     </div>
-                                    <div className="flex gap-2">
-                                       <div>
-                                          <Label className="text-slate-400">Expira em</Label>
-                                          <Input placeholder="MM/YY" />
-                                       </div>
-                                       <div>
-                                          <Label className="text-slate-400">CCV</Label>
-                                          <Input placeholder="000" />
-                                       </div>
+                                    <div className="w-1/2">
+                                       <Label className="text-slate-400">CCV</Label>
+                                       <Input placeholder="000" />
                                     </div>
                                  </div>
-                                 <div className="flex items-center gap-1.5 pt-4">
-                                    <Checkbox id="default" />
-                                    <Label htmlFor="default" className="text-slate-400 font-normal">Marcar como método de pagamento padrão</Label>
+                              </div>
+                              <div className="flex items-center gap-1.5 pt-4">
+                                 <Checkbox id="default" />
+                                 <Label htmlFor="default" className="text-slate-400 font-normal">Marcar como método de pagamento padrão</Label>
+                              </div>
+                           </div>
+                        </TabsContent>
+
+                        <TabsContent value="crypto">
+                           <div>
+                              <div onClick={() => setSelectedCrypto("btc")}
+                                 className={`flex items-center gap-3 mb-4 p-3 rounded-lg border background ${selectedCrypto === "btc" ? "!border-cyan-500" : "border-slate-700 hover:border-cyan-500/50"} cursor-pointer transition-colors`}
+                              >
+                                 <div className="p-2 bg-yellow-500/15 rounded-full">
+                                    <Bitcoin className="w-5 h-5 text-yellow-500" />
                                  </div>
+                                 <div>
+                                    <h1 className="text-slate-200 font-medium">Bitcoin (BTC)</h1>
+                                    <span className="text-sm text-slate-400">A crypto mais popular do mundo</span>
+                                 </div>
+                              </div>
+                              <div onClick={() => setSelectedCrypto("eth")}
+                                 className={`flex items-center gap-3 mb-4 p-3 rounded-lg border background  ${selectedCrypto === "eth" ? "!border-cyan-500" : "border-slate-700 hover:border-cyan-500/50"} cursor-pointer transition-colors`}
+                              >
+                                 <div className="p-2 bg-blue-500/15 rounded-full">
+                                    <Menu className="w-5 h-5 text-blue-500" />
+                                 </div>
+                                 <div>
+                                    <h1 className="text-slate-200 font-medium">Ethereum (ETH)</h1>
+                                    <span className="text-sm text-slate-400">Blockchain programável</span>
+                                 </div>
+                              </div>
+                              <div>
+                                 <Label className="text-slate-400">Endereço</Label>
+                                 <Input placeholder="Adicione o endereço da sua carteira" />
+                              </div>
+                              <div className="flex items-center gap-1.5 pt-4">
+                                 <Checkbox id="default" />
+                                 <Label htmlFor="default" className="text-slate-400 font-normal">Marcar como método de pagamento padrão</Label>
                               </div>
                            </div>
                         </TabsContent>
