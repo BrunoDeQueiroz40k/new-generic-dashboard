@@ -6,11 +6,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Title } from "@/components/ui/title";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
 import { DialogTitle, DialogClose } from "@/components/ui/dialog";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { SwitchComplete } from "@/components/ui/switchComplete";
 
 const chaves = [
    { id: "dev", title: "Desenvolvimento", value: "desenvolvimento", description: "Para testar e desenvolver ambientes" },
@@ -63,25 +63,13 @@ export function GerenciarChavesAPIsCriarDialog() {
                   </Title>
                   <div className="flex flex-col gap-3">
                      <div className="flex items-center justify-between">
-                        <div>
-                           <span className="text-base">Acesso de Leitura</span>
-                           <p className="text-sm font-normal text-slate-400">Permite somente a leitura das APIs</p>
-                        </div>
-                        <Switch defaultChecked />
+                        <SwitchComplete title="Acesso de Leitura" description="Permite somente a leitura das APIs" checked={true} />
                      </div>
                      <div className="flex items-center justify-between">
-                        <div>
-                           <span className="text-base">Acesso de Escrita</span>
-                           <p className="text-sm font-normal text-slate-400">Permite a criação e atualização de dados</p>
-                        </div>
-                        <Switch defaultChecked />
+                        <SwitchComplete title="Acesso de Escrita" description="Permite a criação e atualização de dados" checked={true} />
                      </div>
                      <div className="flex items-center justify-between">
-                        <div>
-                           <span className="text-base">Acesso de Deletar</span>
-                           <p className="text-sm font-normal text-slate-400">Permite deletar dados</p>
-                        </div>
-                        <Switch defaultChecked />
+                        <SwitchComplete title="Acesso de Deletar" description="Permite deletar dados" checked={true} />
                      </div>
                   </div>
                </div>

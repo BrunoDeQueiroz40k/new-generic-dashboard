@@ -6,9 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Title } from "@/components/ui/title";
-import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { SwitchComplete } from "@/components/ui/switchComplete";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
@@ -235,18 +235,10 @@ export function MinhasAPIsCriarDialog() {
                         </div>
                         <div className="pt-4 space-y-3">
                            <div className="flex items-center justify-between">
-                              <div className="flex flex-col">
-                                 <span className="text-slate-300">Auto-gerar Chaves API</span>
-                                 <span className="text-xs text-slate-400">Gere automaticamente chaves APIs para novos clientes</span>
-                              </div>
-                              <Switch id="auto-gerar" defaultChecked />
+                              <SwitchComplete title="Auto-gerar Chaves API" description="Gere automaticamente chaves APIs para novos clientes" checked={true} />
                            </div>
                            <div className="flex items-center justify-between pb-2">
-                              <div className="flex flex-col">
-                                 <span className="text-slate-300">Expiração de chave</span>
-                                 <span className="text-xs text-slate-400">habilite para expirar a chave API automaticamente</span>
-                              </div>
-                              <Switch id="auto-gerar" defaultChecked />
+                              <SwitchComplete title="Expiração de chave" description="Habilite para expirar a chave API automaticamente" checked={true} />
                            </div>
                         </div>
                      </div>
@@ -259,11 +251,7 @@ export function MinhasAPIsCriarDialog() {
                               <Title className="pb-0">Limite de taxa</Title>
                               <p className="text-xs text-slate-500 pb-4">Configure os limite de requisições da API</p>
                               <div className="flex items-center justify-between pb-2">
-                                 <div className="flex flex-col">
-                                    <span className="text-slate-300">Habilitar limite de taxa</span>
-                                    <span className="text-xs text-slate-400">Limite o número de requisições</span>
-                                 </div>
-                                 <Switch id="auto-gerar" defaultChecked />
+                                 <SwitchComplete title="Habilitar limite de taxa" description="Limite o número de requisições" checked={true} />
                               </div>
                               <div className="pt-3">
                                  <Label className="font-normal text-slate-400">Requisições por minuto</Label>
@@ -279,11 +267,7 @@ export function MinhasAPIsCriarDialog() {
                               <Title className="pb-0">Configurações CORS</Title>
                               <p className="text-xs text-slate-500 pb-4">Configure recuros de compartilhamento Cross-Origin</p>
                               <div className="flex items-center justify-between pb-2">
-                                 <div className="flex flex-col">
-                                    <span className="text-slate-300">Habilitar CORS</span>
-                                    <span className="text-xs text-slate-400">Permitir requisições cross-origin para a sua API</span>
-                                 </div>
-                                 <Switch id="auto-gerar" defaultChecked />
+                                 <SwitchComplete title="Habilitar CORS" description="Permitir requisições cross-origin para a sua API" checked={true} />
                               </div>
                               <div className="pt-3">
                                  <Label className="font-normal text-slate-400">Métodos permitidos</Label>
@@ -300,11 +284,7 @@ export function MinhasAPIsCriarDialog() {
                            <Title className="pb-0">Caching e Performance</Title>
                            <p className="text-xs text-slate-500 pb-4">Configurações de cache e performance</p>
                            <div className="flex items-center justify-between pb-2">
-                              <div className="flex flex-col">
-                                 <span className="text-slate-300">Permitir Cache</span>
-                                 <span className="text-xs text-slate-400">Resposta em cache para melhorar a performance</span>
-                              </div>
-                              <Switch id="auto-gerar" defaultChecked />
+                              <SwitchComplete title="Permitir Cache" description="Resposta em cache para melhorar a performance" checked={true} />
                            </div>
                            <div className="flex gap-4">
                               <div className="flex-1">
@@ -329,11 +309,7 @@ export function MinhasAPIsCriarDialog() {
                               </div>
                            </div>
                            <div className="flex items-center justify-between py-2">
-                              <div className="flex flex-col">
-                                 <span className="text-slate-300">Comprenssão</span>
-                                 <span className="text-xs text-slate-400">Comprenssar respostas da API</span>
-                              </div>
-                              <Switch id="auto-gerar" defaultChecked />
+                              <SwitchComplete title="Comprenssão" description="Comprenssar respostas da API" checked={true} />
                            </div>
                         </div>
                      </div>

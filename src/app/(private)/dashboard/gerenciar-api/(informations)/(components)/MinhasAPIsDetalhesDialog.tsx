@@ -6,8 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Title } from "@/components/ui/title";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
 import { Progress } from "@/components/ui/progress";
+import { SwitchComplete } from "@/components/ui/switchComplete";
 import { DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
@@ -263,25 +263,13 @@ export function MinhasAPIsDetalhesDialog({ api }: DetalhesProps) {
                      <p className="text-slate-400 text-sm pb-6">Configure as opções de: {api.title}</p>
                      <div className="flex flex-col gap-3 pb-6">
                         <div className="flex items-center justify-between">
-                           <div>
-                              <h2>Status da API</h2>
-                              <p className="text-xs text-slate-400">Habilite ou desabilite essa API</p>
-                           </div>
-                           <Switch defaultChecked />
+                           <SwitchComplete title="Status da API" description="Habilite ou desabilite essa API" checked={true} />
                         </div>
                         <div className="flex items-center justify-between">
-                           <div>
-                              <h2>Requer Autenticação</h2>
-                              <p className="text-xs text-slate-400">Requer uma chave API para todas as requests</p>
-                           </div>
-                           <Switch />
+                           <SwitchComplete title="Requer Autenticação" description="Requer uma chave API para todas as requests" checked={true} />
                         </div>
                         <div className="flex items-center justify-between">
-                           <div>
-                              <h2>CORS habilitada</h2>
-                              <p className="text-xs text-slate-400">Permite cross-origin requests</p>
-                           </div>
-                           <Switch />
+                           <SwitchComplete title="CORS habilitada" description="Permite cross-origin requests" checked={false} />
                         </div>
                         <div>
                            <h2>Limite de chamadas</h2>
