@@ -1,4 +1,6 @@
 import { CreditCard } from "lucide-react";
+
+import { Planos } from "./(informations)/Planos";
 import { Faturas } from "./(informations)/Faturas";
 import { AlertaDeUso } from "./(informations)/AlertasDeUso";
 import { UsoDeRecursos } from "./(informations)/UsoDeRecursos";
@@ -31,6 +33,7 @@ export default function Faturamento() {
                   <AlertaDeUso />
                </div>
                <MetodoDePagamento />
+               <Planos />
             </PageContent>
          </Page>
       </>
