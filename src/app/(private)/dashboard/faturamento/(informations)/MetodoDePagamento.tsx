@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image";
 import { useState } from "react";
 import { Bitcoin, CheckCircle2, CreditCard, Menu, Pencil, Plus, Trash, Wallet } from "lucide-react";
 
@@ -10,7 +11,11 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+
+// Imagens
+import Pix from "@/../public/imgs/qrcode.png";
 
 const metodo = [
    { icon: CreditCard, title: "Visa termina com 4242", expires: "Expira em 09/29", default: true },
@@ -110,9 +115,7 @@ export function MetodoDePagamento() {
 
                         <TabsContent value="crypto">
                            <div>
-                              <div onClick={() => setSelectedCrypto("btc")}
-                                 className={`flex items-center gap-3 mb-4 p-3 rounded-lg border background ${selectedCrypto === "btc" ? "!border-cyan-500" : "border-slate-700 hover:border-cyan-500/50"} cursor-pointer transition-colors`}
-                              >
+                              <div onClick={() => setSelectedCrypto("btc")} className={`flex items-center gap-3 mb-4 p-3 rounded-lg border background ${selectedCrypto === "btc" ? "!border-cyan-500" : "border-slate-700 hover:border-cyan-500/50"} cursor-pointer transition-colors`}>
                                  <div className="p-2 bg-yellow-500/15 rounded-full">
                                     <Bitcoin className="w-5 h-5 text-yellow-500" />
                                  </div>
@@ -121,9 +124,7 @@ export function MetodoDePagamento() {
                                     <span className="text-sm text-slate-400">A crypto mais popular do mundo</span>
                                  </div>
                               </div>
-                              <div onClick={() => setSelectedCrypto("eth")}
-                                 className={`flex items-center gap-3 mb-4 p-3 rounded-lg border background  ${selectedCrypto === "eth" ? "!border-cyan-500" : "border-slate-700 hover:border-cyan-500/50"} cursor-pointer transition-colors`}
-                              >
+                              <div onClick={() => setSelectedCrypto("eth")} className={`flex items-center gap-3 mb-4 p-3 rounded-lg border background  ${selectedCrypto === "eth" ? "!border-cyan-500" : "border-slate-700 hover:border-cyan-500/50"} cursor-pointer transition-colors`}>
                                  <div className="p-2 bg-blue-500/15 rounded-full">
                                     <Menu className="w-5 h-5 text-blue-500" />
                                  </div>
@@ -142,6 +143,50 @@ export function MetodoDePagamento() {
                               </div>
                            </div>
                         </TabsContent>
+
+                        <TabsContent value="pix">
+                           <div>
+                              <div className="background2 p-4 rounded-lg flex flex-col items-center gap-4">
+                                 <div className="p-2 bg-white rounded-lg">
+                                    <Image src={Pix} alt="Pix" width={120} height={120} className="bg-gray-400/30 rounded-lg p-0.5" />
+                                 </div>
+                                 <span className="text-slate-400 text-xs">Scaneie este QR Code para linkar a sua chave PIX</span>
+                              </div>
+                              <div className="pt-4">
+                                 <Label className="text-slate-400">Chave PIX</Label>
+                                 <Input placeholder="Adicione a chave PIX" />
+                              </div>
+                              <div className="pt-4">
+                                 <Label className="text-slate-400">Tipo da Chave</Label>
+                                 <Select>
+                                    <SelectTrigger className="w-full">
+                                       <SelectValue placeholder="Selecione o tipo da chave" />
+                                    </SelectTrigger>
+                                    <SelectContent className="bg-slate-800 border-slate-700 text-slate-200">
+                                       <SelectItem value="CPF">CPF</SelectItem>
+                                       <SelectItem value="CNPJ">CNPJ</SelectItem>
+                                       <SelectItem value="Email">Email</SelectItem>
+                                       <SelectItem value="Telefone">Telefone</SelectItem>
+                                    </SelectContent>
+                                 </Select>
+                              </div>
+                              <div className="flex items-center gap-1.5 pt-4">
+                                 <Checkbox id="default" />
+                                 <Label htmlFor="default" className="text-slate-400 font-normal">Marcar como método de pagamento padrão</Label>
+                              </div>
+                           </div>
+                        </TabsContent>
+                        <div className="flex items-center justify-end gap-2 pt-4">
+                           <DialogClose asChild>
+                              <Button>Cancelar</Button>
+                           </DialogClose>
+                           <DialogClose asChild>
+                              <Button variant="blue">
+                                 <Plus className="w-5 h-5" />
+                                 Adicionar método
+                              </Button>
+                           </DialogClose>
+                        </div>
                      </Tabs>
                   </DialogContent>
                </Dialog>
