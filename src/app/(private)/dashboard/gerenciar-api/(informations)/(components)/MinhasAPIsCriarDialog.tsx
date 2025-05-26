@@ -317,9 +317,9 @@ export function MinhasAPIsCriarDialog() {
                </Tabs>
                <div className="pt-4 flex gap-3 justify-end">
                   <DialogClose asChild>
-                     <Button variant="border">Cancelar</Button>
+                     <Button variant="red">Cancelar</Button>
                   </DialogClose>
-                  <Button variant="blue">
+                  <Button variant="green">
                      <Plus className="w-4 h-4" />
                      Criar Nova API
                   </Button>

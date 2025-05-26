@@ -178,10 +178,10 @@ export function MetodoDePagamento() {
                         </TabsContent>
                         <div className="flex items-center justify-end gap-2 pt-4">
                            <DialogClose asChild>
-                              <Button>Cancelar</Button>
+                              <Button variant="red">Cancelar</Button>
                            </DialogClose>
                            <DialogClose asChild>
-                              <Button variant="blue">
+                              <Button variant="green">
                                  <Plus className="w-5 h-5" />
                                  Adicionar método
                               </Button>

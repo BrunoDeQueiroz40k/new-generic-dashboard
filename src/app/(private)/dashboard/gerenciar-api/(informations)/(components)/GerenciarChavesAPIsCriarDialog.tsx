@@ -90,10 +90,10 @@ export function GerenciarChavesAPIsCriarDialog() {
                </div>
                <div className="flex gap-2 justify-end">
                   <DialogClose asChild>
-                     <Button>Cancelar</Button>
+                     <Button variant="red">Cancelar</Button>
                   </DialogClose>
                   <DialogClose asChild>
-                     <Button variant="blue">
+                     <Button variant="green">
                         <Plus className="w-4 h-4" />
                         Criar Chave
                      </Button>
