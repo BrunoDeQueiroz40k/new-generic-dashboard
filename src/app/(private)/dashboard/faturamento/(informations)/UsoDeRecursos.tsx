@@ -1,3 +1,4 @@
+import { Menu } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -13,6 +14,7 @@ export function UsoDeRecursos() {
       <>
          <Card className="flex-1">
             <CardHeader>
+               <Menu className="w-6 h-6 text-slate-400" />
                <CardTitle>Uso dos Recursos</CardTitle>
             </CardHeader>
             <CardContent>

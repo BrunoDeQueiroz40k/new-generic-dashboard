@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Bitcoin, CheckCircle2, CreditCard, Menu, Pencil, Plus, Trash, Wallet } from "lucide-react";
+import { Bitcoin, CheckCircle2, CreditCard, CircleDollarSign, Menu, Pencil, Plus, Trash, Wallet } from "lucide-react";
 
 // Componentes
 import { Label } from "@/components/ui/label";
@@ -30,6 +30,7 @@ export function MetodoDePagamento() {
       <>
          <Card>
             <CardHeader>
+               <CircleDollarSign className="w-6 h-6 text-slate-400" />
                <CardTitle>Método de pagamento</CardTitle>
                <Dialog>
                   <DialogTrigger asChild>

@@ -1,5 +1,6 @@
 "use client";
 
+import { ChartPie } from "lucide-react";
 import { Dot } from "@/components/ui/dot";
 import { Cell, Pie, PieChart } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -39,6 +40,7 @@ export function CirculoDeCusto() {
       <>
          <Card className="flex-1">
             <CardHeader>
+               <ChartPie className="w-6 h-6 text-slate-400" />
                <CardTitle>Circulo de Custo</CardTitle>
             </CardHeader>
             <CardContent className="pt-0">

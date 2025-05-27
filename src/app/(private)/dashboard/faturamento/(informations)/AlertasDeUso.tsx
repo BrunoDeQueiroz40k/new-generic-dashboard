@@ -1,3 +1,4 @@
+import { AlertCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -9,16 +10,17 @@ export function AlertaDeUso() {
       <>
          <Card className="flex-1">
             <CardHeader>
+               <AlertCircle className="w-6 h-6 text-slate-400" />
                <CardTitle>Alertas de Uso</CardTitle>
             </CardHeader>
             <CardContent>
-               <div className="flex items-center justify-between background2 p-3 mb-3">
+               <div className="background2 p-3 pb-0 mb-3">
                  <SwitchComplete title="80% da Alocação da API" description="Notificação por E-mail quando atingir 80% do uso mensal da API" checked={true} />
                </div>
-               <div className="flex items-center justify-between background2 p-3 mb-3">
+               <div className="background2 p-3 pb-0 mb-3">
                   <SwitchComplete title="90% da Alocação da API" description="Notificação por E-mail quando atingir 90% do uso mensal da API" checked={true} />
                </div>
-               <div className="flex items-center justify-between background2 p-3 mb-3">
+               <div className="background2 p-3 pb-0 mb-3">
                   <SwitchComplete title="Alerta de (%) Customizada" description="Receba um alerta quando exceder o número customoziado" checked={false} />
                </div>
                <div>

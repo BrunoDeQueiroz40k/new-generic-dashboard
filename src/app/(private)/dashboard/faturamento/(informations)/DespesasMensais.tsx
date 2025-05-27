@@ -1,5 +1,6 @@
 "use client"
 
+import { ChartLine } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, XAxis, YAxis } from "recharts";
@@ -17,8 +18,11 @@ export function DespesasMensais() {
    return (
       <>
          <Card className="flex-1/5">
-            <CardHeader>
-               <CardTitle>Despesas Mensais</CardTitle>
+            <CardHeader className="flex justify-between">
+               <div className="flex items-center gap-2">
+                  <ChartLine className="w-6 h-6 text-slate-400" />
+                  <CardTitle>Despesas Mensais</CardTitle>
+               </div>
                <div className="min-w-[200px]">
                   <Select>
                      <SelectTrigger className="w-full">
