@@ -59,8 +59,10 @@ body {
   --color-alterra: #FF8601;
 
   /* ANIMAÇÕES */
-  --animate-spin-slow: spin-slow 10s linear infinite;
-  --animate-spin-slower: spin-slower 30s linear infinite;
+  --animate-spin-slow: spin-slow 30s linear infinite;
+  --animate-spin-slower: spin-slower 50s linear infinite;
+  --animate-spin-reverse: spin-reverse 30s linear infinite;
+  --animate-fade-out: fade-out 1s ease-out forwards;
 
   @keyframes spin-slow {
     0% {
@@ -77,6 +79,24 @@ body {
     }
     100% {
       transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-reverse {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
     }
   }
 }

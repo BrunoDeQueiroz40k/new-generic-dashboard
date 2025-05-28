@@ -2,35 +2,40 @@ import Link from "next/link";
 import Image from "next/image";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Bell, Cog, LogOut, Search, User } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
 // Componentes
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
 // Imagem
+import CORPS from "@/../public/imgs/CORPS.png";
+import ALTERRA from "@/../public/imgs/ALTERRA.png";
 import Alterra from "@/../public/imgs/alterra.gif";
 
 const user = [
-   { icon: User, label: "Perfil", href: "/dashboard/configuracoes" },
-   { icon: Cog, label: "Configurações", href: "/dashboard/configuracoes" },
-   { icon: LogOut, label: "Sair", href: "/login" },
+  { icon: User, label: "Perfil", href: "/dashboard/configuracoes" },
+  { icon: Cog, label: "Configurações", href: "/dashboard/configuracoes" },
+  { icon: LogOut, label: "Sair", href: "/login" },
 ]
 
 export function Header() {
   return (
     <>
-      <header className="flex items-center justify-between py-4 border-b border-slate-700/50 mb-6 w-full">
+      <header className="flex items-center justify-between py-2 border-b border-slate-700/50 mb-6 w-full">
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center justify-center">
-            <Image src={Alterra} alt="Alterra Logo" className="w-10" />
-            <span className="text-2xl font-bold ml-3">
-              Alterra <span className="text-[#FF8601]">Corps</span>
+            <Image src={Alterra} alt="Alterra Logo" className="w-14" />
+            <span className="ml-3">
+              <Image src={ALTERRA} alt="Alterra Logo" className="w-30 select-none" />
+            </span>
+            <span className="ml-3">
+              <Image src={CORPS} alt="Alterra Logo" className="w-23 select-none" />
             </span>
           </div>
 
           <div className="flex items-center space-x-4">
             <div className="hidden md:flex items-center space-x-1 bg-slate-800/50 rounded-full px-3 py-1.5 border border-slate-700/50 backdrop-blur-sm">
-              <Search className="h-4 w-4 text-slate-400" />
+              <Search className="h-4 w-4 mr-2 text-slate-400" />
               <input
                 type="text"
                 placeholder="Search systems..."

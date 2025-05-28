@@ -24,42 +24,18 @@ const menuItems = [
     title: "PRINCIPAL",
     items: [
       { icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" },
-      {
-        icon: Key,
-        label: "Gerenciar APIs",
-        href: "/dashboard/gerenciar-api",
-      },
-      {
-        icon: CreditCard,
-        label: "Faturamento",
-        href: "/dashboard/faturamento",
-      },
-      {
-        icon: ChartNoAxesColumnIncreasing,
-        label: "Monitoramento",
-        href: "/dashboard/monitoramento",
-      },
-      {
-        icon: Search,
-        label: "Consulta de Dados",
-        href: "/dashboard/consulta-de-dados",
-      },
+      { icon: Key, label: "Gerenciar APIs", href: "/dashboard/gerenciar-api" },
+      { icon: CreditCard, label: "Faturamento", href: "/dashboard/faturamento" },
+      { icon: ChartNoAxesColumnIncreasing, label: "Monitoramento", href: "/dashboard/monitoramento" },
+      { icon: Search, label: "Consulta de Dados", href: "/dashboard/consulta-de-dados" },
     ],
   },
   {
     title: "SUPORTE",
     items: [
       { icon: BadgeHelp, label: "Suporte", href: "/dashboard/suporte" },
-      {
-        icon: FileText,
-        label: "Documentação",
-        href: "/dashboard/documentacao",
-      },
-      {
-        icon: ChartSpline,
-        label: "Relatórios",
-        href: "/dashboard/relatorios",
-      },
+      { icon: FileText, label: "Documentação", href: "/dashboard/documentacao" },
+      { icon: ChartSpline, label: "Relatórios", href: "/dashboard/relatorios" },
     ],
   },
   {
@@ -87,13 +63,7 @@ export function Sidebar() {
                   <ul className="space-y-3">
                     {section.items?.map((item) => (
                       <li key={item.label}>
-                        <Link
-                          href={item.href}
-                          className={`flex items-center gap-3 text-sm rounded-sm px-7 py-2 transition-colors ${pathname === item.href
-                            ? "text-alterra bg-slate-800/50"
-                            : "text-gray-300 hover:text-alterra hover:bg-slate-800/50"
-                            }`}
-                        >
+                        <Link href={item.href} className={`flex items-center gap-3 text-sm rounded-sm px-7 py-2 transition-colors ${pathname === item.href ? "text-alterra bg-slate-800/50" : "text-gray-300 hover:text-alterra hover:bg-slate-800/50" }`}>
                           {item.icon && <item.icon className="w-[18px] h-[18px]" />}
                           {item.label}
                         </Link>
