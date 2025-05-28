@@ -30,8 +30,8 @@ export default function NotFound() {
         {/* Main card */}
         <Card className="pb-4">
           <CardHeader className="pb-4 md:pb-0">
-            <div className="flex justify-between items-center">
-              <CardTitle className="text-slate-100 text-xl flex items-center justify-between">
+            <div className="flex justify-between items-center w-full">
+              <CardTitle className="text-slate-100 text-xl flex items-center">
                 <AlertCircle className="mr-2 h-5 w-5 text-red-500" />
                 Error 404
               </CardTitle>
