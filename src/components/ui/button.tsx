@@ -13,7 +13,7 @@ const buttonVariants = cva(
           "bg-slate-800/50 border-slate-700/50 text-slate-200 hover:bg-slate-700/50",
         border:
           "bg-slate-800/50 border-slate-700/50 text-slate-200 hover:bg-slate-700/50 border",
-        alterra:  
+        alterra:
           "w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white",
         blue:
           "border border-blue-500/60 bg-blue-500/20 text-blue-500 hover:bg-blue-500/30",
@@ -21,6 +21,8 @@ const buttonVariants = cva(
           "border border-green-500/60 bg-green-500/20 text-green-500 hover:bg-green-500/30",
         red:
           "border border-red-500/60 bg-red-500/20 text-red-500 hover:bg-red-500/30",
+        yellow:
+          "border border-yellow-500/60 bg-yellow-500/20 text-yellow-500 hover:bg-yellow-500/30",
       },
       size: {
         default: "h-10 px-4 py-2",

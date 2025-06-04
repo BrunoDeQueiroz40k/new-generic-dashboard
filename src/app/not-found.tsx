@@ -15,9 +15,9 @@ import { Dot } from "@/components/ui/dot";
 import { Button } from "@/components/ui/button";
 
 // Componentes Defaults
+import { Version } from "./version";
 import Particles from "@/components/ui/particles";
 import AlterraLogo from "@/components/ui/alterra-logo";
-import { Version } from "./version";
 
 export default function NotFound() {
   return (

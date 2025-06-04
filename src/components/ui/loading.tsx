@@ -10,31 +10,72 @@ export function Loading() {
    const [isFading, setIsFading] = useState(false)
 
    useEffect(() => {
-      // Controla o overflow do body
       document.body.style.overflow = "hidden"
       
-      const timer = setInterval(() => {
-         setProgress((prev) => {
-            if (prev >= 100) {
-               clearInterval(timer)
-               // Adiciona delay de 3 segundos antes de começar o fade
+      const loadingSequence = [
+         { target: 10, delay: 300, type: 'jump' },
+         { target: 37, delay: 400, type: 'jump' },
+         { target: 50, delay: 500, type: 'jump' },
+         { target: 73, delay: 600, type: 'continuous' },
+         { target: 87, delay: 400, type: 'jump' },
+         { target: 99, delay: 300, type: 'jump' },
+         { target: 100, delay: 200, type: 'jump' }
+      ]
+
+      let currentIndex = 0
+      let animationFrameId: number
+      let lastProgress = 0
+
+      const nextStep = () => {
+         if (currentIndex >= loadingSequence.length) {
+            setTimeout(() => {
+               setIsFading(true)
                setTimeout(() => {
-                  setIsFading(true)
-                  // Após a animação de fade terminar, remove o loading
-                  setTimeout(() => {
-                     setIsLoading(false)
-                     document.body.style.overflow = "auto"
-                  }, 500)
-               }, 3000)
-               return 100
+                  setIsLoading(false)
+                  document.body.style.overflow = "auto"
+               }, 500)
+            }, 500)
+            return
+         }
+
+         const current = loadingSequence[currentIndex]
+         
+         if (current.type === 'jump') {
+            setProgress(current.target)
+            lastProgress = current.target
+            currentIndex++
+            setTimeout(nextStep, current.delay)
+         } else if (current.type === 'continuous') {
+            const startProgress = lastProgress
+            const startTime = Date.now()
+            
+            const animate = () => {
+               const elapsed = Date.now() - startTime
+               const progress = Math.min(elapsed / current.delay, 1)
+               
+               const newProgress = Math.floor(startProgress + (current.target - startProgress) * progress)
+               setProgress(newProgress)
+
+               if (progress < 1) {
+                  animationFrameId = requestAnimationFrame(animate)
+               } else {
+                  lastProgress = current.target
+                  currentIndex++
+                  setTimeout(nextStep, 100)
+               }
             }
-            return prev + 1
-         })
-      }, 50)
+
+            animationFrameId = requestAnimationFrame(animate)
+         }
+      }
+
+      nextStep()
 
       return () => {
-         clearInterval(timer)
          document.body.style.overflow = "auto"
+         if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId)
+         }
       }
    }, [])
 
